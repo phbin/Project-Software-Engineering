@@ -159,21 +159,19 @@
                     Foreground="Black"
                     HorizontalAlignment="Left"
                     BorderBrush="#BCBCBC">
-                    <Grid
-                          VerticalAlignment="Stretch">
+                    <Grid Width="auto">
                         <TextBlock Text="Add"
                                    FontSize="26"
                                    Foreground="#E0A645"
-                                   HorizontalAlignment="Left" RenderTransformOrigin="-0.467,0.602" Margin="-22,-3,0,0" Height="34" VerticalAlignment="Top" />
+                                   HorizontalAlignment="Left"  Height="34" VerticalAlignment="Center" Margin="-30,3,0,-3.4" />
                         <Border CornerRadius="90"
                                 Width="28"
                                 Height="28"
-                                Background="#E0A645" Margin="36,0,-27.2,0">
+                                Background="#E0A645" Margin="36,2,-27.2,1.2" Grid.RowSpan="2">
                             <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="White"
                                                      VerticalAlignment="Center"
                                                      HorizontalAlignment="Center"/>
                         </Border>
-
                     </Grid>
 
                 </Button>
