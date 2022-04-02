@@ -6,9 +6,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Thông tin cá nhân"
-        Height="450" Width="700"
-        FontFamily="Lato">
+        Height="450" Width="700">
     <Window.Resources>
+        
         <Style TargetType="{x:Type Label}"
                 x:Key="labelStyle">
             <Style.Setters>
@@ -200,21 +200,23 @@
                     Width="100"
                     materialDesign:ButtonAssist.CornerRadius="18"
                     ToolTip="Add"
-                    Background="Transparent"
+                    Background="#FCC871"
                     Foreground="Black"
                     BorderBrush="#BCBCBC">
                         <Grid
                           VerticalAlignment="Stretch">
                             <TextBlock Text="Add"
                                    FontSize="22"
-                                   Foreground="#E0A645" VerticalAlignment="Center" Margin="-20,2,16.8,-2" Height="28" />
+                                   Foreground="White" VerticalAlignment="Center" Margin="-20,2,16.8,-2" Height="28" />
                             <Border CornerRadius="90"
                                 Width="24"
                                 Height="24"
-                                Background="#E0A645" Margin="30,2,-17.2,2">
-                                <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="White"
-                                                     VerticalAlignment="Center"
-                                                     HorizontalAlignment="Center"/>
+                                Background="White" Margin="30,2,-17.2,2">
+                                <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="#FCC871"
+                                                         VerticalAlignment="Center"
+                                                         HorizontalAlignment="Center"
+                                                         Width="24"
+                                                         Height="24"/>
                             </Border>
                         </Grid>
 
@@ -228,8 +230,9 @@
                     Margin="60 0 0 0"
                     materialDesign:ButtonAssist.CornerRadius="18"
                     ToolTip="Exit"
-                    Background="Transparent"
+                    Background="#ABABAB"
                     BorderBrush="#BCBCBC"
+                    Foreground="White"
                     Content="Exit"
                     
                     FontSize="25"/>

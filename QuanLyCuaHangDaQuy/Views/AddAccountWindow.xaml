@@ -11,7 +11,6 @@
         <Style x:Key="tbAccountStyle" 
             TargetType="{x:Type TextBox}">
             <Style.Setters>
-                <Setter Property="FontFamily" Value="Lato"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="Height" Value="30"/>
                 <Setter Property="Width" Value="120"/>
@@ -20,17 +19,19 @@
             </Style.Setters>
 
         </Style>
-        <Style TargetType="{x:Type TextBlock}">
+        <Style x:Key="textboxTitle" 
+            TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="#E0A645"/>
+            <Setter Property="FontSize" Value="12"/>
         </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" >
             <Border VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     CornerRadius="8"
@@ -40,15 +41,15 @@
                        VerticalAlignment="Center"
                        HorizontalAlignment="Center"
                        FontSize="25"
-                       FontFamily="Lato"
                        Foreground="#E0A645"></TextBlock>
             </Border>
         </Grid>
         <StackPanel Orientation="Vertical" 
                     Grid.Row="1"
-                    Margin="60 0 60 0">
+                    Margin="60 4 60 0">
             <Grid>
-                <TextBlock Text="Name"/>
+                <TextBlock Style="{StaticResource textboxTitle}" 
+                    Text="Mã nhân viên" />
                 <ComboBox Margin="0 2 0 0 "
                     materialDesign:HintAssist.Hint="Mã NV"
                     ItemsSource="{Binding LongListToTestComboVirtualization}"
@@ -62,16 +63,24 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" Margin="0 10 0 0 ">
-                <TextBlock Text="Admin"></TextBlock>
+                <TextBlock Text="Admin" Foreground="#E0A645"></TextBlock>
                 <RadioButton Margin="20 0 0 0 " IsChecked="False"/>
             </StackPanel>
-
-            <TextBox x:Name="tbUser"
+            <Grid Margin="0 10 0 10">
+                <TextBlock Style="{StaticResource textboxTitle}"
+                           Text="Tên đăng nhập"/>
+                <TextBox x:Name="tbUser"
                      materialDesign:HintAssist.Hint="Username"
-                     Padding="0 20 0 0"/>
-            <TextBox x:Name="tbPassword"
+                     Padding="0 18 0 0"/>
+            </Grid>
+            <Grid>
+                <TextBlock Style="{StaticResource textboxTitle}"
+                    Text="Mật khẩu "/>
+                <TextBox x:Name="tbPassword"
                      materialDesign:HintAssist.Hint="Password"
-                     Padding="0 20 0 0"/>
+                     Padding="0 18 0 0"/>
+            </Grid>
+
         </StackPanel>
         <Grid Grid.Row="2">
             <Button
@@ -79,23 +88,25 @@
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="30"
                     Width="100"
-                    materialDesign:ButtonAssist.CornerRadius="18"
+                    materialDesign:ButtonAssist.CornerRadius="14"
                     ToolTip="Add"
-                    Background="Transparent"
+                    Background="#FCC871"
                     Foreground="Black"
                     BorderBrush="#BCBCBC">
                 <Grid
                           VerticalAlignment="Stretch">
                     <TextBlock Text="Add"
-                                   FontSize="20"
-                                   Foreground="#E0A645" RenderTransformOrigin="-0.467,0.602" Margin="-22,-3,12.8,-8.6" Height="34" VerticalAlignment="Top" />
+                                   FontSize="18"
+                                   Foreground="White" Margin="-15,1,15,1" />
                     <Border CornerRadius="90"
                                 Width="20"
                                 Height="20"
-                                Background="#E0A645" Margin="36,0,-27.2,0">
-                        <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="White"
-                                                     VerticalAlignment="Bottom"
-                                                     HorizontalAlignment="Center" Margin="2,0,2,2" />
+                                Background="White" Margin="33,1,-20,1">
+                        <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="#FCC871"
+                                                 Height="20"
+                                                 Width="20"
+                                                 VerticalAlignment="Center"
+ HorizontalAlignment="Center"/>
                     </Border>
 
                 </Grid>

@@ -18,7 +18,7 @@ namespace QuanLyCuaHangDaQuy.Resources.UserControls
     /// <summary>
     /// Interaction logic for CustomerControl.xaml
     /// </summary>
-    public partial class CustomerControl : Page
+    public partial class CustomerControl : UserControl
     {
         public CustomerControl()
         {
