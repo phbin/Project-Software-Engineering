@@ -1,0 +1,243 @@
+﻿<Window x:Class="QuanLyCuaHangDaQuy.ViewModels.StaffService1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="Service" Width="1080" Height="783.96"
+        WindowStartupLocation="CenterScreen">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65.25"></RowDefinition>
+            <RowDefinition Height="702.75"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid Height="702.75">
+
+                <Image Width="1080"
+               Height="172.5"
+               VerticalAlignment="Top"
+               Source="\Resources\Image\CoverImage.png">
+                </Image>
+
+
+                <Grid Width="1080">
+                    <ScrollViewer>
+                        <Grid Width="1080"
+              Height="530.25"
+              VerticalAlignment="Bottom"
+              >
+                            <Grid Width="262.5"
+                Height="257.25"
+                Margin="96.75,59.25,720.75,213.75">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#FCC871" 
+                         BorderThickness="0" 
+                         Command="{Binding test}"
+                         >
+
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Repair.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                                
+                               Foreground="#ffffff"
+                               Margin="84,144.75,83.5,78.5"
+                               Text="REPAIR">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#ffffff"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+                            </Grid>
+                            <Grid Width="262.5"
+                Height="257.25"
+                Margin="420.75,59.25,396.75,213.75">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#EEEEEE"
+                         BorderThickness="0">
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Painting.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                               Text="PAINTING"
+                               Foreground="#000000"
+                               Margin="66,144.75,65.5,78.5">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#000000"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+
+                            </Grid>
+                            <Grid Width="262.5"
+                  Height="257.25"
+                  Margin="744.75,59.25,72.75,213.75"
+                  VerticalAlignment="Bottom">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#FCC871" 
+                         BorderThickness="0">
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Polishing.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                               Text="POLISHING"
+                               Foreground="#ffffff"
+                               Margin="57,144.75,56.5,78.5">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#ffffff"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+
+                            </Grid>
+                            <Grid Width="262.5"
+                 Height="257.25"
+                 Margin="96.75,375.75,720.75,0">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#EEEEEE" 
+                         BorderThickness="0">
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Repair.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                               Text="REPAIR"
+                               Foreground="#000000"
+                               Margin="84,144.75,83.5,78.5">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#000000"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+                            </Grid>
+                            <Grid Width="262.5"
+                 Height="257.25"
+                 Margin="420.75,375.75,396.75,0">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#FCC871" 
+                         BorderThickness="0">
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Painting.png"
+                       >
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                               Text="PAINTING"
+                               Foreground="#ffffff"
+                               Margin="66,144.75,65.5,78.5">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#ffffff"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+                            </Grid>
+                            <Grid Width="262.5"
+                 Height="257.25"
+                 Margin="744.75,375.75,72.75,0">
+                                <Button  Width="262.5"
+                         Height="257.25"  
+                         Background="#EEEEEE" 
+                         BorderThickness="0">
+                                </Button>
+                                <Image Height="72"
+                       Width="72"
+                       Margin="95.25,41.25,95.25,144"
+                       Source="\Resources\Image\Polishing.png">
+
+                                </Image>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="28.5"
+                                Text="POLISHING"
+                               Foreground="#000000"
+                               Margin="57,144.75,56.5,78.5">
+
+                                </TextBlock>
+                                <TextBlock FontFamily="Lato"
+                               FontSize="8.25"
+                               Text="Môn lái dashs asd asdfa salkasf ádd
+asjkdfas asdkjas safdlkjsajgm, olsdfms"
+                               Foreground="#000000"
+                               Margin="67.5,198.75,68,38.5"
+                               TextWrapping="Wrap">
+
+                                </TextBlock>
+                            </Grid>
+                        </Grid>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>

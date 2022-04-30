@@ -1,0 +1,72 @@
+﻿<Window x:Class="QuanLyCuaHangDaQuy.ViewModels.StaffService2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Service" Height="783.96" Width="1080">
+    <Grid>
+        <!--<Grid.Resources>
+            <Style TargetType="Button" >
+                <Setter Property="Background" Value="#FCC871"></Setter>
+                <Setter Property="BorderThickness" Value="0"></Setter>
+            </Style>
+        </Grid.Resources>-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="65.25"></RowDefinition>
+            <RowDefinition Height="702.75"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Button Width="393"
+                    Height="384.75"
+                    Margin="119.25,87.75,567.75,230.25"
+                    Background="#FCC871"
+                    BorderThickness="0">
+                <Image Height="198"
+                   Width="198"
+                   Source="\Resources\Image\Repair.png">
+
+                </Image>
+            </Button>
+            <Button Width="355.5"
+                Height="57.75"
+                Margin="633.75,312,90.75,333"
+                Background="#FCC871"
+                BorderThickness="0">
+                <TextBlock Text="BOOK"
+                       FontFamily="Lato Regular"
+                       FontSize="21"
+                       Height="25"
+                       Width="auto"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center">
+
+                </TextBlock>
+            </Button>
+            <TextBlock Text="REPAIRING"
+                   FontFamily="Lato"
+                   FontSize="37.5"
+                   Margin="634,88,238,570"></TextBlock>
+            <TextBlock Text="Time:"
+                   FontFamily="Lato"
+                   FontSize="15"
+                   Margin="634,151,394,534"></TextBlock>
+            <TextBlock Text="300.000đ"
+                   FontFamily="Lato"
+                   FontSize="33.75"
+                   Margin="634,250,268,412"></TextBlock>
+            <TextBlock Text="Heart designs are simply enchanting and great for showing a loved one how much he means to you. And with this filigree ring in 14-carat white gold, the enchanting heart is set with 3"
+                   TextWrapping="Wrap"
+                   FontFamily="Lato"
+                   FontSize="15"
+                   Margin="118.5,523.5,567.75,125.25"></TextBlock>
+        </Grid>
+
+    </Grid>
+</Window>
+

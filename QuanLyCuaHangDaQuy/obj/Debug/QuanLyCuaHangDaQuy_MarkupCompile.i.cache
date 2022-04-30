@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
 QuanLyCuaHangDaQuy
 none
 false
 DEBUG;TRACE
-C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-8529888367
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
+10-2056712508
 
-161955450358
-17-2039015957
-Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;
+18354813533
+17-1246490909
+Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;ViewModels\StaffService1.xaml;ViewModels\StaffService2.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;
 
-False
+True
 
