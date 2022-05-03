@@ -18,9 +18,7 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        DataContext="{StaticResource AdminVM}"
-        Margin="0"
-        FontFamily="/Resources/Fonts/#Lato">
+        DataContext="{StaticResource AdminVM}">
     <Window.Resources>
         <Style x:Key="MenuBarBtStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="{x:Null}"/>
