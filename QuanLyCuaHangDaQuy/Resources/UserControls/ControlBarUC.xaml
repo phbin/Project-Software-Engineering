@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:MainStaffViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="65.25" >
+             d:DesignHeight="65.25" 
+             >
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button" x:Key="ButtonMenu">
@@ -46,6 +49,7 @@
         <materialDesign:ColorZone
          Height="65.25"
             Width="1080"
+            MaxWidth="1600"
           Background="#585858">
 
             <DockPanel>
@@ -88,13 +92,13 @@
                      Margin="0,0,30,0"
                         >
                     </Button>
-                    <Button
+                    <Button x:Name="shopButton"
                      Style="{StaticResource ButtonMenu}"
                      Width="64.75"
                      Height="33.75"
                      Content="Shop"
                      Margin="0,0,30,0"
-                        
+                     Command="{Binding ShopViewCommand}"
                      >
                     </Button>
                     <Button
@@ -153,5 +157,6 @@
             </DockPanel>
 
         </materialDesign:ColorZone>
+
     </Grid>
 </UserControl>

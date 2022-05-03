@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace QuanLyCuaHangDaQuy.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ShopWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ShopWindow : UserControl
     {
-        public MainWindow()
+        public ShopWindow()
         {
             InitializeComponent();
         }
