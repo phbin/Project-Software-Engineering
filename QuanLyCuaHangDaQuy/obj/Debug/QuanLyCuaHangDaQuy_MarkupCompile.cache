@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-10-2056712508
+101555931528
 
-17-1858065145
+18-1762982823
 17-1246490909
-Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;ViewModels\StaffService1.xaml;ViewModels\StaffService2.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;
+Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\StaffService1.xaml;Views\StaffService2.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;
 
-False
+True
 

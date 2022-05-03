@@ -124,8 +124,6 @@ D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Person
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\ViewModels\StaffService1.g.cs
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\ViewModels\StaffService2.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.g.cs
@@ -142,8 +140,6 @@ D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAcc
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.baml
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.baml
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\ViewModels\StaffService1.baml
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\ViewModels\StaffService2.baml
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
@@ -151,3 +147,7 @@ D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHan
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\StaffService1.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\StaffService2.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\StaffService1.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\StaffService2.baml

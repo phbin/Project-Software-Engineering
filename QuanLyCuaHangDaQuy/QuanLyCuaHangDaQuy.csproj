@@ -81,10 +81,10 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\StaffService1.xaml.cs">
+    <Compile Include="Views\StaffService1.xaml.cs">
       <DependentUpon>StaffService1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\StaffService2.xaml.cs">
+    <Compile Include="Views\StaffService2.xaml.cs">
       <DependentUpon>StaffService2.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AddAccountWindow.xaml.cs">
@@ -108,11 +108,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ViewModels\StaffService1.xaml">
+    <Page Include="Views\StaffService1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ViewModels\StaffService2.xaml">
+    <Page Include="Views\StaffService2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
