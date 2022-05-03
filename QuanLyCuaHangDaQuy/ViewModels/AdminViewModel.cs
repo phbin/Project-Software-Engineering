@@ -14,7 +14,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
 {
     public class AdminViewModel : BaseViewModel
     {
-        private Button bla;
         public ICommand NavigateCommand { get; set; }
         public ICommand GetUidCommand { get; set; }
         public ICommand MouseLeaveCommand { get; set; }
@@ -44,36 +43,46 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             window.grCustomer.Visibility = Visibility.Collapsed;
             window.grDiscount.Visibility = Visibility.Collapsed;
             window.grProduct.Visibility = Visibility.Collapsed;
+            window.grImportation.Visibility = Visibility.Collapsed;
+            window.grService.Visibility= Visibility.Collapsed;
 
-            string backgr = "#E0A645";
+            string backgr_enable= "#E0A645";
+            string backgr_disable = "#585858";
 
+            window.btHR.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
+            window.btProduct.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
+            window.btCustomer.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
+            window.btService.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
+            window.btImportation.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
+            window.btDiscount.Background = (Brush)new BrushConverter().ConvertFrom(backgr_disable);
 
             switch (index)
             {
                 case 10:
                     window.grHR.Visibility = Visibility.Visible;
-                    window.btHR.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
+                    window.btHR.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                     break;
                 case 20:
                     window.grProduct.Visibility = Visibility.Visible;
-                    window.btProduct.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
+                    window.btProduct.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                     break;
                 case 30:
                     window.grCustomer.Visibility = Visibility.Visible;
-                    window.btCustomer.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
+                    window.btCustomer.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                     break;
                 //case 40:
-                //    window.grService.Visibility = Visibility.Visible;
-                //    window.btService.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
-                //    break;
-                //case 50:
-                //    window.grImportation.Visibility = Visibility.Visible;
-                //    window.btImportation.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
-                //    break;
+                     //window.grService.Visibility = Visibility.Visible;
+                     //window.btService.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
+                     //break;
+                case 50:
+                    window.grImportation.Visibility = Visibility.Visible;
+                    window.btImportation.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
+                   break;
                 case 60:
                     window.grDiscount.Visibility = Visibility.Visible;
-                    window.btDiscount.Foreground = (Brush)new BrushConverter().ConvertFrom(backgr);
+                    window.btDiscount.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                     break;
+
             }
 
         }

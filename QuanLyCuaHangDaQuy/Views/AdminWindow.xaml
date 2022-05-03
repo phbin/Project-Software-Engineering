@@ -10,6 +10,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         x:Name="wdAdmin"
+        ResizeMode="NoResize"
         Title="MainWindow" Height="768" Width="1080"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,7 +18,9 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        DataContext="{StaticResource AdminVM}">
+        DataContext="{StaticResource AdminVM}"
+        Margin="0"
+        FontFamily="/Resources/Fonts/#Lato">
     <Window.Resources>
         <Style x:Key="MenuBarBtStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="{x:Null}"/>
@@ -25,10 +28,9 @@
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
             <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="FontFamily" Value="Lato"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="21"/>
             <Setter Property="FontWeight" Value="Regular"/>
-            <Setter Property="Height" Value="48"/>
+            <Setter Property="Height" Value="34"/>
             <Setter Property="Padding" Value="20,0,20,0"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -57,7 +59,7 @@
             </Setter>
         </Style>
         <Style x:Key="TextHeader" TargetType="{x:Type TextBlock}">
-            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="FontSize" Value="22.5"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="FontFamily" Value="Lato"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -72,6 +74,12 @@
             <RowDefinition Height="87"/>
             <RowDefinition />
         </Grid.RowDefinitions>
+
+
+
+
+
+
         <!--menu-->
         <Grid Grid.Row="0"
             x:Name="grdMenu" 
@@ -82,14 +90,15 @@
                         Margin="0,0,20,0">
                 <Button 
                     x:Name="btHR"
-                    Uid="10"
                     Content="HR" 
+                    Uid="10"
                     Command="{Binding NavigateCommand}"
-                    Style="{DynamicResource MenuBarBtStyle}">
+                    CommandParameter="{Binding ElementName=wdAdmin}"
+                    Style="{DynamicResource MenuBarBtStyle}" >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseMove">
                             <i:InvokeCommandAction Command="{Binding GetUidCommand}"
-                                                   CommandParameter="{Binding ElementName=btCustomer}"/>
+                                                   CommandParameter="{Binding ElementName=btHR}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
@@ -140,6 +149,7 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+
                 <Button 
                     x:Name="btImportation"
                     Content="Importation"
@@ -154,12 +164,22 @@
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                 </Button>
+
                 <Button 
                     x:Name="btDiscount"
                     Content="Discount"
                     Uid="60"
                     Command="{Binding NavigateCommand}"
-                    Style="{DynamicResource MenuBarBtStyle}"/>
+                    CommandParameter="{Binding ElementName=wdAdmin}"
+                    Style="{DynamicResource MenuBarBtStyle}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseMove">
+                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btDiscount}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+
                 <Button 
                     x:Name="Report"
                     Content="Report" 
@@ -170,22 +190,26 @@
             <Grid VerticalAlignment="Center"
                   HorizontalAlignment="Left">
                 <TextBlock Text="Hi Tuan"
-                           FontSize="32"
-                           Foreground="White" Margin="40,0,-40.2,-0.6"></TextBlock>
+                           FontSize="24"
+                           Foreground="White" Margin="40,0,0,-1" HorizontalAlignment="Left" Width="109"></TextBlock>
             </Grid>
         </Grid>
+
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="106"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0">
+
+
+            <Grid Grid.Row="0" Visibility="Visible">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="270*"/>
+                    <ColumnDefinition Width="19*"/>
+                    <ColumnDefinition Width="251*"/>
                 </Grid.ColumnDefinitions>
                 <Button
-                    Margin="17,29,0,28.6"
+                    Margin="17,29,0,29"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Height="48"
                     Width="142"
@@ -201,7 +225,7 @@
                                    Foreground="White"
                                    HorizontalAlignment="Center" 
                                    Width="100"
-                                   Height="34" VerticalAlignment="Top" Margin="0,-3,0,0" />
+                                   Height="34" VerticalAlignment="Top" Margin="0,6,0,0" />
                         <Border CornerRadius="90"
                                 Width="28"
                                 Height="28"
@@ -219,10 +243,10 @@
                         CornerRadius="25"
                         BorderBrush="#ABABAB"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Right"
+                        HorizontalAlignment="Left"
                         Width="474"
                         Height="46"
-                        Margin="0,30,17,29.6" Grid.Column="1">
+                        Margin="11,0,0,0" Grid.Column="2">
                     <Grid HorizontalAlignment="Right"
                       Width="400">
                         <TextBox 
@@ -262,14 +286,16 @@
                     </Grid>
                 </Border>
             </Grid>
+
+
+            <!--HR grid-->
             <Grid Grid.Row="1"
                   Margin="17,0,17,49"
-                  Visibility="Collapsed"
+                  Visibility="Visible"
                   x:Name="grHR">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
-                    <RowDefinition Height="259*"/>
-                    <RowDefinition Height="193*"/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0"
                         BorderThickness="0"
@@ -297,12 +323,10 @@
                         <TextBlock
                                 Text="Phone number" 
                                 Grid.Column="2"
-                                FontSize="20"
                                 Style="{StaticResource TextHeader}" />
                         <TextBlock
                                 Text="ID Number" 
                                 Grid.Column="3"
-                                FontSize="20"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
                                 Text="Type" 
@@ -323,6 +347,8 @@
                         >
                 </Border>
             </Grid>
+
+            <!--product grid-->
             <Grid Grid.Row="1"
                   Margin="23,0,23,49"
                   Visibility="Collapsed"
@@ -384,6 +410,8 @@
                         >
                 </Border>
             </Grid>
+
+            <!--Customer Grid-->
             <Grid Grid.Row="1"
                   Margin="17,0,17,49"
                   Visibility="Collapsed"
@@ -448,6 +476,8 @@
 
                 </Border>
             </Grid>
+
+            <!--Discount grid-->
             <Grid Grid.Row="1"
                   Margin="23,0,23,49"
                   Visibility="Collapsed"
@@ -462,11 +492,10 @@
                         Background="#FCC871">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="1.5*"/>
-
-                            <ColumnDefinition Width="600"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <TextBlock
                                 Text="No." 
@@ -475,8 +504,7 @@
                         <TextBlock
                                 Text="Discount Code" 
                                 Grid.Column="1"
-                                Style="{StaticResource TextHeader}"
-                                Margin="20,0,0,0"/>
+                                Style="{StaticResource TextHeader}"/>
                         <TextBlock
                                 Text="Discount Precent" 
                                 Grid.Column="2"
@@ -492,6 +520,109 @@
                         >
                 </Border>
             </Grid>
+
+            <!--Service Grid-->
+            <Grid Grid.Row="1"
+                  Margin="23,0,23,49"
+                  Visibility="Collapsed"
+                  x:Name="grService">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+
+
+                            <ColumnDefinition Width="600"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="" 
+                                Grid.Column="1"
+                                Style="{StaticResource TextHeader}"
+                                Margin="20,0,0,0"/>
+                        <TextBlock
+                                Text="" 
+                                Grid.Column="2"
+                                Style="{StaticResource TextHeader}" />
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" 
+                        >
+                </Border>
+            </Grid>
+
+            <!--Importation grid-->
+            <Grid Grid.Row="1"
+                  Margin="23,0,23,49"
+                  Visibility="Collapsed"
+                  x:Name="grImportation">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition/>
+
+                            <ColumnDefinition Width="600"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Name" 
+                                Grid.Column="1"
+                                Style="{StaticResource TextHeader}"
+                                Margin="20,0,0,0"/>
+                        <TextBlock
+                                Text="Price" 
+                                Grid.Column="2"
+                                Style="{StaticResource TextHeader}" />
+                        <TextBlock
+                            Text="Time"
+                            Grid.Column="3"
+                            Style="{StaticResource TextHeader}"/>
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" 
+                        >
+                </Border>
+            </Grid>
+
+            <!--report grid-->
+
         </Grid>
     </Grid>
 </Window>

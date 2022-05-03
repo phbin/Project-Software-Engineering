@@ -97,7 +97,7 @@
                           VerticalAlignment="Stretch">
                     <TextBlock Text="Add"
                                    FontSize="18"
-                                   Foreground="White" Margin="-15,1,15,1" />
+                                   Foreground="White" Margin="-15,-2,15,4" />
                     <Border CornerRadius="90"
                                 Width="20"
                                 Height="20"
@@ -106,7 +106,7 @@
                                                  Height="20"
                                                  Width="20"
                                                  VerticalAlignment="Center"
- HorizontalAlignment="Center"/>
+                                                 HorizontalAlignment="Center"/>
                     </Border>
 
                 </Grid>

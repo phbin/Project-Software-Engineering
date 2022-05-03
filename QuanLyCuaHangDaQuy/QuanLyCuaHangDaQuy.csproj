@@ -69,8 +69,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Resources\UserControls\CartUC.xaml.cs">
+      <DependentUpon>CartUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\UserControls\CustomerControl.xaml.cs">
       <DependentUpon>CustomerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ProductCatelogyUC.xaml.cs">
+      <DependentUpon>ProductCatelogyUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\SelectedProductCartUC.xaml.cs">
+      <DependentUpon>SelectedProductCartUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ShowProductUC.xaml.cs">
+      <DependentUpon>ShowProductUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
@@ -82,11 +94,30 @@
     <Compile Include="Views\PersonalInfoWindow.xaml.cs">
       <DependentUpon>PersonalInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Shop3Grid.xaml.cs">
+      <DependentUpon>Shop3Grid.xaml</DependentUpon>
+    </Compile>
     <Page Include="Resources\MainResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\UserControls\CartUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\UserControls\CustomerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\ProductCatelogyUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\SelectedProductCartUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\ShowProductUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,6 +139,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\PersonalInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Shop3Grid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

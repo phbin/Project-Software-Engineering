@@ -33,3 +33,13 @@ C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQu
 C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
 C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
 C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ProductCatelogyUC.g.cs
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Shop3Grid.g.cs
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ProductCatelogyUC.baml
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Shop3Grid.baml
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.g.cs
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.baml
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.g.cs
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.g.cs
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.baml
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.baml
