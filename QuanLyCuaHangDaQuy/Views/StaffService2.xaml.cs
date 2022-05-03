@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyCuaHangDaQuy.ViewModels
+namespace QuanLyCuaHangDaQuy.Views
 {
     /// <summary>
     /// Interaction logic for StaffService2.xaml

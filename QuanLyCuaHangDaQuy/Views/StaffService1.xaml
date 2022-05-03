@@ -1,10 +1,10 @@
-﻿<Window x:Class="QuanLyCuaHangDaQuy.ViewModels.StaffService1"
+﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.StaffService1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Title="Service" Width="1080" Height="783.96"
@@ -241,3 +241,4 @@ asjkdfas asdkjas safdlkjsajgm, olsdfms"
     </Grid>
 
 </Window>
+

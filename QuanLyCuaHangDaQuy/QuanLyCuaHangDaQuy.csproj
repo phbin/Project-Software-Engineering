@@ -81,12 +81,6 @@
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="Views\StaffService1.xaml.cs">
-      <DependentUpon>StaffService1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\StaffService2.xaml.cs">
-      <DependentUpon>StaffService2.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\AddAccountWindow.xaml.cs">
       <DependentUpon>AddAccountWindow.xaml</DependentUpon>
     </Compile>
@@ -95,6 +89,12 @@
     </Compile>
     <Compile Include="Views\ShopWindow.xaml.cs">
       <DependentUpon>ShopWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StaffService1.xaml.cs">
+      <DependentUpon>StaffService1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StaffService2.xaml.cs">
+      <DependentUpon>StaffService2.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\UserControls\ControlBarUC.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -107,14 +107,6 @@
     <Page Include="Resources\UserControls\ItemsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\StaffService1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\StaffService2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AddAccountWindow.xaml">
       <SubType>Designer</SubType>
@@ -144,6 +136,14 @@
     <Page Include="Views\ShopWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StaffService1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\StaffService2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
