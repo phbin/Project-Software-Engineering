@@ -4,4 +4,6 @@
                     xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels">
     <viewmodels:AdminViewModel x:Key="AdminVM"/>
     <viewmodels:CustomerViewModel x:Key="CustomerVM"/>
+    <viewmodels:HumanResourcesViewModel x:Key="HumanResourcesVM"/>
+    <viewmodels:ExitButtonViewModel x:Key="ExitButtonVM"/>
 </ResourceDictionary>

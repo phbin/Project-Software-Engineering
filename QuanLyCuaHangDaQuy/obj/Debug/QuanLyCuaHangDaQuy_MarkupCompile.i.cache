@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-10-525229841
+161299762868
 
-19-1214803510
+271015363983
 17899168739
-Resources\MainResources.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ProductCatelogyUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Views\PersonalInfoWindow.xaml;Views\Shop3Grid.xaml;
+Resources\MainResources.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ExitButton.xaml;Resources\UserControls\ProductCatelogyUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\AccountManagerWindow.xaml;Views\AdminWindow.xaml;Views\CustomerInfoWindow.xaml;Views\FormCatelogyManagerWindow.xaml;Views\HumanResourceEditWindow.xaml;Views\MaterialCatelogyManagerWindow.xaml;Views\PersonalInfoWindow.xaml;Views\ProviderManagerWindow.xaml;
 
 True
 

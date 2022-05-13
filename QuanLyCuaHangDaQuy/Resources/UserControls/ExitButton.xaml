@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="QuanLyCuaHangDaQuy.Resources.UserControls.ExitButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Background="Transparent"
+             d:DesignHeight="45" d:DesignWidth="45"
+             x:Name="ucExitButton"
+             DataContext="{StaticResource ExitButtonVM}">
+    <Grid>
+        <Button  
+            Height="45"  
+            Width="45"      
+            Style="{StaticResource MaterialDesignIconForegroundButton}"  
+            Padding="0"   
+            ToolTip="Exit"  
+            VerticalAlignment="Center"
+           HorizontalAlignment="Center"
+            Command="{Binding CloseWindowCommand}"
+            CommandParameter="{Binding ElementName=ucExitButton}">
+            <materialDesign:PackIcon 
+                    Width="45"
+                    Height="45"
+                    Kind="WindowClose" 
+                    Foreground="#BCBCBC"/>
+        </Button>
+    </Grid>
+</UserControl>

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace QuanLyCuaHangDaQuy.Views
 {
     /// <summary>
-    /// Interaction logic for Shop3Grid.xaml
+    /// Interaction logic for ProviderManagerWindow.xaml
     /// </summary>
-    public partial class Shop3Grid : Window
+    public partial class ProviderManagerWindow : Window
     {
-        public Shop3Grid()
+        public ProviderManagerWindow()
         {
             InitializeComponent();
         }

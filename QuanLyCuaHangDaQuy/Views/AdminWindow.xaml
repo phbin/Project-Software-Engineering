@@ -12,6 +12,7 @@
         x:Name="wdAdmin"
         ResizeMode="NoResize"
         Title="MainWindow" Height="768" Width="1080"
+        FontFamily="Lato"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -19,6 +20,8 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         DataContext="{StaticResource AdminVM}">
+
+
     <Window.Resources>
         <Style x:Key="MenuBarBtStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="{x:Null}"/>
@@ -29,7 +32,8 @@
             <Setter Property="FontSize" Value="21"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Height" Value="34"/>
-            <Setter Property="Padding" Value="20,0,20,0"/>
+            <Setter Property="Padding" Value="12,0,12,0"/>
+            <Setter Property="Margin" Value="0 14 17 17"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -69,7 +73,7 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="87"/>
+            <RowDefinition Height="65"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
@@ -78,201 +82,253 @@
 
 
 
+
         <!--menu-->
-        <Grid Grid.Row="0"
+
+        <DockPanel Grid.Row="0"
             x:Name="grdMenu" 
-            Height="87" Width="auto" Background="#FF585858"
+            Background="#FF585858"
+            LastChildFill="False"
             materialDesign:ShadowAssist.ShadowDepth="Depth0">
-            <StackPanel Orientation="Horizontal"
-                        HorizontalAlignment="Right"
-                        Margin="0,0,20,0">
-                <Button 
+
+            <Grid VerticalAlignment="Center"
+                  HorizontalAlignment="Left"
+                  DockPanel.Dock="Left">
+                <TextBlock Text="Hi Tuan"
+                           FontSize="24"
+                           Foreground="White" Margin="40,0,0,-1" HorizontalAlignment="Left" Width="109"/>
+            </Grid>
+
+            <Button DockPanel.Dock="Right"
+                    x:Name="SwitchMenuButton"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    Height="35"
+                    Width="35"
+                    Padding="0"
+                    Margin="20 0 20 0 "
+                    VerticalAlignment="Center"
+                    Command="{Binding SwitchMenuButton}"
+                    CommandParameter="{Binding ElementName=wdAdmin}">
+                <Grid>
+                    <materialDesign:PackIcon Kind="ChevronRight" Foreground="White" 
+                                             Width="30"
+                                             Height="30" VerticalAlignment="Bottom"
+                                             HorizontalAlignment="Center"
+                                             x:Name="IconSwitchBt"
+                                             />
+
+                </Grid>
+            </Button>
+
+            <Grid x:Name="grdMenuButton"
+                  Width="550"
+                  DockPanel.Dock="Right"
+                  HorizontalAlignment="Right">
+                <ScrollViewer
+                    x:Name="MenuSrV"
+                    CanContentScroll="True"
+                    VerticalScrollBarVisibility="Disabled"
+                    HorizontalScrollBarVisibility="Disabled">
+
+                    <StackPanel Orientation="Horizontal"
+                                Height="65">
+                        <Button 
                     x:Name="btHR"
                     Content="HR" 
                     Uid="10"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}" >
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
                                                    CommandParameter="{Binding ElementName=btHR}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
 
-                <Button 
-                    x:Name="btProduct"
+                        <Button 
+                    x:Name="btAccount"
+                    Content="Account" 
                     Uid="20"
-                    Content="Product"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
-                    Style="{DynamicResource MenuBarBtStyle}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
-                                                   CommandParameter="{Binding ElementName=btProduct}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <Button 
+                    Style="{DynamicResource MenuBarBtStyle}" >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btAccount}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                        <Button 
                     x:Name="btCustomer"
                     Content="Customer"
                     Uid="30"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
                                                    CommandParameter="{Binding ElementName=btCustomer}"/>
-                        </i:EventTrigger>
-                        <i:EventTrigger EventName="Mouseleave">
-                            <i:InvokeCommandAction Command="{Binding MoveLeaveCommand}"
+                                </i:EventTrigger>
+                                <i:EventTrigger EventName="Mouseleave">
+                                    <i:InvokeCommandAction Command="{Binding MoveLeaveCommand}"
                                                    CommandParameter="{Binding ElementName=btCustomer}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
-                <Button 
-                    x:Name="btService"
-                    Content="Service"
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+                        <Button 
+                    x:Name="btProvider"
                     Uid="40"
-                    Command="{Binding NavigateCommand}"                   
+                    Content="Provider"
+                    Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
-                                                   CommandParameter="{Binding ElementName=btService}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btProvider}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
 
-                <Button 
-                    x:Name="btImportation"
-                    Content="Importation"
+                        <Button 
+                    x:Name="btCatelogy"
+                    Content="Catelogy"
                     Uid="50"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
-                                                   CommandParameter="{Binding ElementName=btImportation}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btCatelogy}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
 
-                <Button 
-                    x:Name="btDiscount"
-                    Content="Discount"
+
+                        <Button 
+                    x:Name="btInventory"
+                    Content="Inventory"
                     Uid="60"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="MouseMove">
-                            <i:InvokeCommandAction Command="{Binding GetUidCommand}"
-                                                   CommandParameter="{Binding ElementName=btDiscount}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
-                </Button>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btInventory}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
 
-                <Button 
+
+                        <Button 
+                    x:Name="btService"
+                    Content="Service"
+                    Uid="70"
+                    Command="{Binding NavigateCommand}"                   
+                    CommandParameter="{Binding ElementName=wdAdmin}"
+                    Style="{DynamicResource MenuBarBtStyle}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseMove">
+                                    <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btService}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+
+
+                        <Button 
                     x:Name="Report"
                     Content="Report" 
-                    Uid="70"
+                    Uid="80"
                     Command="{Binding NavigateCommand}"
-                    Style="{DynamicResource MenuBarBtStyle}"/>
-            </StackPanel>
-            <Grid VerticalAlignment="Center"
-                  HorizontalAlignment="Left">
-                <TextBlock Text="Hi Tuan"
-                           FontSize="24"
-                           Foreground="White" Margin="40,0,0,-1" HorizontalAlignment="Left" Width="109"></TextBlock>
-            </Grid>
-        </Grid>
+                    Style="{DynamicResource MenuBarBtStyle}"
+                            />
 
-        <Grid Grid.Row="1">
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+
+
+        </DockPanel>
+
+        <Grid Grid.Row="1" Margin="17 0 17 17">
             <Grid.RowDefinitions>
-                <RowDefinition Height="106"/>
+                <RowDefinition Height="78"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0" Visibility="Visible">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="270*"/>
-                    <ColumnDefinition Width="19*"/>
-                    <ColumnDefinition Width="251*"/>
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0">
                 <Button
-                    Margin="17,29,0,29"
-                    Style="{StaticResource MaterialDesignRaisedButton}"
-                    Height="48"
-                    Width="142"
-                    materialDesign:ButtonAssist.CornerRadius="18"
+                    Style="{StaticResource MaterialDesignFlatDarkButton}"
+                    Height="36"
+                    Width="106"
+                    Padding="0"
+                    materialDesign:ButtonAssist.CornerRadius="12"
                     ToolTip="Add"
                     Background="#FCC871"
                     Foreground="Black"
                     HorizontalAlignment="Left"
                     BorderBrush="#BCBCBC">
-                    <Grid Width="auto">
+                    <DockPanel Width="75" LastChildFill="False">
                         <TextBlock Text="Add"
-                                   FontSize="26"
-                                   Foreground="White"
-                                   HorizontalAlignment="Center" 
-                                   Width="100"
-                                   Height="34" VerticalAlignment="Top" Margin="0,6,0,0" />
+                                   DockPanel.Dock="Left"
+                                   VerticalAlignment="Center"
+                                   FontSize="20"
+                                   Foreground="White" />
                         <Border CornerRadius="90"
+                                DockPanel.Dock="Right"
                                 Width="28"
                                 Height="28"
-                                Background="White" Margin="36,2,-27.2,1.2" Grid.RowSpan="2">
+                                Background="White">
                             <materialDesign:PackIcon Kind="Plus" BorderThickness="2" Foreground="#FCC871"
                                                      VerticalAlignment="Center"
                                                      HorizontalAlignment="Center"
                                                      Height="28"
                                                      Width="28" />
                         </Border>
-                    </Grid>
-
+                    </DockPanel>
                 </Button>
-                <Border BorderThickness="2"
-                        CornerRadius="25"
+                
+                <!--search Bar-->
+                <Border BorderThickness="1"
+                        CornerRadius="21"
                         BorderBrush="#ABABAB"
                         VerticalAlignment="Center"
-                        HorizontalAlignment="Left"
-                        Width="474"
-                        Height="46"
-                        Margin="11,0,0,0" Grid.Column="2">
-                    <Grid HorizontalAlignment="Right"
-                      Width="400">
+                        Width="356"
+                        Height="36"
+                        HorizontalAlignment="Right">
+                    <DockPanel Margin="15 0 0 0">
                         <TextBox 
-                            x:Name="txtSearchSaleGoods"
+                            x:Name="txtSearch"
+                            Width="294"
                             materialDesign:HintAssist.Hint="Tim sthing"
-                            materialDesign:HintAssist.Foreground="black"
                             FontSize="18" 
-                            Height="46"
-                            MaxLines="1"
                             FontWeight="Medium" 
                             HorizontalContentAlignment="Left" 
                             VerticalContentAlignment="Center"
                             Foreground="#ABABAB" 
                             Background="Transparent"
                             BorderThickness="0" 
-                            Margin="-45,-3,45,0.2"
-                           />
+                            DockPanel.Dock="Left"
+                            />
                         <Button 
-                            IsDefault="True"
                             Height="30"
                             Width="30"
-                            Margin="0,3,10,2"
+                            Margin="0 0 10 0"
                             Background="{x:Null}"
                             BorderBrush="{x:Null}"
                             VerticalAlignment="Center"
                             FocusVisualStyle="{x:Null}"
                             HorizontalAlignment="Right"
-                            Padding="0" >
+                            Padding="0" 
+                            DockPanel.Dock="Right">
                             <materialDesign:PackIcon 
                                 Kind="Magnify" 
                                 Height="24"
@@ -281,15 +337,14 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"/>
                         </Button>
-                    </Grid>
+                    </DockPanel>
                 </Border>
             </Grid>
 
 
             <!--HR grid-->
             <Grid Grid.Row="1"
-                  Margin="17,0,17,49"
-                  Visibility="Visible"
+                  Visibility="Collapsed"
                   x:Name="grHR">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
@@ -301,38 +356,28 @@
                         Background="#FCC871">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="1.25*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="275"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition />
+
                         </Grid.ColumnDefinitions>
                         <TextBlock
                                 Text="No." 
                                 Grid.Column="0"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Name" 
+                                Text="Full Name" 
                                 Grid.Column="1"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Phone number" 
+                                Text="Phone Number" 
                                 Grid.Column="2"
                                 Style="{StaticResource TextHeader}" />
                         <TextBlock
                                 Text="ID Number" 
                                 Grid.Column="3"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Type" 
-                                Grid.Column="4"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Account" 
-                                Grid.Column="5"
                                 Style="{StaticResource TextHeader}"/>
                     </Grid>
                 </Border>
@@ -341,16 +386,14 @@
                         BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2" 
-                        >
+                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
                 </Border>
             </Grid>
-
-            <!--product grid-->
+            
+            <!--Account-->
             <Grid Grid.Row="1"
-                  Margin="23,0,23,49"
                   Visibility="Collapsed"
-                  x:Name="grProduct">
+                  x:Name="grAccount">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -361,40 +404,212 @@
                         Background="#FCC871">
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="1.25*"/>
-                            <ColumnDefinition Width="1.75*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="275"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition />
+
                         </Grid.ColumnDefinitions>
                         <TextBlock
                                 Text="No." 
                                 Grid.Column="0"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Name" 
+                                Text="Full Name" 
                                 Grid.Column="1"
-                                Style="{StaticResource TextHeader}"
-                                Margin="20,0,0,0"
-                                HorizontalAlignment="Left"/>
+                                Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Category" 
+                                Text="Username" 
+                                Grid.Column="2"
+                                Style="{StaticResource TextHeader}" />
+
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                </Border>
+            </Grid>
+
+            <!--Customer Grid-->
+            <Grid Grid.Row="1"
+                  Visibility="Collapsed"
+                  x:Name="grCustomer">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="125"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="75"/>
+                            <ColumnDefinition/>
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Full Name" 
+                                Grid.Column="1"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Birthday" 
                                 Grid.Column="2"
                                 Style="{StaticResource TextHeader}" />
                         <TextBlock
-                                Text="Unit" 
+                                Text="Phone Number" 
                                 Grid.Column="3"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Quantity" 
+                                Text="Email" 
                                 Grid.Column="4"
                                 Style="{StaticResource TextHeader}"/>
                         <TextBlock
-                                Text="Unit Price" 
+                                Text="Point" 
                                 Grid.Column="5"
+                                Style="{StaticResource TextHeader}"/>
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                </Border>
+            </Grid>
+            
+            <!--Provider-->
+            <Grid Grid.Row="1"
+                  Visibility="Collapsed"
+                  x:Name="grProvider">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="275"/>
+                            <ColumnDefinition Width="275"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition />
+
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Full Name" 
+                                Grid.Column="1"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Address" 
+                                Grid.Column="2"
+                                Style="{StaticResource TextHeader}" />
+                        <TextBlock
+                                Text="Phone Number" 
+                                Grid.Column="3"
+                                Style="{StaticResource TextHeader}"/>
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                </Border>
+            </Grid>
+
+            <!--Catelogy grid-->
+            <!--Material-->
+            <Grid Grid.Row="1"
+                  Visibility="Collapsed"
+                  x:Name="grMaterial">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Name of Material" 
+                                Grid.Column="1"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Profit" 
+                                Grid.Column="2"
+                                Style="{StaticResource TextHeader}" />
+
+                    </Grid>
+                </Border>
+                <Border
+                        Grid.Row="1"
+                        BorderBrush="#ABABAB"                        
+                        Background="#FBFBFB"
+                        CornerRadius="0,0,10,10"
+                        BorderThickness="2,0,2,2" 
+                        >
+                </Border>
+            </Grid>
+            
+            <!--Form-->
+            <Grid Grid.Row="1"
+                  Visibility="Collapsed"
+                  x:Name="grForm">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="58"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0"
+                        BorderThickness="0"
+                        CornerRadius="10,10,0,0"
+                        Background="#FCC871">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="107"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                                Text="No." 
+                                Grid.Column="0"
+                                Style="{StaticResource TextHeader}"/>
+                        <TextBlock
+                                Text="Name of Form" 
+                                Grid.Column="1"
                                 Style="{StaticResource TextHeader}"/>
 
                     </Grid>
@@ -408,219 +623,14 @@
                         >
                 </Border>
             </Grid>
-
-            <!--Customer Grid-->
-            <Grid Grid.Row="1"
-                  Margin="17,0,17,49"
-                  Visibility="Collapsed"
-                  x:Name="grCustomer">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="37*"/>
-                    <ColumnDefinition Width="480*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871" Grid.ColumnSpan="2">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2.5*"/>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="1.5*"/>
-                            <ColumnDefinition Width="40"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"
-                                Margin="20,0,0,0"/>
-                        <TextBlock
-                                Text="Phone number" 
-                                Grid.Column="2"
-                                FontSize="26"
-                                Style="{StaticResource TextHeader}" />
-                        <TextBlock
-                                Text="Email" 
-                                Grid.Column="3"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Point" 
-                                Grid.Column="4"
-                                Style="{StaticResource TextHeader}"/>
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"                    
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
-                    <StackPanel x:Name="stkCustomer">
-                        <UserControls:CustomerControl/>
-                        <UserControls:CustomerControl/>
-                        <UserControls:CustomerControl/>
-                    </StackPanel>
-
-                </Border>
-            </Grid>
-
-            <!--Discount grid-->
-            <Grid Grid.Row="1"
-                  Margin="23,0,23,49"
-                  Visibility="Collapsed"
-                  x:Name="grDiscount">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="125"/>
-                            <ColumnDefinition Width="300"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Discount Code" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Discount Precent" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" 
-                        >
-                </Border>
-            </Grid>
-
+            <!--Inventory grid-->
+            
             <!--Service Grid-->
-            <Grid Grid.Row="1"
-                  Margin="23,0,23,49"
-                  Visibility="Collapsed"
-                  x:Name="grService">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="125"/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
 
-
-                            <ColumnDefinition Width="600"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"
-                                Margin="20,0,0,0"/>
-                        <TextBlock
-                                Text="" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" 
-                        >
-                </Border>
-            </Grid>
-
-            <!--Importation grid-->
-            <Grid Grid.Row="1"
-                  Margin="23,0,23,49"
-                  Visibility="Collapsed"
-                  x:Name="grImportation">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="75"/>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition/>
-
-                            <ColumnDefinition Width="600"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"
-                                Margin="20,0,0,0"/>
-                        <TextBlock
-                                Text="Price" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                        <TextBlock
-                            Text="Time"
-                            Grid.Column="3"
-                            Style="{StaticResource TextHeader}"/>
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" 
-                        >
-                </Border>
-            </Grid>
 
             <!--report grid-->
 
+            
         </Grid>
     </Grid>
 </Window>

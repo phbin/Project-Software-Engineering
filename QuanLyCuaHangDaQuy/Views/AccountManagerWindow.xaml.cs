@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace QuanLyCuaHangDaQuy.Views
 {
     /// <summary>
-    /// Interaction logic for AddAccountWindow.xaml
+    /// Interaction logic for AccountManagerWindow.xaml
     /// </summary>
-    public partial class AddAccountWindow : Window
+    public partial class AccountManagerWindow : Window
     {
-        public AddAccountWindow()
+        public AccountManagerWindow()
         {
             InitializeComponent();
         }
