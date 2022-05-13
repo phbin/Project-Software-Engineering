@@ -126,9 +126,9 @@
                   HorizontalAlignment="Right">
                 <ScrollViewer
                     x:Name="MenuSrV"
-                    CanContentScroll="True"
                     VerticalScrollBarVisibility="Disabled"
-                    HorizontalScrollBarVisibility="Disabled">
+                    HorizontalScrollBarVisibility="Disabled"
+                    IsDeferredScrollingEnabled="False">
 
                     <StackPanel Orientation="Horizontal"
                                 Height="65">

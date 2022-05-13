@@ -40,10 +40,10 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             {
                 if (menubar_flag == 0)
                 {
+                    window.MenuSrV.CanContentScroll=true; 
                     window.grdMenuButton.Width = 330;
                     window.MenuSrV.ScrollToHorizontalOffset(5);
                     window.IconSwitchBt.Kind = PackIconKind.ChevronLeft;
-
                     menubar_flag = 1;
                 }
                 else if (menubar_flag == 1)
@@ -51,6 +51,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     window.grdMenuButton.Width = 550;
                     window.MenuSrV.ScrollToHome();
                     window.IconSwitchBt.Kind = PackIconKind.ChevronRight;
+                    window.MenuSrV.CanContentScroll = false;
                     menubar_flag = 0;
                 }
 
