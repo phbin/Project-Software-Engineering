@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
+C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
 QuanLyCuaHangDaQuy
 none
 false
 DEBUG;TRACE
-D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-101555931528
+C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
+18-68826997
+2739969757
+472123644790
+2268392883
+Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;Views\Staff_AddCustomer.xaml;Views\Staff_AddReceipt.xaml;Views\Staff_AddService.xaml;Views\Staff_EditCustomer.xaml;Views\Staff_EditReceipt.xaml;Views\Staff_EditService.xaml;Views\Staff_InfoCustomer.xaml;Views\Staff_ListCustomer.xaml;Views\Staff_ListReceipt.xaml;Views\Staff_ListService.xaml;
 
-18-1762982823
-17-1246490909
-Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;Views\StaffService1.xaml;Views\StaffService2.xaml;
-
-True
+False
 
