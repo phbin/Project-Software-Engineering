@@ -35,18 +35,6 @@ create table Account  -- Tài khoản
 )
 go
 
-create table InfoCustomer  -- Khách hàng
-(
-	ID varchar(50) primary key,
-	FullName nvarchar(100) not null,
-	DoB smalldatetime not null,
-	Phone varchar(100),
-	Email nvarchar(100),
-	IDPersonal bigint not null unique, --cmnd/cccd
-	Points int -- điểm tích lũy (nếu kịp)
-)
-go
-
 create table FormCategory --hình thức: dây chuyền, vòng tay, nhẫn...
 (
 	ID varchar(50) primary key,
@@ -103,6 +91,7 @@ go
 --Size
 create table ItemSize
 (
+	ID varchar(50) primary key,
 	IDItem varchar(50) not null,
 	SizeName varchar(50) not null,
 	constraint FK_ItemSize_ImportedItems foreign key (IDItem) references ImportedItems(ID),
@@ -111,7 +100,8 @@ create table ItemSize
 --Hàng bán
 create table Items
 (
-	IDItem varchar(50) primary key,
+	ID varchar(50) primary key,
+	IDItem varchar(50),
 	IDForm varchar(50) not null,
 	IDMaterial varchar(50) not null,
 	Profit float default 0.01,
@@ -149,6 +139,23 @@ create table CusService
 	PriceDiscounted float, --đơn giá được tính=Price+Costs
 	Stt varchar not null --tình trạng (xong hoặc chưa)
 	constraint FK_CusService_ServiceCategory foreign key (ID) references ServiceCategory(ID)
+)
+go
+
+create table InfoCustomer  -- Khách hàng
+(
+	ID varchar(50) primary key,
+	IDItem varchar(50),
+	IDService varchar(50),
+	FullName nvarchar(100) not null,
+	DoB smalldatetime not null,
+	Phone varchar(100),
+	Email nvarchar(100),
+	IDPersonal bigint not null unique, --cmnd/cccd
+	Points int -- điểm tích lũy (nếu kịp)
+	constraint FK_InfoCustomer_Items foreign key (IDItem) references Items(ID),
+	constraint FK_InfoCustomer_CusService foreign key (IDService) references CusService(ID)
+
 )
 go
 
@@ -246,3 +253,32 @@ insert dbo.MaterialCategory values('M07','Spinel ')
 insert dbo.MaterialCategory values('M08','Platinum ')
 insert dbo.MaterialCategory values('M09','Diamond ')
 go
+
+insert dbo.ProviderInfo values('P01','PNJ','Bến Tre','0359086355')
+insert dbo.ProviderInfo values('P02','DOJI','Kiên Giang','0359086356')
+insert dbo.ProviderInfo values('P03','SJC','Đồng Nai','0359086357')
+insert dbo.ProviderInfo values('P04','SBJ','Kontum','0359086358')
+insert dbo.ProviderInfo values('P05','PNJ','Hồ Chí Minh','0359086359')
+insert dbo.ProviderInfo values('P06','MINH CHÂU','Tiền Giang','0359086360')
+insert dbo.ProviderInfo values('P07','JEWELRY','Sóc Trăng','0359086361')
+insert dbo.ProviderInfo values('P08','SKYMOND LUXURY','Quảng Nam','0359086362')
+insert dbo.ProviderInfo values('P09','PANDORA','Hà Nội','0359086363')
+go
+
+insert dbo.ImportedItems values('I01','Dây chuyền','1','P01','U01','M01','10','1000000','','28/03/2022','dây chuyền hột soàn lấp la lấp lánh','')
+insert dbo.ImportedItems values('I02','Nhẫn','2','P02','U02','M02','10','900000','','28/03/2022','nhẫn uyên ương','')
+insert dbo.ImportedItems values('I03','Vòng tay','3','P03','U03','M03','10','850000','','28/03/2022','vòng tay hoa lá','')
+insert dbo.ImportedItems values('I04','Bông tai','2','P04','U02','M04','10','700000','','28/03/2022','bông tai hột soàn','')
+insert dbo.ImportedItems values('I05','Đồng hồ','1','P05','U01','M05','10','1000000','','28/03/2022','đồng hồ thời trang','')
+insert dbo.ImportedItems values('I06','Lắc tay','1','P06','U01','M06','10','500000','','28/03/2022','lắc tay nhỏ','')
+insert dbo.ImportedItems values('I07','Kiềng','2','P07','U02','M07','10','700000','','28/03/2022','kiềng cưới','')
+go
+select * from dbo.ImportedItems;
+
+exec USP_UpdateImportedItems 'I01'
+exec USP_UpdateImportedItems 'I02'
+exec USP_UpdateImportedItems 'I03'
+exec USP_UpdateImportedItems 'I04'
+exec USP_UpdateImportedItems 'I05'
+exec USP_UpdateImportedItems 'I06'
+exec USP_UpdateImportedItems 'I07'
