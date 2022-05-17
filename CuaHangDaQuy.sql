@@ -87,7 +87,6 @@ create table IMPORTEDITEMS
 (
 	ID varchar(50) primary key,
 	NameItem nvarchar(1000) not null default N'No name', --tên sản phẩm
-	Size int not null,
 	IDProd varchar(50) not null,
 	IDForm varchar(50) not null,
 	IDMaterial varchar(50) not null,
@@ -119,22 +118,11 @@ create table ITEMBILL
 (
 	IDItemBillForm varchar(50) not null,
 	IDItem varchar(50) not null, 
-	Total float not null, --thành tiền từng sản phẩm = Đơn giá*Số lượng
-	Quantity int, --số lượng mỗi sản phẩm
-	DateBought smalldatetime not null default getdate(), --ngày mua
-	constraint FK_IDItemBillForm_ItemBillForm foreign key (IDItemBillForm) references ItemBillForm(ID),
-	constraint FK_IDItemBillForm_ImportedItems foreign key (IDItem) references ImportedItems(ID),
-	constraint PK_IDItemBillForm primary key(IDItemBillForm,IDItem)
+	constraint FK_IDItemBill_ItemBillForm foreign key (IDItemBillForm) references ItemBillForm(ID),
+	constraint FK_IDItemBill_ImportedItems foreign key (IDItem) references ImportedItems(ID),
+	constraint PK_IDItemBill primary key(IDItemBillForm,IDItem)
 )
 go
-
---Size
-create table ITEMSIZE
-(
-	IDItem varchar(50) not null,
-	SizeName varchar(50) not null,
-	constraint FK_ItemSize_ImportedItems foreign key (IDItem) references ImportedItems(ID),
-)
 
 --Phiếu bán hàng
 create table ITEMFORM
@@ -203,7 +191,6 @@ go
 --Giỏ hàng
 create table CARTS
 (
-	ID varchar(50) primary key,
 	IDItem varchar(50) not null,
 	Quantity int, --số lượng
 	Total float, --thành tiền
@@ -232,12 +219,14 @@ begin
 
 	update dbo.ImportedItems set Total=@purchaseprice*@quantity where ID=@id
 	update dbo.ImportedItems set Price=@purchaseprice+(@purchaseprice*@profit) where ID=@id
+	
 end
 go
 
 --thành tiền từng sản phẩm bán ra
 create proc USP_UpdateItems
-@id varchar(50)
+@iditemform varchar(50),
+@iditem varchar(50)
 as
 begin
 	declare @price float
@@ -245,13 +234,13 @@ begin
 
 	select @quantity = Quantity
 	from dbo.Items 
-	where IDItem=@id
+	where IDItem=@iditem
 	
 	select @price = Price
 	from dbo.ImportedItems 
-	where ID=@id
+	where ID=@iditem
 
-	update dbo.Items set Total=@price*@quantity where IDItem=@id
+	update dbo.Items set Total=@price*@quantity where IDItem=@iditem  and IDItemForm=@iditemform
 end
 go
 
@@ -264,7 +253,6 @@ begin
 	declare @costs float
 	declare @quantity int
 
-
 	select @price = Price
 	from dbo.ServiceCategory
 	where ID=@idservice
@@ -273,9 +261,24 @@ begin
 	from dbo.ServiceList
 	where IDCusService=@idcusservice and IDService=@idservice
 
-	
 	update dbo.ServiceList set PriceDiscounted=@price+@costs where IDCusService=@idcusservice and IDService=@idservice
 	update dbo.ServiceList set Total=PriceDiscounted*@quantity where IDCusService=@idcusservice and IDService=@idservice
+	update dbo.ServiceList set Remain=Total-Prepay where IDCusService=@idcusservice and IDService=@idservice
+
+end
+go
+--tổng tiền sản phẩm trong giỏ hàng
+create proc USP_Carts
+@iditem varchar(50)
+as
+begin
+	declare @price float
+
+	select @price = Price
+	from dbo.IMPORTEDITEMS
+	where ID=@iditem
+
+	update dbo.CARTS set Total=Quantity*@price where IDItem=@iditem
 end
 go
 
@@ -305,32 +308,87 @@ insert dbo.MaterialCategory values('M07','U02','Spinel ','0.04')
 insert dbo.MaterialCategory values('M08','U03','Diamond','0.1')
 go
 
-/*
-insert dbo.INFOCUSTOMER values('P01','PNJ','Bến Tre','0359086355')
-insert dbo.INFOCUSTOMER values('P02','DOJI','Kiên Giang','0359086356')
-insert dbo.INFOCUSTOMER values('P03','SJC','Đồng Nai','0359086357')
-insert dbo.INFOCUSTOMER values('P04','SBJ','Kontum','0359086358')
-insert dbo.INFOCUSTOMER values('P05','PNJ','Hồ Chí Minh','0359086359')
-insert dbo.INFOCUSTOMER values('P06','MINH CHÂU','Tiền Giang','0359086360')
-insert dbo.INFOCUSTOMER values('P07','JEWELRY','Sóc Trăng','0359086361')
-insert dbo.INFOCUSTOMER values('P08','SKYMOND LUXURY','Quảng Nam','0359086362')
-insert dbo.INFOCUSTOMER values('P09','PANDORA','Hà Nội','0359086363')
-go
+insert into InfoStaff values('NV01', 'Huỳnh Thế Vĩ', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','1234231', '1')
+insert into InfoStaff values('NV02', 'Uyên', '23/03/2002', 'Nữ', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','123123123', '1')
+insert into InfoStaff values('NV03', 'Thịnh', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','14123123', '1')
+insert into InfoStaff values('NV04', 'Bình', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','51244131', '1')
+insert into InfoStaff values('NV05', 'Tuấn', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','125412', '1')
 
-insert dbo.ImportedItems values('I01','Dây chuyền','1','P01','U01','M01','10','1000000','','28/03/2022','dây chuyền hột soàn lấp la lấp lánh','')
-insert dbo.ImportedItems values('I02','Nhẫn','2','P02','U02','M02','10','900000','','28/03/2022','nhẫn uyên ương','')
-insert dbo.ImportedItems values('I03','Vòng tay','3','P03','U03','M03','10','850000','','28/03/2022','vòng tay hoa lá','')
-insert dbo.ImportedItems values('I04','Bông tai','2','P04','U02','M04','10','700000','','28/03/2022','bông tai hột soàn','')
-insert dbo.ImportedItems values('I05','Đồng hồ','1','P05','U01','M05','10','1000000','','28/03/2022','đồng hồ thời trang','')
-insert dbo.ImportedItems values('I06','Lắc tay','1','P06','U01','M06','10','500000','','28/03/2022','lắc tay nhỏ','')
-insert dbo.ImportedItems values('I07','Kiềng','2','P07','U02','M07','10','700000','','28/03/2022','kiềng cưới','')
-go
-select * from dbo.ImportedItems;
+insert into Account values('huynhthevi', '123456', 'NV01', '1')
+insert into Account values('neyu', '123456', 'NV02', '0')
+insert into Account values('thinh', '123456', 'NV03', '0')
 
-exec USP_UpdateImportedItems 'I01'
-exec USP_UpdateImportedItems 'I02'
-exec USP_UpdateImportedItems 'I03'
-exec USP_UpdateImportedItems 'I04'
-exec USP_UpdateImportedItems 'I05'
-exec USP_UpdateImportedItems 'I06'
-exec USP_UpdateImportedItems 'I07'*/
+insert into InfoCustomer values('KH01', 'Khách hàng 1', '23/03/2002', '0123912312', 'kh@gm.com', '123123123', '10')
+insert into InfoCustomer values('KH02', 'Khách hàng 2', '23/03/2002', '0123912312', 'kh@gm.com', '123123133', '0')
+insert into InfoCustomer values('KH03', 'Khách hàng 3', '23/03/2002', '0123912312', 'kh@gm.com', '123341243', '0')
+
+insert into INFOPROVIDER values('NCC1', 'Nhà cung cấp 1', 'SG', '012312312')
+insert into INFOPROVIDER values('NCC2', 'Nhà cung cấp 2', 'SG', '012312312')
+insert into INFOPROVIDER values('NCC3', 'Nhà cung cấp 3', 'SG', '012312312')
+
+select * from ImportedItems
+insert into ImportedItems values('SP1', N'Necklace', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP2', N'Ring', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP3', N'Bracelet', 'NCC2', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP4', N'Earrings', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
+exec USP_UpdateImportedItems 'SP1'
+exec USP_UpdateImportedItems 'SP2'
+exec USP_UpdateImportedItems 'SP3'
+exec USP_UpdateImportedItems 'SP4'
+
+select * from ITEMBILLFORM
+insert into ITEMBILLFORM values('B01', 'NCC1', '')
+
+select * from ITEMBILL
+insert into ITEMBILL values('B01', 'SP1')
+insert into ITEMBILL values('B01', 'SP2')
+insert into ITEMBILL values('B01', 'SP3')
+insert into ITEMBILL values('B01', 'SP4')
+
+
+select * from ITEMFORM
+insert into ITEMFORM values('B01', 'KH01', 'NV01', '')
+insert into ITEMFORM values('B02', 'KH01', 'NV01', '')
+insert into ITEMFORM values('B03', 'KH01', 'NV01', '')
+
+select * from Items
+insert into Items values('B01', 'SP1', '', 1, '')
+insert into Items values('B01', 'SP2', '', 1, '')
+insert into Items values('B01', 'SP3', '', 1, '')
+insert into Items values('B02', 'SP1', '', 3, '')
+
+exec USP_UpdateItems 'B01','SP1'
+exec USP_UpdateItems 'B01','SP2'
+exec USP_UpdateItems 'B01','SP3'
+exec USP_UpdateItems 'B02','SP1'
+
+select * from ServiceCategory
+insert into ServiceCategory values('SV1', 'Đanh bong', 100000)
+insert into ServiceCategory values('SV2', 'Sua', 100000)
+insert into ServiceCategory values('SV3', 'Cat', 100000)
+
+select * from CusService
+insert into CusService values('CS1', 'KH01', '', 'unfinish')
+insert into CusService values('CS2', 'KH02', '', 'unfinish')
+insert into CusService values('CS3', 'KH02', '', 'unfinish')
+
+select * from SERVICELIST
+insert into SERVICELIST values('CS1', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('CS2', 'SV3', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('CS3', 'SV2', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('CS3', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
+
+exec USP_UpdateServiceList 'CS1','SV1'
+exec USP_UpdateServiceList 'CS2','SV3'
+exec USP_UpdateServiceList 'CS3','SV2'
+exec USP_UpdateServiceList 'CS3','SV1'
+
+select * from CARTS
+insert into CARTS values('SP1', 1, '')
+insert into CARTS values('SP2', 2, '')
+insert into CARTS values('SP3', 5, '')
+insert into CARTS values('SP4', 1, '')
+exec USP_Carts 'SP1'
+exec USP_Carts 'SP2'
+exec USP_Carts 'SP3'
+exec USP_Carts 'SP4'

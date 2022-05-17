@@ -1,10 +1,11 @@
-﻿<Application x:Class="QuanLyCuaHangDaQuy.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
              xmlns:viewModel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
              xmlns:view="clr-namespace:QuanLyCuaHangDaQuy.Views"
-             StartupUri="Views/MainStaffWindow.xaml">
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:view1="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" xmlns:view11="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" x:Class="QuanLyCuaHangDaQuy.App"
+             StartupUri="Views/Staff/MainStaffWindow.xaml">  
 
     <Application.Resources>
         <ResourceDictionary>
@@ -19,6 +20,12 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ShopItemsClickViewModel}">
                 <view:ShopItemsClick/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view1:HomeWindow/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:CartViewModel}">
+                <view11:CartUC/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

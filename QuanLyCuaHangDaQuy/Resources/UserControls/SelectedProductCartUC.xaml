@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="QuanLyCuaHangDaQuy.Resources.UserControls.SelectedProductCartUC"
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
+        xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"        
+        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="135" d:DesignWidth="670"
+             FontFamily="/Resources/Fonts/#Lato">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="135"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Rectangle Height="0"
+                   Fill="#ABABAB"
+                   Width="690"
+                   VerticalAlignment="Bottom" 
+                   Grid.ColumnSpan="5"></Rectangle>
+        <Image Grid.Column="0"                   
+               Source="/Resources/Image/avatar.png"/>
+        <StackPanel Grid.Column="1" Margin="30 0 30 0">
+            <TextBlock Text="=)))))"
+                       FontSize="23"
+                       FontWeight="Bold" Margin="0,20,0,0"/>
+            <TextBlock Text="Uyen ga blaaaaaaaa"
+                       FontSize="15.75"
+                       Foreground="#ABABAB"
+                       />
+        </StackPanel>
+        <TextBlock Grid.Column="2"
+                   Text="3.000.000d"
+                   FontSize="15.75"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="#ABABAB"/>
+        <WrapPanel Height="20" 
+                    Grid.Column="3">
+            <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                    Height="18"
+                    Padding="0"
+                    Margin="0 0 4 0"
+                    Content="{materialDesign:PackIcon Minus}"
+                    Foreground="#ABABAB">
+            </Button>
+
+
+            <Border Height="20"
+                    Width="40"
+                    Background="#DFDFDF"
+                    CornerRadius="3.75">
+                <TextBlock Text="0"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Foreground="#ABABAB"
+                           FontWeight="Bold"/>
+            </Border>
+            <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                    Height="18"
+                    Padding="0"
+                    Margin="4 0 0 0"
+                    Content="{materialDesign:PackIcon Plus}"
+                    Foreground="#ABABAB"
+                    >
+            </Button>
+        </WrapPanel>
+
+        <Button Grid.Column="4"
+                Width="30"
+                Height="30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                   Style="{StaticResource MaterialDesignIconForegroundButton}">
+            <materialDesign:PackIcon Kind="WindowClose" 
+                                         Foreground="#555555" />
+        </Button>
+    </Grid>
+</UserControl>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-12-1158533974
-
-20510630887
-17-1881028593
-Resources\ResourceDictionary\ScrollBarStyle.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Resources\UserControls\SearchBarUC.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\MainStaffWindow.xaml;Views\PersonalInfoWindow.xaml;Views\ShopItemsClick.xaml;Views\ShopWindow.xaml;
+39246879890
+21628168987
+71-1235287005
+23-638885414
+Resources\ResourceDictionary\ScrollBarStyle.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ExitButton.xaml;Resources\UserControls\ItemsControl.xaml;Resources\UserControls\SearchBarUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\Admin\AccountManagerWindow.xaml;Views\Admin\Admin_Service\AddEditService.xaml;Views\Admin\CustomerInfoWindow.xaml;Views\Admin\FormCatelogyManagerWindow.xaml;Views\Admin\HumanResourceEditWindow.xaml;Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml;Views\Admin\AdminWindow.xaml;Resources\MainResource.xaml;Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml;Views\Admin\Admin_ImportedItems\ImportItem.xaml;Views\Admin\InventoryInfo.xaml;Views\Staff\HomeWindow.xaml;Views\Staff\MainStaffWindow.xaml;Views\Admin\MaterialCatelogyManagerWindow.xaml;Views\Admin\PersonalInfoWindow.xaml;Views\Admin\ProviderManagerWindow.xaml;Views\Staff\ShopItemsClick.xaml;Views\Staff\ShopWindow.xaml;Views\Staff\Staff_Customer\Staff_AddCustomer.xaml;Views\Staff\Staff_Service\Staff_AddReceipt.xaml;Views\Staff\Staff_Service\Staff_AddService.xaml;Views\Staff\Staff_Customer\Staff_Customer.xaml;Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml;Views\Staff\Staff_Customer\Staff_EditCustomer.xaml;Views\Staff\Staff_Service\Staff_EditReceipt.xaml;Views\Staff\Staff_Service\Staff_EditService.xaml;Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml;Views\Staff\Staff_Customer\Staff_ListCustomer.xaml;Views\Staff\Staff_Service\Staff_ListReceipt.xaml;Views\Staff\Staff_Service\Staff_ListService.xaml;
 
 False
 

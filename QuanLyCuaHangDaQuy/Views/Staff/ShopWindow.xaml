@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="QuanLyCuaHangDaQuy.Views.ShopWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
+             xmlns:uc="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
+             xmlns:self="clr-namespace:QuanLyCuaHangDaQuy"
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:MainStaffViewModel}"
+             mc:Ignorable="d" 
+             d:DesignHeight="702.75" d:DesignWidth="1080"         
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/ResourceDictionary/ScrollBarStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DockPanel>
+        <DockPanel DockPanel.Dock="Top">
+            <uc:SearchBarUC></uc:SearchBarUC>
+        </DockPanel>
+        <!--category-->
+        <DockPanel Width="282">
+            <Grid Margin="29.25,25,29.25,17.25">
+                <Border Width="223.5" BorderBrush="Silver" BorderThickness="1" CornerRadius="7.5,7.5,7.5,7.5"
+                          Background="#FFF0F0F0"/>
+                <TextBlock Text="CATEGORY"
+                                  FontFamily="Lato"
+                                  FontSize="18.75"
+                                  Foreground="#E0A645" 
+                                  FontWeight="SemiBold"
+                                  HorizontalAlignment="Center"
+                                  Margin="0,20.25">
+                </TextBlock>
+                <TreeView Name="trvCategory">
+                    
+                    <TreeViewItem
+                            Header="Ring"
+                                  FontFamily="Lato"
+                                  FontSize="12.75"
+                                  Foreground="#ABABAB" 
+                                  FontWeight="SemiBold"
+                                  HorizontalAlignment="Left"
+                                  Margin="30.75,73.5">
+                    </TreeViewItem>
+                </TreeView>
+            </Grid>
+        </DockPanel>
+        <!--items-->
+        <DockPanel>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" >
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type uc:ItemsControl}">
+                            <Style.Setters>
+                                <Setter Property="Margin" Value="15"></Setter>
+                            </Style.Setters>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                </WrapPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </DockPanel>
+</UserControl>
