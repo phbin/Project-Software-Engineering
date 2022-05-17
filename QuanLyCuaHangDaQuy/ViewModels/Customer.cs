@@ -1,13 +1,19 @@
-﻿using System;
+﻿using QuanLyCuaHangDaQuy.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
     public class Customer: BaseViewModel
     {
+            public static ICommand DeleteCommand { get; set; }
+            public static ICommand EditCommand { get; set; }
             private int _no;
             private string _id;
             private string _fullname;
@@ -17,16 +23,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             private string _phone;
             private long _idpersonal;
             private int? _points;
-            private string _color;
-            public string Colorr
-            {
-                get { return _color; }
-                set
-                {
-                    _color = value;
-                    OnPropertyChanged(nameof(_color));
-                }
-            }
             public int No
             {
                 get

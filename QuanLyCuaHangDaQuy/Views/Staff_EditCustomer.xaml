@@ -42,7 +42,7 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Command="{Binding btnClose}"
+                 Click="Button_Click"
                  Background="Transparent"
                  BorderThickness="0">
             <materialDesign:PackIcon Kind="Close" 
@@ -83,6 +83,7 @@
         <TextBox Grid.Column="1"
                  Grid.Row="4"
                  FontSize="20"
+                  x:Name="FullName"
                  Margin="0,0,0,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
@@ -114,15 +115,21 @@
                    FontSize="15"
                    FontFamily="Lato"
                    Margin="5,0,0,0"/>
-        <TextBox Grid.Column="1"
+        <DatePicker Grid.Column="1"
                  Grid.Row="8"
                  FontSize="20"
-                 Margin="0,0,0,0"
+                 Margin="0,0,100,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
                  Height="35.6">
-        </TextBox>
+            <DatePicker.CalendarStyle>
+                <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FCC871" />
+                    </Style.Resources>
+                </Style>
+            </DatePicker.CalendarStyle>
+        </DatePicker>
         <!--ID Personal-->
         <TextBlock Text="ID Personal"
                    Grid.Column="3"

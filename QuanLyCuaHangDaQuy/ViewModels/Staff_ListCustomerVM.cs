@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 
@@ -29,9 +31,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             set { _textSearch = value; OnPropertyChanged(nameof(_textSearch)); }
         }
         public ICommand LoadCommand { get; set; }
+
         public ICommand SearchCommand { get; set; }
-        public ICommand EditCommand { get; set; }
-        public ICommand DeleteCommand { get; set; }
         public ICommand AddCommand { get; set; }
         public ICommand SelectedCustomerCommand { get; set; }
         public ICommand TextSearchCommand { get; set; }
@@ -45,9 +46,22 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     int no = 1;
                     foreach (var item in List)
                     {
-                        ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email ,Colorr= "#FCC871" });
+                        var DatTen = new Customer
+                        {
+                            No = no,
+                            DoB = item.DoB,
+                            DoB_Format = item.DoB.ToShortDateString(),
+                            FullName = item.FullName,
+                            ID = item.ID,
+                            IDPersonal = item.IDPersonal,
+                            Phone = item.Phone,
+                            Points = item.Points,
+                            Email = item.Email,
+                        };
+                        ListCustomer.Add(DatTen);
                         no++;
                     }
+                    SelectedCustomer = ListCustomer[0];
                 }
             );
             SelectedCustomerCommand = new RelayCommand<object>(
@@ -68,47 +82,10 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 (p) => { return true; },
                 (p) =>
                 {
-                  Staff_AddCustomer staff_AddCustomer = new Staff_AddCustomer();
+                    Staff_AddCustomer staff_AddCustomer = new Staff_AddCustomer();
                     staff_AddCustomer.ShowDialog();
                 }
             );
-            EditCommand = new RelayCommand<object>(
-             (p) => { return true; },
-             (p) =>
-             {
-                 Staff_EditCustomer staff_EditCustomer = new Staff_EditCustomer();
-                 staff_EditCustomer.ShowDialog();
-             }
-         );
-            DeleteCommand = new RelayCommand<object>(
-             (p) => { return true; },
-             (p) =>
-             {
-                 MessageBox.Show("Xóa","dsda");
-             }
-         );
-            // SearchCommand = new RelayCommand<object>(
-            //    (p) => { return true; },
-            //    (p) =>
-            //    {
-            //        MessageBox.Show(TextSearch);
-            //        if (String.Equals(TextSearch, "") == false || TextSearch != string.Empty)
-            //        {
-            //            ListCustomer.Clear();
-            //            var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
-            //            int no = 1;
-            //            foreach (var item in List)
-            //            {
-            //                if (item.FullName.Contains(TextSearch))
-            //                {
-            //                    ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email, Colorr = "#FCC871" });
-            //                    no++;
-            //                }
-
-            //            }
-            //        }
-            //    }
-            //);
             TextSearchCommand = new RelayCommand<object>(
              (p) => { return true; },
              (p) =>
@@ -120,7 +97,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                      int no = 1;
                      foreach (var item in List)
                      {
-                         ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email, Colorr = "#FCC871" });
+                         ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email });
                          no++;
                      }
                  }
@@ -133,7 +110,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                      {
                          if (item.FullName.Contains(TextSearch) && TextSearch != null)
                          {
-                             ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email, Colorr = "#FCC871" });
+                             ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email });
                              no++;
                          }
 
@@ -141,7 +118,34 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                  }
              }
          );
+            Customer.EditCommand = new RelayCommand<object>(
+            (p) => { return true; },
+            (p) =>
+            {
+                Staff_EditCustomer staff_EditCustomer = new Staff_EditCustomer();
+                staff_EditCustomer.FullName.Text =  SelectedCustomer.FullName.ToString();
+                staff_EditCustomer.ShowDialog();
+            }
+        );
+            Customer.DeleteCommand = new RelayCommand<object>(
+            (p) => { return true; },
+            (p) =>
+            {
+                DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this customer?","", (MessageBoxButtons)MessageBoxButton.YesNo);
+                if(result == System.Windows.Forms.DialogResult.Yes)
+                {
+                 
+                }
+                else
+                {
+                  
+                }
+            }
+        );
+
+
         }
+
 
     }
 }
