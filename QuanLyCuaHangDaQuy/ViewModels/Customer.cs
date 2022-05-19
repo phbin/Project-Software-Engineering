@@ -32,7 +32,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _no = value;
-                    OnPropertyChanged(nameof(_no));
+                    OnPropertyChanged(nameof(No));
                 }
             }
             public string ID
@@ -44,7 +44,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _id = value;
-                    OnPropertyChanged(nameof(_id));
+                    OnPropertyChanged(nameof(ID));
                 }
             }
             public string FullName
@@ -56,7 +56,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _fullname = value;
-                    OnPropertyChanged(nameof(_fullname));
+                    OnPropertyChanged(nameof(FullName));
                 }
             }
             public DateTime DoB
@@ -68,7 +68,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _dob = value;
-                    OnPropertyChanged(nameof(_dob));
+                    OnPropertyChanged(nameof(DoB));
                 }
             }
             public string DoB_Format
@@ -80,7 +80,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _dob_format = value;
-                    OnPropertyChanged(nameof(_dob_format));
+                    OnPropertyChanged(nameof(DoB_Format));
                 }
             }
             public string Email
@@ -92,7 +92,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _email = value;
-                    OnPropertyChanged(nameof(_email));
+                    OnPropertyChanged(nameof(Email));
                 }
             }
             public string Phone
@@ -104,7 +104,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _phone = value;
-                    OnPropertyChanged(nameof(_phone));
+                    OnPropertyChanged(nameof(Phone));
                 }
             }
             public long IDPersonal
@@ -116,7 +116,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _idpersonal = value;
-                    OnPropertyChanged(nameof(_idpersonal));
+                    OnPropertyChanged(nameof(IDPersonal));
                 }
             }
             public int? Points
@@ -128,7 +128,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 set
                 {
                     _points = value;
-                    OnPropertyChanged(nameof(_points));
+                    OnPropertyChanged(nameof(Points));
                 }
             }
         }

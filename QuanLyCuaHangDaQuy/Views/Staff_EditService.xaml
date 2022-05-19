@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
-          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+        x:Name="Staff_EditService"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None" Height="658" Width="970">
+    <Window.DataContext>
+        <vm:Staff_EditServiceVM/>
+    </Window.DataContext>
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBlock"

@@ -7,8 +7,22 @@
         mc:Ignorable="d"
           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         WindowStyle="None" 
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
         WindowStartupLocation="CenterScreen" Height="540" Width="676">
- 
+    <Window.DataContext>
+        <vm:Staff_AddCustomerVM></vm:Staff_AddCustomerVM>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="Pastday" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+            <Setter Property="DisplayDateStart" Value="1/1/1111"></Setter>
+            <Setter Property="DisplayDateEnd" Value="{x:Static System:DateTime.Today}"/>
+        </Style>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="86"/>
@@ -93,7 +107,7 @@
                  Margin="0,0,0,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="{Binding FullName}"
+                 Text="{Binding FullName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  materialDesign:HintAssist.Hint="Enter full name"
                  Height="35.6">
         </TextBox>
@@ -110,27 +124,39 @@
                  FontSize="20"
                  Margin="0,0,0,0"
                  Foreground="Black"
+                  Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  materialDesign:HintAssist.Hint="Enter email"
                  Height="35.6">
         </TextBox>
-        <!--Brithday-->
-        <TextBlock Text="Brithday"
+        <!--Birthday-->
+        <TextBlock Text="Birthday"
                    Grid.Column="1"
                    Grid.Row="6"
                    Foreground="#BCBCBC"
                    FontSize="15"
                    FontFamily="Lato"
                    Margin="5,0,0,0"/>
-        <TextBox Grid.Column="1"
+        <DatePicker Grid.Column="1"
                  Grid.Row="8"
+                    Style="{StaticResource Pastday}"
                  FontSize="20"
-                 Margin="0,0,0,0"
+                 Margin="0,0,80,0"
+                 Text="{Binding Birthday,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Foreground="Black"
                  VerticalAlignment="Top"
                  materialDesign:HintAssist.Hint="Enter birthday"
                  Height="35.6">
-        </TextBox>
+            <DatePicker.CalendarStyle>
+                <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FCC871" />
+                    </Style.Resources>
+                </Style>
+                
+            </DatePicker.CalendarStyle>
+            
+        </DatePicker>
         <!--ID Personal-->
         <TextBlock Text="ID Personal"
                    Grid.Column="3"
@@ -144,6 +170,8 @@
                  FontSize="20"
                  Margin="0,0,0,0"
                  Foreground="Black"
+                 PreviewTextInput="TextBox_PreviewTextInput"
+                  Text="{Binding IDPersonal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
                  materialDesign:HintAssist.Hint="Enter ID Personal"
                  Height="35.6">
@@ -160,8 +188,10 @@
                  Grid.Row="12"
                  FontSize="20"
                  Margin="0,0,0,0"
+                  Text="{Binding Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Foreground="Black"
                  VerticalAlignment="Top"
+                 PreviewTextInput="TextBox_PreviewTextInput"
                  materialDesign:HintAssist.Hint="Enter phone number"
                  Height="35.6">
         </TextBox>
@@ -177,10 +207,11 @@
                  Grid.Row="12"
                  FontSize="20"
                  Margin="0,0,0,0"
+                  Text="{Binding Points,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Foreground="Black"
+                 PreviewTextInput="TextBox_PreviewTextInput"
                  materialDesign:HintAssist.Hint="Enter points"
                  VerticalAlignment="Top"
-                 Text="0"
                  Height="35.6">
         </TextBox>
         <!--Add-->
@@ -197,11 +228,7 @@
             FontSize="21"
             Command="{Binding AddCommand}"
             materialDesign:ShadowAssist.ShadowDepth="Depth0" >
-            <!--<i:Interaction.Triggers>
-                <i:EventTrigger EventName="Click">
-                    <i:InvokeCommandAction Command="{Binding AddCommand}"/>
-                </i:EventTrigger>
-            </i:Interaction.Triggers>-->
+          
         </Button>
     </Grid>
 </Window>

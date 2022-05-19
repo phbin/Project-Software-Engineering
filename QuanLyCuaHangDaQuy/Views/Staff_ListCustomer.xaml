@@ -140,7 +140,7 @@
                         >
                 <TextBox Margin="15,4,5,4"
                          Width="310"
-                         Text="{Binding TextSearch, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding TextSearch,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="0" 
                        >
                     <i:Interaction.Triggers>
@@ -181,7 +181,7 @@
                   Grid.RowSpan="2"
                   AutoGenerateColumns = "false "
                   Background="Transparent"
-                  ItemsSource="{Binding ListCustomer}"
+                  ItemsSource="{Binding ListCustomer, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   IsEnabled="True"
                   IsReadOnly="True"
