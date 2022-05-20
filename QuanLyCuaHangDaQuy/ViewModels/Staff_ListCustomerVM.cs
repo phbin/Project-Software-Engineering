@@ -66,7 +66,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 (p) => { return true; },
                 (p) =>
                 {
-                  var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
+                    var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
                     int no = 1;
                     foreach (var item in List)
                     {

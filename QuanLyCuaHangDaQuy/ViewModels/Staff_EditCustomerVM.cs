@@ -117,7 +117,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                        DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == ID).FirstOrDefault().IDPersonal = long.Parse(IDPersonal);
                        DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == ID).FirstOrDefault().DoB = DateTime.Parse(Birthday, CultureInfo.InvariantCulture);
                        DataProvider.Ins.DB.SaveChanges();
-                       
+                       (p as Window).Close();
                    }
                }
            );

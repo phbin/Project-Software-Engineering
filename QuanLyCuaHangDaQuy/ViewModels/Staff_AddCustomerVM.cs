@@ -110,6 +110,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                        int i=DataProvider.Ins.DB.INFOCUSTOMERs.Count();
                        DataProvider.Ins.DB.INFOCUSTOMERs.Add(new INFOCUSTOMER { DoB = DateTime.Parse(Birthday, CultureInfo.InvariantCulture), Phone = Phone, IDPersonal = long.Parse(IDPersonal), FullName = FullName, Email = Email, Points = int.Parse(Points), ID = "Customer"+(i+1).ToString()});
                        DataProvider.Ins.DB.SaveChanges();
+                       (p as Window).Close();
                    }
                }
            );

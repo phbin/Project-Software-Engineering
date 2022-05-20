@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         mc:Ignorable="d"
         xmlns:System="clr-namespace:System;assembly=mscorlib"
-        x:Name="Staff_EditCustomer1"
-          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        x:Name="EditCustomer"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         WindowStyle="None" 
         WindowStartupLocation="CenterScreen" Height="540" Width="676">
     <Window.DataContext>
@@ -58,9 +58,13 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Click="Button_Click"
                  Background="Transparent"
                  BorderThickness="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=EditCustomer}" MethodName="Close"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
                                  Foreground="#BCBCBC" 
                                      HorizontalAlignment="Center"
@@ -228,7 +232,8 @@
             BorderThickness="0"
             FontSize="21"
             Command="{Binding ConfirmCommand}"
-            CommandParameter="{Binding ElementName=Staff_EditCustomer1}"
+              CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}"
             materialDesign:ShadowAssist.ShadowDepth="Depth0" 
                 />
     </Grid>

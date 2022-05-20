@@ -14,7 +14,6 @@ namespace QuanLyCuaHangDaQuy.Model
     
     public partial class CART
     {
-        public string ID { get; set; }
         public string IDItem { get; set; }
         public Nullable<int> Quantity { get; set; }
         public Nullable<double> Total { get; set; }

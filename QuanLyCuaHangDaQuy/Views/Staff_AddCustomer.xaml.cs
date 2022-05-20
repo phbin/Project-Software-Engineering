@@ -24,16 +24,12 @@ namespace QuanLyCuaHangDaQuy.Views
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();   
-        }
-
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            MessageBox.Show("j");
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+
         }
 
     }

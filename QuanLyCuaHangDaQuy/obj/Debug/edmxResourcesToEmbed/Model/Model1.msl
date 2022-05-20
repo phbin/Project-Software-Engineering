@@ -11,16 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CARTS">
-      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
-        <MappingFragment StoreEntitySet="CARTS">
-          <ScalarProperty Name="ID" ColumnName="ID" />
-          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="CUSSERVICEs">
       <EntityTypeMapping TypeName="CuaHangDaQuyModel.CUSSERVICE">
         <MappingFragment StoreEntitySet="CUSSERVICE">
@@ -93,17 +83,6 @@
           <ScalarProperty Name="Avatar" ColumnName="Avatar" />
           <ScalarProperty Name="IDPersonal" ColumnName="IDPersonal" />
           <ScalarProperty Name="stt" ColumnName="stt" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ITEMBILLs">
-      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILL">
-        <MappingFragment StoreEntitySet="ITEMBILL">
-          <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
-          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="DateBought" ColumnName="DateBought" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -180,14 +159,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ITEMSIZEs">
-      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMSIZE">
-        <MappingFragment StoreEntitySet="ITEMSIZE">
+    <EntitySetMapping Name="CARTS">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
+        <MappingFragment StoreEntitySet="CARTS">
           <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-          <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <AssociationSetMapping Name="ITEMBILL" TypeName="CuaHangDaQuyModel.ITEMBILL" StoreEntitySet="ITEMBILL">
+      <EndProperty Name="IMPORTEDITEMS">
+        <ScalarProperty Name="ID" ColumnName="IDItem" />
+      </EndProperty>
+      <EndProperty Name="ITEMBILLFORM">
+        <ScalarProperty Name="ID" ColumnName="IDItemBillForm" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <FunctionImportMapping FunctionImportName="USP_Carts" FunctionName="CuaHangDaQuyModel.Store.USP_Carts" />
     <FunctionImportMapping FunctionImportName="USP_UpdateImportedItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateImportedItems" />
     <FunctionImportMapping FunctionImportName="USP_UpdateItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateItems" />
     <FunctionImportMapping FunctionImportName="USP_UpdateServiceList" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateServiceList" />

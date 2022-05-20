@@ -14,11 +14,12 @@
           <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="AccType" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="CARTS">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="IDItem" />
           </Key>
-          <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Quantity" Type="int" />
           <Property Name="Total" Type="float" />
@@ -99,9 +100,6 @@
           </Key>
           <Property Name="IDItemBillForm" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Total" Type="float" Nullable="false" />
-          <Property Name="Quantity" Type="int" />
-          <Property Name="DateBought" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="ITEMBILLFORM">
           <Key>
@@ -130,16 +128,6 @@
           <Property Name="Total" Type="float" Nullable="false" />
           <Property Name="Quantity" Type="int" />
           <Property Name="DateSell" Type="smalldatetime" Nullable="false" />
-        </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="ITEMSIZE">
-          <Key>
-            <PropertyRef Name="IDItem" />
-            <PropertyRef Name="SizeName" />
-          </Key>
-          <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SizeName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="MATERIALCATEGORY">
           <Key>
@@ -205,7 +193,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_IDItemBillForm_ImportedItems">
+        <Association Name="FK_IDItemBill_ImportedItems">
           <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEMS" Multiplicity="1" />
           <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -217,7 +205,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_IDItemBillForm_ItemBillForm">
+        <Association Name="FK_IDItemBill_ItemBillForm">
           <End Role="ITEMBILLFORM" Type="Self.ITEMBILLFORM" Multiplicity="1" />
           <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
           <ReferentialConstraint>
@@ -325,18 +313,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ItemSize_ImportedItems">
-          <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEMS" Multiplicity="1" />
-          <End Role="ITEMSIZE" Type="Self.ITEMSIZE" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IMPORTEDITEMS">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ITEMSIZE">
-              <PropertyRef Name="IDItem" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_MaterialCategory_Unit">
           <End Role="UNIT" Type="Self.UNIT" Multiplicity="1" />
           <End Role="MATERIALCATEGORY" Type="Self.MATERIALCATEGORY" Multiplicity="*" />
@@ -375,7 +351,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
         </Association>
         <Association Name="FK_WishList_ImportedItems">
           <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEMS" Multiplicity="1" />
-          <End Role="CARTS" Type="Self.CARTS" Multiplicity="*" />
+          <End Role="CARTS" Type="Self.CARTS" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="IMPORTEDITEMS">
               <PropertyRef Name="ID" />
@@ -385,11 +361,15 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="USP_Carts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="iditem" Type="varchar" Mode="In" />
+        </Function>
         <Function Name="USP_UpdateImportedItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="varchar" Mode="In" />
         </Function>
         <Function Name="USP_UpdateItems" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="id" Type="varchar" Mode="In" />
+          <Parameter Name="iditemform" Type="varchar" Mode="In" />
+          <Parameter Name="iditem" Type="varchar" Mode="In" />
         </Function>
         <Function Name="USP_UpdateServiceList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idcusservice" Type="varchar" Mode="In" />
@@ -397,7 +377,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
         </Function>
         <EntityContainer Name="CuaHangDaQuyModelStoreContainer">
           <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CARTS" EntityType="Self.CARTS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CUSSERVICE" EntityType="Self.CUSSERVICE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FORMCATEGORY" EntityType="Self.FORMCATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="IMPORTEDITEMS" EntityType="Self.IMPORTEDITEMS" Schema="dbo" store:Type="Tables" />
@@ -412,11 +391,12 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <EntitySet Name="SERVICECATEGORY" EntityType="Self.SERVICECATEGORY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SERVICELIST" EntityType="Self.SERVICELIST" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UNIT" EntityType="Self.UNIT" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ITEMSIZE" EntityType="Self.ITEMSIZE" store:Type="Tables" store:Schema="dbo">
+          <EntitySet Name="CARTS" EntityType="Self.CARTS" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
-    [ITEMSIZE].[IDItem] AS [IDItem], 
-    [ITEMSIZE].[SizeName] AS [SizeName]
-    FROM [dbo].[ITEMSIZE] AS [ITEMSIZE]</DefiningQuery>
+    [CARTS].[IDItem] AS [IDItem], 
+    [CARTS].[Quantity] AS [Quantity], 
+    [CARTS].[Total] AS [Total]
+    FROM [dbo].[CARTS] AS [CARTS]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Account_ID" Association="Self.FK_Account_ID">
             <End Role="INFOSTAFF" EntitySet="INFOSTAFF" />
@@ -426,11 +406,11 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="INFOCUSTOMER" EntitySet="INFOCUSTOMER" />
             <End Role="CUSSERVICE" EntitySet="CUSSERVICE" />
           </AssociationSet>
-          <AssociationSet Name="FK_IDItemBillForm_ImportedItems" Association="Self.FK_IDItemBillForm_ImportedItems">
+          <AssociationSet Name="FK_IDItemBill_ImportedItems" Association="Self.FK_IDItemBill_ImportedItems">
             <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
             <End Role="ITEMBILL" EntitySet="ITEMBILL" />
           </AssociationSet>
-          <AssociationSet Name="FK_IDItemBillForm_ItemBillForm" Association="Self.FK_IDItemBillForm_ItemBillForm">
+          <AssociationSet Name="FK_IDItemBill_ItemBillForm" Association="Self.FK_IDItemBill_ItemBillForm">
             <End Role="ITEMBILLFORM" EntitySet="ITEMBILLFORM" />
             <End Role="ITEMBILL" EntitySet="ITEMBILL" />
           </AssociationSet>
@@ -466,10 +446,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="ITEMFORM" EntitySet="ITEMFORM" />
             <End Role="ITEMS" EntitySet="ITEMS" />
           </AssociationSet>
-          <AssociationSet Name="FK_ItemSize_ImportedItems" Association="Self.FK_ItemSize_ImportedItems">
-            <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-            <End Role="ITEMSIZE" EntitySet="ITEMSIZE" />
-          </AssociationSet>
           <AssociationSet Name="FK_MaterialCategory_Unit" Association="Self.FK_MaterialCategory_Unit">
             <End Role="UNIT" EntitySet="UNIT" />
             <End Role="MATERIALCATEGORY" EntitySet="MATERIALCATEGORY" />
@@ -501,16 +477,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="AccType" Type="Int32" Nullable="false" />
           <NavigationProperty Name="INFOSTAFF" Relationship="Self.FK_Account_ID" FromRole="ACCOUNT" ToRole="INFOSTAFF" />
-        </EntityType>
-        <EntityType Name="CART">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="Total" Type="Double" />
-          <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_WishList_ImportedItems" FromRole="CARTS" ToRole="IMPORTEDITEMS" />
         </EntityType>
         <EntityType Name="CUSSERVICE">
           <Key>
@@ -547,13 +513,12 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <Property Name="DatePurchase" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="Descript" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <NavigationProperty Name="CARTS" Relationship="Self.FK_WishList_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="CARTS" />
           <NavigationProperty Name="FORMCATEGORY" Relationship="Self.FK_ImportedItems_FormCategory" FromRole="IMPORTEDITEMS" ToRole="FORMCATEGORY" />
-          <NavigationProperty Name="ITEMBILLs" Relationship="Self.FK_IDItemBillForm_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="ITEMBILL" />
           <NavigationProperty Name="MATERIALCATEGORY" Relationship="Self.FK_ImportedItems_MaterialCategory" FromRole="IMPORTEDITEMS" ToRole="MATERIALCATEGORY" />
           <NavigationProperty Name="INFOPROVIDER" Relationship="Self.FK_ImportedItems_ProviderInfo" FromRole="IMPORTEDITEMS" ToRole="INFOPROVIDER" />
           <NavigationProperty Name="ITEMS" Relationship="Self.FK_Items_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="ITEMS" />
-          <NavigationProperty Name="ITEMSIZEs" Relationship="Self.FK_ItemSize_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="ITEMSIZE" />
+          <NavigationProperty Name="CART" Relationship="Self.FK_WishList_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="CARTS" />
+          <NavigationProperty Name="ITEMBILLFORMs" Relationship="Self.ITEMBILL" FromRole="IMPORTEDITEMS" ToRole="ITEMBILLFORM" />
         </EntityType>
         <EntityType Name="INFOCUSTOMER">
           <Key>
@@ -597,19 +562,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <NavigationProperty Name="ACCOUNTs" Relationship="Self.FK_Account_ID" FromRole="INFOSTAFF" ToRole="ACCOUNT" />
           <NavigationProperty Name="ITEMFORMs" Relationship="Self.FK_ITEMFORM_InfoStaff" FromRole="INFOSTAFF" ToRole="ITEMFORM" />
         </EntityType>
-        <EntityType Name="ITEMBILL">
-          <Key>
-            <PropertyRef Name="IDItemBillForm" />
-            <PropertyRef Name="IDItem" />
-          </Key>
-          <Property Name="IDItemBillForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Total" Type="Double" Nullable="false" />
-          <Property Name="Quantity" Type="Int32" />
-          <Property Name="DateBought" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_IDItemBillForm_ImportedItems" FromRole="ITEMBILL" ToRole="IMPORTEDITEMS" />
-          <NavigationProperty Name="ITEMBILLFORM" Relationship="Self.FK_IDItemBillForm_ItemBillForm" FromRole="ITEMBILL" ToRole="ITEMBILLFORM" />
-        </EntityType>
         <EntityType Name="ITEMBILLFORM">
           <Key>
             <PropertyRef Name="ID" />
@@ -618,7 +570,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <Property Name="IDProd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DateBooking" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="INFOPROVIDER" Relationship="Self.FK_ItemBillForm_InfoCustomer" FromRole="ITEMBILLFORM" ToRole="INFOPROVIDER" />
-          <NavigationProperty Name="ITEMBILLs" Relationship="Self.FK_IDItemBillForm_ItemBillForm" FromRole="ITEMBILLFORM" ToRole="ITEMBILL" />
+          <NavigationProperty Name="IMPORTEDITEMS" Relationship="Self.ITEMBILL" FromRole="ITEMBILLFORM" ToRole="IMPORTEDITEMS" />
         </EntityType>
         <EntityType Name="ITEMFORM">
           <Key>
@@ -691,14 +643,14 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <Property Name="NameUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="MATERIALCATEGORies" Relationship="Self.FK_MaterialCategory_Unit" FromRole="UNIT" ToRole="MATERIALCATEGORY" />
         </EntityType>
-        <EntityType Name="ITEMSIZE">
+        <EntityType Name="CART">
           <Key>
             <PropertyRef Name="IDItem" />
-            <PropertyRef Name="SizeName" />
           </Key>
           <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SizeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_ItemSize_ImportedItems" FromRole="ITEMSIZE" ToRole="IMPORTEDITEMS" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="Total" Type="Double" />
+          <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_WishList_ImportedItems" FromRole="CARTS" ToRole="IMPORTEDITEMS" />
         </EntityType>
         <Association Name="FK_Account_ID">
           <End Role="INFOSTAFF" Type="Self.INFOSTAFF" Multiplicity="1" />
@@ -709,18 +661,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Principal>
             <Dependent Role="ACCOUNT">
               <PropertyRef Name="ID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_WishList_ImportedItems">
-          <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
-          <End Role="CARTS" Type="Self.CART" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IMPORTEDITEMS">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="CARTS">
-              <PropertyRef Name="IDItem" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -760,18 +700,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_IDItemBillForm_ImportedItems">
-          <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
-          <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="IMPORTEDITEMS">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ITEMBILL">
-              <PropertyRef Name="IDItem" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ImportedItems_MaterialCategory">
           <End Role="MATERIALCATEGORY" Type="Self.MATERIALCATEGORY" Multiplicity="1" />
           <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="*" />
@@ -808,14 +736,14 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ItemSize_ImportedItems">
+        <Association Name="FK_WishList_ImportedItems">
           <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
-          <End Role="ITEMSIZE" Type="Self.ITEMSIZE" Multiplicity="*" />
+          <End Role="CARTS" Type="Self.CART" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="IMPORTEDITEMS">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="ITEMSIZE">
+            <Dependent Role="CARTS">
               <PropertyRef Name="IDItem" />
             </Dependent>
           </ReferentialConstraint>
@@ -856,18 +784,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_IDItemBillForm_ItemBillForm">
-          <End Role="ITEMBILLFORM" Type="Self.ITEMBILLFORM" Multiplicity="1" />
-          <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ITEMBILLFORM">
-              <PropertyRef Name="ID" />
-            </Principal>
-            <Dependent Role="ITEMBILL">
-              <PropertyRef Name="IDItemBillForm" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Items_ItemForm">
           <End Role="ITEMFORM" Type="Self.ITEMFORM" Multiplicity="1" />
           <End Role="ITEMS" Type="Self.ITEM" Multiplicity="*" />
@@ -904,16 +820,18 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="ITEMBILL">
+          <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="*" />
+          <End Role="ITEMBILLFORM" Type="Self.ITEMBILLFORM" Multiplicity="*" />
+        </Association>
         <EntityContainer Name="CuaHangDaQuyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
-          <EntitySet Name="CARTS" EntityType="Self.CART" />
           <EntitySet Name="CUSSERVICEs" EntityType="Self.CUSSERVICE" />
           <EntitySet Name="FORMCATEGORies" EntityType="Self.FORMCATEGORY" />
           <EntitySet Name="IMPORTEDITEMS" EntityType="Self.IMPORTEDITEM" />
           <EntitySet Name="INFOCUSTOMERs" EntityType="Self.INFOCUSTOMER" />
           <EntitySet Name="INFOPROVIDERs" EntityType="Self.INFOPROVIDER" />
           <EntitySet Name="INFOSTAFFs" EntityType="Self.INFOSTAFF" />
-          <EntitySet Name="ITEMBILLs" EntityType="Self.ITEMBILL" />
           <EntitySet Name="ITEMBILLFORMs" EntityType="Self.ITEMBILLFORM" />
           <EntitySet Name="ITEMFORMs" EntityType="Self.ITEMFORM" />
           <EntitySet Name="ITEMS" EntityType="Self.ITEM" />
@@ -921,14 +839,10 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
           <EntitySet Name="SERVICECATEGORies" EntityType="Self.SERVICECATEGORY" />
           <EntitySet Name="SERVICELISTs" EntityType="Self.SERVICELIST" />
           <EntitySet Name="UNITs" EntityType="Self.UNIT" />
-          <EntitySet Name="ITEMSIZEs" EntityType="Self.ITEMSIZE" />
+          <EntitySet Name="CARTS" EntityType="Self.CART" />
           <AssociationSet Name="FK_Account_ID" Association="Self.FK_Account_ID">
             <End Role="INFOSTAFF" EntitySet="INFOSTAFFs" />
             <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_WishList_ImportedItems" Association="Self.FK_WishList_ImportedItems">
-            <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-            <End Role="CARTS" EntitySet="CARTS" />
           </AssociationSet>
           <AssociationSet Name="FK_CusService_InfoCustomer" Association="Self.FK_CusService_InfoCustomer">
             <End Role="INFOCUSTOMER" EntitySet="INFOCUSTOMERs" />
@@ -942,10 +856,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="FORMCATEGORY" EntitySet="FORMCATEGORies" />
             <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
           </AssociationSet>
-          <AssociationSet Name="FK_IDItemBillForm_ImportedItems" Association="Self.FK_IDItemBillForm_ImportedItems">
-            <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-            <End Role="ITEMBILL" EntitySet="ITEMBILLs" />
-          </AssociationSet>
           <AssociationSet Name="FK_ImportedItems_MaterialCategory" Association="Self.FK_ImportedItems_MaterialCategory">
             <End Role="MATERIALCATEGORY" EntitySet="MATERIALCATEGORies" />
             <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
@@ -958,9 +868,9 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
             <End Role="ITEMS" EntitySet="ITEMS" />
           </AssociationSet>
-          <AssociationSet Name="FK_ItemSize_ImportedItems" Association="Self.FK_ItemSize_ImportedItems">
+          <AssociationSet Name="FK_WishList_ImportedItems" Association="Self.FK_WishList_ImportedItems">
             <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-            <End Role="ITEMSIZE" EntitySet="ITEMSIZEs" />
+            <End Role="CARTS" EntitySet="CARTS" />
           </AssociationSet>
           <AssociationSet Name="FK_ITEMFORM_InfoCustomer" Association="Self.FK_ITEMFORM_InfoCustomer">
             <End Role="INFOCUSTOMER" EntitySet="INFOCUSTOMERs" />
@@ -974,10 +884,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="INFOSTAFF" EntitySet="INFOSTAFFs" />
             <End Role="ITEMFORM" EntitySet="ITEMFORMs" />
           </AssociationSet>
-          <AssociationSet Name="FK_IDItemBillForm_ItemBillForm" Association="Self.FK_IDItemBillForm_ItemBillForm">
-            <End Role="ITEMBILLFORM" EntitySet="ITEMBILLFORMs" />
-            <End Role="ITEMBILL" EntitySet="ITEMBILLs" />
-          </AssociationSet>
           <AssociationSet Name="FK_Items_ItemForm" Association="Self.FK_Items_ItemForm">
             <End Role="ITEMFORM" EntitySet="ITEMFORMs" />
             <End Role="ITEMS" EntitySet="ITEMS" />
@@ -990,11 +896,19 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
             <End Role="SERVICECATEGORY" EntitySet="SERVICECATEGORies" />
             <End Role="SERVICELIST" EntitySet="SERVICELISTs" />
           </AssociationSet>
+          <AssociationSet Name="ITEMBILL" Association="Self.ITEMBILL">
+            <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
+            <End Role="ITEMBILLFORM" EntitySet="ITEMBILLFORMs" />
+          </AssociationSet>
+          <FunctionImport Name="USP_Carts">
+            <Parameter Name="iditem" Mode="In" Type="String" />
+          </FunctionImport>
           <FunctionImport Name="USP_UpdateImportedItems">
             <Parameter Name="id" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_UpdateItems">
-            <Parameter Name="id" Mode="In" Type="String" />
+            <Parameter Name="iditemform" Mode="In" Type="String" />
+            <Parameter Name="iditem" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="USP_UpdateServiceList">
             <Parameter Name="idcusservice" Mode="In" Type="String" />
@@ -1014,16 +928,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
                 <ScalarProperty Name="Pass" ColumnName="Pass" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="AccType" ColumnName="AccType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CARTS">
-            <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
-              <MappingFragment StoreEntitySet="CARTS">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1102,17 +1006,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ITEMBILLs">
-            <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILL">
-              <MappingFragment StoreEntitySet="ITEMBILL">
-                <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
-                <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-                <ScalarProperty Name="Total" ColumnName="Total" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="DateBought" ColumnName="DateBought" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ITEMBILLFORMs">
             <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILLFORM">
               <MappingFragment StoreEntitySet="ITEMBILLFORM">
@@ -1186,14 +1079,24 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.ITEMSIZE' does not have a primary
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ITEMSIZEs">
-            <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMSIZE">
-              <MappingFragment StoreEntitySet="ITEMSIZE">
+          <EntitySetMapping Name="CARTS">
+            <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
+              <MappingFragment StoreEntitySet="CARTS">
                 <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-                <ScalarProperty Name="SizeName" ColumnName="SizeName" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <AssociationSetMapping Name="ITEMBILL" TypeName="CuaHangDaQuyModel.ITEMBILL" StoreEntitySet="ITEMBILL">
+            <EndProperty Name="IMPORTEDITEMS">
+              <ScalarProperty Name="ID" ColumnName="IDItem" />
+            </EndProperty>
+            <EndProperty Name="ITEMBILLFORM">
+              <ScalarProperty Name="ID" ColumnName="IDItemBillForm" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <FunctionImportMapping FunctionImportName="USP_Carts" FunctionName="CuaHangDaQuyModel.Store.USP_Carts" />
           <FunctionImportMapping FunctionImportName="USP_UpdateImportedItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateImportedItems" />
           <FunctionImportMapping FunctionImportName="USP_UpdateItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateItems" />
           <FunctionImportMapping FunctionImportName="USP_UpdateServiceList" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateServiceList" />
