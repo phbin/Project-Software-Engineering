@@ -52,7 +52,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 ListCustomer.Add(DatTen);
                 no++;
             }
-            SelectedCustomer = ListCustomer[0];
+            if (no >= 2) { SelectedCustomer = ListCustomer[0]; }
+
         }
         public ICommand LoadCommand { get; set; }
 
@@ -85,7 +86,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         ListCustomer.Add(DatTen);
                         no++;
                     }
-                    SelectedCustomer = ListCustomer[0];
+                    if (no >= 2) { SelectedCustomer = ListCustomer[0]; }
                 }
             );
             SelectedCustomerCommand = new RelayCommand<object>(
@@ -163,10 +164,38 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             (p) => { return true; },
             (p) =>
             {
-                DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this customer?","", (MessageBoxButtons)MessageBoxButton.YesNo);
-                if(result == System.Windows.Forms.DialogResult.Yes)
-                {
-                    DataProvider.Ins.DB.INFOCUSTOMERs.Remove(DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.IDPersonal == SelectedCustomer.IDPersonal).FirstOrDefault());
+            DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this customer?", "", (MessageBoxButtons)MessageBoxButton.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                int IDtemp = DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer==SelectedCustomer.ID).Count();
+                    while( IDtemp >=1)
+                    {
+                        string IDItemform= DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault().ID;
+                        int IDtemp1 = DataProvider.Ins.DB.ITEMS.ToList().Where(h => h.IDItemForm == IDItemform).Count();
+                        while(IDtemp1 >=1)
+                        {
+                            DataProvider.Ins.DB.ITEMS.Remove(DataProvider.Ins.DB.ITEMS.Where(h => h.IDItemForm == IDItemform).FirstOrDefault());
+                            IDtemp1--;
+                        }
+                        DataProvider.Ins.DB.ITEMFORMs.Remove(DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault());
+                        IDtemp--;
+
+                    }
+                    IDtemp = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).Count();
+                    while (IDtemp >= 1)
+                    {
+                        string IDService = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault().ID;
+                        int IDtemp1 = DataProvider.Ins.DB.SERVICELISTs.ToList().Where(h => h.IDService == IDService).Count();
+                        while (IDtemp1 >= 1)
+                        {
+                            DataProvider.Ins.DB.SERVICELISTs.Remove(DataProvider.Ins.DB.SERVICELISTs.Where(h => h.IDService == IDService).FirstOrDefault());
+                            IDtemp1--;
+                        }
+                        DataProvider.Ins.DB.CUSSERVICEs.Remove(DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault());
+                        IDtemp--;
+
+                    }
+                    DataProvider.Ins.DB.INFOCUSTOMERs.Remove(DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == SelectedCustomer.ID).FirstOrDefault());
                     DataProvider.Ins.DB.SaveChanges();
                     LoadData();
                 }

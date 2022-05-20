@@ -89,18 +89,36 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                (p) => { return true; },
                (p) =>
                {
-                   if (FullName == "" || Email == "" || Phone == "" || Birthday == "" || Points.ToString() == "" || IDPersonal.ToString()=="")
+                   if (FullName == "" || Email == "" || Phone == "" || Birthday == "" || Points == "" || IDPersonal == "")
                    {
                        MessageBox.Show("Please fill in all the information");
                        return;
                    }
-                  if(IsValidEmail(Email)==false)
+                   if (IsValidEmail(Email) == false)
                    {
                        MessageBox.Show("Email invalidate");
+                       return;
                    }
-                  else
+                   int Result;
+                   if (int.TryParse(IDPersonal, out Result) == false)
                    {
-                       var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
+                       MessageBox.Show("ID Personal only accepts numbers");
+                       IDPersonal = "";
+                       return;
+                   }
+                   if (int.TryParse(Phone, out Result) == false)
+                   {
+                       MessageBox.Show("Phone only accepts numbers");
+                       Phone = "";
+                       return;
+                   }
+                   if (int.TryParse(Points, out Result) == false)
+                   {
+                       MessageBox.Show("Points only accepts numbers");
+                       Points = "0";
+                       return;
+                   }
+                   var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
                        foreach (var item in List)
                        {
                            if (item.IDPersonal == long.Parse(IDPersonal) && item.ID != ID)
@@ -118,7 +136,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                        DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == ID).FirstOrDefault().DoB = DateTime.Parse(Birthday, CultureInfo.InvariantCulture);
                        DataProvider.Ins.DB.SaveChanges();
                        (p as Window).Close();
-                   }
+                   
                }
            );
 
