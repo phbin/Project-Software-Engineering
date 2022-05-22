@@ -99,22 +99,21 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                        MessageBox.Show("Email invalidate");
                        return;
                    }
-                   int Result;
-                   if (int.TryParse(IDPersonal, out Result) == false)
+                   if (IDPersonal.Length>=20)
                    {
-                       MessageBox.Show("ID Personal only accepts numbers");
+                       MessageBox.Show("ID Personal too long");
                        IDPersonal = "";
                        return;
                    }
-                   if (int.TryParse(Phone, out Result) == false)
+                   if (Phone.Length>=20)
                    {
-                       MessageBox.Show("Phone only accepts numbers");
+                       MessageBox.Show("Phone too long");
                        Phone = "";
                        return;
                    }
-                   if (int.TryParse(Points, out Result) == false)
+                   if (Points.Length>=11)
                    {
-                       MessageBox.Show("Points only accepts numbers");
+                       MessageBox.Show("Points too long");
                        Points = "0";
                        return;
                    }

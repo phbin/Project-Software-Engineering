@@ -55,9 +55,32 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             if (no >= 2) { SelectedCustomer = ListCustomer[0]; }
 
         }
-        public ICommand LoadCommand { get; set; }
 
-        public ICommand SearchCommand { get; set; }
+        public void LoadDataAfterTextSearch()
+
+        {
+            if (TextSearch == "" || TextSearch == null)
+            {
+                LoadData();
+            }
+            else
+            {
+                ListCustomer.Clear();
+                var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
+                int no = 1;
+                foreach (var item in List)
+                {
+                    if (item.FullName.Contains(TextSearch))
+                    {
+                        ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email });
+                        no++;
+                    }
+                    if (no >= 2) { SelectedCustomer = ListCustomer[0]; }
+
+                }
+            }
+        }
+        public ICommand LoadCommand { get; set; }
         public ICommand AddCommand { get; set; }
         public ICommand SelectedCustomerCommand { get; set; }
         public ICommand TextSearchCommand { get; set; }
@@ -109,6 +132,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 {
                     Staff_AddCustomer staff_AddCustomer = new Staff_AddCustomer();
                     staff_AddCustomer.ShowDialog();
+                    TextSearch = "";
                     LoadData();
                 }
             );
@@ -116,32 +140,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
              (p) => { return true; },
              (p) =>
              {
-                 if(TextSearch=="")
-                 {
-                     ListCustomer.Clear();
-                     var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
-                     int no = 1;
-                     foreach (var item in List)
-                     {
-                         ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email });
-                         no++;
-                     }
-                 }
-                 else
-                 {
-                     ListCustomer.Clear();
-                     var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
-                     int no = 1;
-                     foreach (var item in List)
-                     {
-                         if (item.FullName.Contains(TextSearch))
-                         {
-                             ListCustomer.Add(new Customer { No = no, DoB = item.DoB, DoB_Format = item.DoB.ToShortDateString(), FullName = item.FullName, ID = item.ID, IDPersonal = item.IDPersonal, Phone = item.Phone, Points = item.Points, Email = item.Email });
-                             no++;
-                         }
-
-                     }
-                 }
+                 LoadDataAfterTextSearch();
              }
          );
             Customer.EditCommand = new RelayCommand<object>(
@@ -157,7 +156,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 staff_EditCustomer.Point.Text = SelectedCustomer.Points.ToString();
                 staff_EditCustomer.ID.Text = SelectedCustomer.ID.ToString();
                 staff_EditCustomer.ShowDialog();
-                LoadData();
+                LoadDataAfterTextSearch();
             }
         );
             Customer.DeleteCommand = new RelayCommand<object>(
@@ -197,7 +196,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     }
                     DataProvider.Ins.DB.INFOCUSTOMERs.Remove(DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == SelectedCustomer.ID).FirstOrDefault());
                     DataProvider.Ins.DB.SaveChanges();
-                    LoadData();
+                    LoadDataAfterTextSearch();
                 }
             }
         );

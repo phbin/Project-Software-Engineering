@@ -216,7 +216,8 @@
         <!--ID -->
         <TextBlock
             Text="{Binding ID, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
-            x:Name="ID">
+            x:Name="ID"
+            Foreground="White">
             
         </TextBlock>
         <!--Confirm-->

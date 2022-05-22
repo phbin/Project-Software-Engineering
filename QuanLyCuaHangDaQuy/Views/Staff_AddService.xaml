@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         mc:Ignorable="d"
-                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         WindowStartupLocation="CenterScreen"
+        x:Name="Staff_AddServiceClose"
         WindowStyle="None" Height="658" Width="970">
     <Grid>
         <Grid.Resources>
@@ -47,9 +48,13 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Command="{Binding btnClose}"
                  Background="Transparent"
                  BorderThickness="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=Staff_AddServiceClose}" MethodName="Close"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
                                  Foreground="#BCBCBC" 
                                      HorizontalAlignment="Center"

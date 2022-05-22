@@ -6,12 +6,18 @@
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         mc:Ignorable="d"
         WindowStyle="None"
+        x:Name="Staff_AddReceiptClose"
         WindowStartupLocation="CenterScreen"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         Title="Staff_AddReceipt" Height="489" Width="676">
-    <!--<Window.DataContext>
+    <Window.DataContext>
         <vm:Staff_AddReceiptVM></vm:Staff_AddReceiptVM>
-    </Window.DataContext>-->
+    </Window.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="86"/>
@@ -42,9 +48,13 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Command="{Binding btnClose}"
                  Background="Transparent"
                  BorderThickness="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=Staff_AddReceiptClose}" MethodName="Close"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
                                  Foreground="#BCBCBC" 
                                      HorizontalAlignment="Center"
@@ -85,7 +95,7 @@
                   Background="#E5E5E5">
             <TextBlock 
                        Foreground="Black"
-                       Text="asdasd"
+                       Text="{Binding ID}"
                        Background="#E5E5E5"
                        FontSize="20"
                        VerticalAlignment="Center"
@@ -105,7 +115,7 @@
                   Background="#E5E5E5">
             <TextBlock 
                        Foreground="Black"
-                       Text="asdasd"
+                       Text="{Binding DateBooking_format}"
                        Background="#E5E5E5"
                        FontSize="20"
                        VerticalAlignment="Center"
@@ -125,10 +135,11 @@
                        Grid.Row="8"
                        Foreground="Black"
                        FontSize="20"
+                       DisplayMemberPath="FullName"
                        FontFamily="Lato"
+                       SelectedItem="{Binding SelectedCustomer}"
+                       ItemsSource="{Binding ListCustomer}"
                               Margin="5 0 0 5">
-            <ComboBoxItem Content="Lê Đặng Phương Uyên "></ComboBoxItem>
-            <ComboBoxItem Content="asdasd"></ComboBoxItem>
         </ComboBox>
         <!--Status-->
         <TextBlock Text="Status"
@@ -143,7 +154,7 @@
                   Background="#E5E5E5">
             <TextBlock 
                        Foreground="Black"
-                       Text="asdasd"
+                       Text="{Binding Stt}"
                        Background="#E5E5E5"
                        FontSize="20"
                        VerticalAlignment="Center"
@@ -160,6 +171,9 @@
                     HorizontalAlignment="Center"
                     Content="Confirm"
                     Foreground="White"
+                                CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}"
+                Command="{Binding AddCommand}"
                     BorderThickness="0"
                     FontSize="21"
                  materialDesign:ShadowAssist.ShadowDepth="Depth0" 

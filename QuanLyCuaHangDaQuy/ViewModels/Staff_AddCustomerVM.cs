@@ -96,26 +96,25 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                        MessageBox.Show("Email invalidate");
                        return;
                    }
-                   int Result;
-                   if (int.TryParse(IDPersonal, out Result) == false)
+                   if (IDPersonal.Length >= 20)
                    {
-                       MessageBox.Show("ID Personal only accepts numbers");
+                       MessageBox.Show("ID Personal too long");
                        IDPersonal = "";
                        return;
                    }
-                   if (int.TryParse(Phone, out Result) == false)
+                   if (Phone.Length >= 20)
                    {
-                       MessageBox.Show("Phone only accepts numbers");
+                       MessageBox.Show("Phone too long");
                        Phone = "";
                        return;
                    }
-                   if (int.TryParse(Points, out Result) == false)
+                   if (Points.Length >= 11)
                    {
-                       MessageBox.Show("Points only accepts numbers");
+                       MessageBox.Show("Points too long");
                        Points = "0";
                        return;
                    }
-                       var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
+                   var List = DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
                        foreach (var item in List)
                        {
                            if (item.IDPersonal == long.Parse(IDPersonal))
@@ -125,8 +124,17 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                                return;
                            }
                        }
-                       int i=DataProvider.Ins.DB.INFOCUSTOMERs.Count();
-                       DataProvider.Ins.DB.INFOCUSTOMERs.Add(new INFOCUSTOMER { DoB = DateTime.Parse(Birthday, CultureInfo.InvariantCulture), Phone = Phone, IDPersonal = long.Parse(IDPersonal), FullName = FullName, Email = Email, Points = int.Parse(Points), ID = "Customer"+(i+1).ToString()});
+                   bool Flag = false;
+                   int Temp = 0;
+                   while (Flag == false)
+                   {
+                       Temp++;
+                       if (DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.ID == "CS" + (Temp).ToString()).FirstOrDefault() == null)
+                       {
+                           Flag = true;
+                       }
+                   }
+                   DataProvider.Ins.DB.INFOCUSTOMERs.Add(new INFOCUSTOMER { DoB = DateTime.Parse(Birthday, CultureInfo.InvariantCulture), Phone = Phone, IDPersonal = long.Parse(IDPersonal), FullName = FullName, Email = Email, Points = int.Parse(Points), ID = "Customer"+(Temp).ToString()});
                        DataProvider.Ins.DB.SaveChanges();
                        (p as Window).Close();
                }

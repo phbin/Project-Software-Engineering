@@ -4,9 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
-         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         mc:Ignorable="d"
         WindowStyle= "None"
+        x:Name="Staff_ListServiceClose"
         WindowStartupLocation="CenterScreen"
         Title="Staff_DetailReceipt" Height="576" Width="970">
     <Grid>
@@ -31,9 +32,13 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Command="{Binding btnClose}"
                  Background="Transparent"
                  BorderThickness="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=Staff_ListServiceClose}" MethodName="Close"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
                                  Foreground="#BCBCBC" 
                                      HorizontalAlignment="Center"

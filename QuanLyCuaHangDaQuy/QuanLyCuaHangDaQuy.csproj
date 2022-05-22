@@ -156,10 +156,13 @@
     <Compile Include="ViewModels\Customer.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\Receipt.cs" />
     <Compile Include="ViewModels\Staff_AddCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_AddReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_EditCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_EditServiceVM.cs" />
     <Compile Include="ViewModels\Staff_ListCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_ListReceiptVM.cs" />
     <Compile Include="Views\AddAccountWindow.xaml.cs">
       <DependentUpon>AddAccountWindow.xaml</DependentUpon>
     </Compile>
