@@ -1,17 +1,18 @@
-﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.AdminWindow"
+﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.Admin.AdminWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
-        xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"        
         xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         mc:Ignorable="d"
         x:Name="wdAdmin"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="768" Width="1080"
+        Height="768" Width="1080"
         FontFamily="Lato"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -20,9 +21,8 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}">
     <Window.DataContext>
-        <viewmodels:AdminViewModel></viewmodels:AdminViewModel>
+        <viewmodels:AdminViewModel/>
     </Window.DataContext>
-
     <Window.Resources>
         <Style x:Key="MenuBarBtStyle" TargetType="{x:Type Button}">
             <Setter Property="Background" Value="{x:Null}"/>
@@ -259,18 +259,70 @@
         </DockPanel>
 
         <Grid Grid.Row="1" Margin="17 0 17 17">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1011*"/>
-                <ColumnDefinition Width="29*"/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="78"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
+            <Grid Grid.Row="0">
+                <!--ds-->
+                <DockPanel x:Name="btSwitchTableCatelogy" 
+                    Width="166" HorizontalAlignment="Left" Visibility="Collapsed">
+                    <Button Style="{StaticResource MaterialDesignPaperSecondaryButton}"
+                            x:Name="btMaterial"
+                            Uid="60"
+                            Padding="0"
+                            Height="36"
+                            Width="83"
+                            Content="Material"
+                            BorderBrush="#BCBCBC"   
+                            Foreground="#BCBCBC"
+                            FontSize="19.5"
+                            BorderThickness="1.5"
+                            DockPanel.Dock="Left"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="0"
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding ElementName=wdAdmin}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btMaterial}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+
+
+                    <Button Style="{StaticResource MaterialDesignPaperSecondaryButton}"
+                            x:Name="btForm"
+                            Uid="70"
+                            Padding="0"
+                            Height="36"
+                            Width="83"
+                            Content="Form"
+                            DockPanel.Dock="Right"  
+                            BorderBrush="#BCBCBC"
+                            Foreground="#BCBCBC"                
+                            FontSize="19.5"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="0"
+                            BorderThickness="1.5"                             
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding ElementName=wdAdmin}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btForm}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                </DockPanel>
+
+
+                <!--add-->
                 <Button
+                    x:Name="btAdd"
                     Style="{StaticResource MaterialDesignFlatDarkButton}"
                     Height="36"
                     Width="106"
@@ -280,7 +332,10 @@
                     Background="#FCC871"
                     Foreground="Black"
                     HorizontalAlignment="Left"
-                    BorderBrush="#BCBCBC">
+                    BorderBrush="#BCBCBC"
+                    Command="{Binding OpenAddWindow}"
+                    CommandParameter="{Binding ElementName=wdAdmin}"
+                    Visibility="Visible">
                     <DockPanel Width="75" LastChildFill="False">
                         <TextBlock Text="Add"
                                    DockPanel.Dock="Left"
@@ -312,7 +367,7 @@
                     <DockPanel Margin="15 0 0 0">
                         <TextBox 
                             x:Name="txtSearch"
-                            Width="294"
+                            Width="300"
                             materialDesign:HintAssist.Hint="Tim sthing"
                             FontSize="18" 
                             FontWeight="Medium" 
@@ -321,8 +376,7 @@
                             Foreground="#ABABAB" 
                             Background="Transparent"
                             BorderThickness="0" 
-                            DockPanel.Dock="Left"
-                            />
+                            DockPanel.Dock="Left"/>
                         <Button 
                             Height="30"
                             Width="30"
@@ -348,9 +402,17 @@
 
 
             <!--HR grid-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grHR" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grHR"
+                  DataContext="{StaticResource HumanResourcesVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadCommand}" 
+                                               CommandParameter="{Binding ElementName=wdAdmin}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -358,7 +420,7 @@
                 <Border Grid.Row="0"
                         BorderThickness="0"
                         CornerRadius="10,10,0,0"
-                        Background="#FCC871">
+                        Background="#FCC871" Grid.ColumnSpan="2">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="107"/>
@@ -391,14 +453,22 @@
                         BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Loaded">
+                            <i:InvokeCommandAction Command="{Binding LoadCommand}"
+                                                   CommandParameter="{Binding ElementName=wdAdmin}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <StackPanel
+                        x:Name="stkHR">
+                    </StackPanel>
                 </Border>
             </Grid>
-
             <!--Account-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grAccount" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grAccount">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -440,9 +510,9 @@
             </Grid>
 
             <!--Customer Grid-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grCustomer" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grCustomer">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -498,9 +568,9 @@
             </Grid>
 
             <!--Provider-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grProvider" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grProvider">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -547,9 +617,9 @@
 
             <!--Catelogy grid-->
             <!--Material-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grMaterial" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grMaterial">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -591,9 +661,9 @@
             </Grid>
 
             <!--Form-->
-            <Grid
+            <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grForm" Grid.ColumnSpan="2" Margin="0,78,-0.4,-0.2" Grid.RowSpan="2">
+                  x:Name="grForm">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="58"/>
                     <RowDefinition/>
@@ -632,9 +702,11 @@
 
             <!--Service Grid-->
 
+
             <!--report grid-->
 
 
         </Grid>
     </Grid>
 </Window>
+

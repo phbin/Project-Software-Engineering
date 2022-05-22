@@ -28,12 +28,14 @@ namespace QuanLyCuaHangDaQuy.Models
         }
     
         public virtual DbSet<ACCOUNT> ACCOUNTs { get; set; }
+        public virtual DbSet<CART> CARTS { get; set; }
         public virtual DbSet<CUSSERVICE> CUSSERVICEs { get; set; }
         public virtual DbSet<FORMCATEGORY> FORMCATEGORies { get; set; }
         public virtual DbSet<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
         public virtual DbSet<INFOCUSTOMER> INFOCUSTOMERs { get; set; }
         public virtual DbSet<INFOPROVIDER> INFOPROVIDERs { get; set; }
         public virtual DbSet<INFOSTAFF> INFOSTAFFs { get; set; }
+        public virtual DbSet<ITEMBILL> ITEMBILLs { get; set; }
         public virtual DbSet<ITEMBILLFORM> ITEMBILLFORMs { get; set; }
         public virtual DbSet<ITEMFORM> ITEMFORMs { get; set; }
         public virtual DbSet<ITEM> ITEMS { get; set; }
@@ -41,7 +43,6 @@ namespace QuanLyCuaHangDaQuy.Models
         public virtual DbSet<SERVICECATEGORY> SERVICECATEGORies { get; set; }
         public virtual DbSet<SERVICELIST> SERVICELISTs { get; set; }
         public virtual DbSet<UNIT> UNITs { get; set; }
-        public virtual DbSet<CART> CARTS { get; set; }
     
         public virtual int USP_Carts(string iditem)
         {

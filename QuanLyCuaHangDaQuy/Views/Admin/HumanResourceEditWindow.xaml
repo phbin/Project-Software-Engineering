@@ -13,6 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         FontFamily="Lato"
+        x:Name="winHREdit"
         DataContext="{StaticResource HumanResourcesVM}">
     <Window.Resources>
 
@@ -120,8 +121,10 @@
                         <Ellipse Width="124"
                              Height="124">
                             <Ellipse.Fill>
-                                <ImageBrush
-                                     ImageSource="{Binding }">
+                                <ImageBrush>
+                                    <ImageBrush.ImageSource>
+                                        <BitmapImage UriSource="\Resources\Images\b.jpg" />
+                                    </ImageBrush.ImageSource>
                                 </ImageBrush>
                             </Ellipse.Fill>
                         </Ellipse>
@@ -137,10 +140,15 @@
                     </Label>
                     <TextBox
                         Uid="10"
-                        x:Name="NameTxtb"
+                        x:Name="TxtbName"
                         materialDesign:HintAssist.Hint="Enter Name"  
-                        HorizontalAlignment="Left"/>
-
+                        HorizontalAlignment="Left">
+                        <TextBox.Text>
+                            <Binding Path="Fullname"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
                     <Label Style="{StaticResource labelStyle}" 
                                Content="Day of birth"
                                Margin="0 21 0 13"/>
@@ -148,7 +156,14 @@
                         x:Uid="20"
                         Height="28"
                         Width="223"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left"
+                        x:Name="dpDayOfBirth">
+                        <DatePicker.Text>
+                            <Binding Path="DoB"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </DatePicker.Text>
+                    </DatePicker>
 
                     <Label 
                         x:Name="SexLabel"
@@ -157,8 +172,12 @@
                        Margin="0 21 0 0"/>
                     <ComboBox
                         Height="41"
-                        Width="225"/>
-
+                        Width="225"
+                        x:Name="cbSex">
+                        <ComboBoxItem Content="Male"/>
+                        <ComboBoxItem Content="Female"/>
+                       
+                    </ComboBox>
 
                 </StackPanel>
 
@@ -170,10 +189,16 @@
                        Margin="0 43 0 13"
                            Uid="40"/>
                     <TextBox 
-                        x:Name="AddressTxtb"
+                        x:Name="TxtbAddress"
                         Uid="40"
                         materialDesign:HintAssist.Hint="Enter Address"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left">
+                        <TextBox.Text>
+                            <Binding Path="Address"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
                     <Label x:Name="PhoneLabel"
                         Style="{StaticResource labelStyle}" 
@@ -182,9 +207,16 @@
                            Uid="50"/>
                     <TextBox 
                         Uid="70"
-                        x:Name="PhoneTxtb"
+                        x:Name="TxtbPhone"
                         materialDesign:HintAssist.Hint="Enter Phone Number"
-                           HorizontalAlignment="Left" />
+                        HorizontalAlignment="Left" 
+                        MaxLength="11">
+                        <TextBox.Text>
+                            <Binding Path="PhoneNumber"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
                     <Label x:Name="EmailLabel"
                            Uid="60"
@@ -193,10 +225,16 @@
                        Margin="0 21 0 13"/>
                     <TextBox 
                             Uid="60"
-                           x:Name="EmailTxtb"
+                           x:Name="TxtbEmail"
                            materialDesign:HintAssist.Hint="Enter Email"
                            HorizontalAlignment="Left"
-                           />
+                           >
+                        <TextBox.Text>
+                            <Binding Path="Email"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
                     <Label x:Name="IDLabel"
                         Style="{StaticResource labelStyle}" 
@@ -204,17 +242,23 @@
                        Margin="0 21 0 13"
                             Uid="70"/>
                     <TextBox 
-                        x:Name="IDTxtb"
+                        x:Name="TxtbID"
                         Uid="70"
                         materialDesign:HintAssist.Hint="Enter Personal ID"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left">
+                        <TextBox.Text>
+                            <Binding Path="ID"
+                                     UpdateSourceTrigger="PropertyChanged">
+                            </Binding>
+                        </TextBox.Text>
+                    </TextBox>
 
                 </StackPanel>
             </Grid>
             
             <!--BUTTON-->
             <Grid Grid.Row="2">
-                <Button 
+                <Button x:Name="btSave"
                     Style="{StaticResource MaterialDesignFlatButton}"
                     materialDesign:ButtonAssist.CornerRadius="0"
                     VerticalAlignment="Center"
@@ -224,7 +268,9 @@
                     Content="Confirm"
                     FontSize="21"
                     Background="#FCC871"
-                    Foreground="#FFFFFF"/>
+                    Foreground="#FFFFFF"
+                    Command="{Binding SaveCommand}"
+                    CommandParameter="{Binding ElementName=winHREdit}"/>
 
 
         </Grid>

@@ -97,8 +97,12 @@
                     <Ellipse Width="124"
                              Height="124">
                         <Ellipse.Fill>
-                                <ImageBrush ImageSource="{Binding }"/>
-                            </Ellipse.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage UriSource="\Resources\Images\b.jpg" />
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Ellipse.Fill>
                     </Ellipse>
                 </Grid>
                 
@@ -108,7 +112,8 @@
                        Margin="0 12 0 13"/>
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="Nguyễn Hoàng Tuấn"
-                           HorizontalAlignment="Left"/>
+                           HorizontalAlignment="Left"
+                           x:Name="txtbName"/>
 
 
                 <Label Style="{StaticResource labelStyle}" 
@@ -116,7 +121,8 @@
                        Margin="0 21 0 13"/>
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="12/27/2002"
-                           HorizontalAlignment="Left"/>
+                           HorizontalAlignment="Left"
+                           x:Name="txtbDayOfBirth"/>
 
                 <Label Style="{StaticResource labelStyle}" 
                        Content="Sex"
@@ -132,17 +138,20 @@
             <StackPanel Grid.Column="1" HorizontalAlignment="Right">
                 <Label Style="{StaticResource labelStyle}" 
                        Content="Address"
-                       Margin="0 38 0 13"/>
+                       Margin="0 38 0 13"
+                       />
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="bla bla bla "
-                           HorizontalAlignment="Left"/>
+                           HorizontalAlignment="Left"
+                           x:Name="txtbAddress"/>
 
                 <Label Style="{StaticResource labelStyle}" 
                        Content="Phone number"
                        Margin="0 26 0 13"/>
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="0833627xxx"
-                           HorizontalAlignment="Left"/>
+                           HorizontalAlignment="Left"
+                           x:Name="txtbPhoneNumber"/>
 
                 <Label Style="{StaticResource labelStyle}" 
                        Content="Email"     
@@ -150,14 +159,16 @@
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="20520344@gm.uit.edu.vn"
                            HorizontalAlignment="Left"
-                           TextTrimming="CharacterEllipsis"/>
+                           TextTrimming="CharacterEllipsis"
+                           x:Name="txtbEmail"/>
 
                 <Label Style="{StaticResource labelStyle}" 
                        Content="Personal ID"
                        Margin="0 21 0 13"/>
                 <TextBlock Style="{StaticResource InformationTextBlockStyle}"
                            Text="20520344"
-                           HorizontalAlignment="Left"/>
+                           HorizontalAlignment="Left"
+                           x:Name="txtbPersonalID"/>
                 
             </StackPanel>
         </Grid>

@@ -9,7 +9,7 @@
              d:DesignHeight="62.75" d:DesignWidth="1080">
     <DockPanel>
         <DockPanel DockPanel.Dock="Top">
-            <Border Height="34.5" Width="355.5" Margin="702.75,13.75,21.75,14.75" BorderBrush="Silver" BorderThickness="1" CornerRadius="30,30,30,30">
+            <Border Height="34.5" Width="355.5" Margin="702.75,13.75,21.75,14.75" BorderBrush="Silver" BorderThickness="1" CornerRadius="22.5">
                 <Grid>
                     <TextBox Height="35" Width="282" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Foreground="#FFABABAB"
                          x:Name="txtSearchItems"     

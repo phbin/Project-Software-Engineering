@@ -4,8 +4,11 @@
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
              xmlns:viewModel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
              xmlns:view="clr-namespace:QuanLyCuaHangDaQuy.Views"
-             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" xmlns:view1="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" xmlns:view11="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" x:Class="QuanLyCuaHangDaQuy.App"
-             StartupUri="Views/Staff/MainStaffWindow.xaml">  
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
+             xmlns:view1="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" 
+             xmlns:view11="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
+             x:Class="QuanLyCuaHangDaQuy.App"
+             StartupUri="/Views/LoginWindow.xaml">  
 
     <Application.Resources>
         <ResourceDictionary>

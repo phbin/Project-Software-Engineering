@@ -52,12 +52,14 @@
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -79,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConvertImage.cs" />
     <Compile Include="Models\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -105,6 +108,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMBILL.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ITEMBILLFORM.cs">
@@ -152,6 +158,9 @@
     <Compile Include="Resources\UserControls\ExitButton.xaml.cs">
       <DependentUpon>ExitButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\UserControls\HumanResourceControl.xaml.cs">
+      <DependentUpon>HumanResourceControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\UserControls\ItemsControl.xaml.cs">
       <DependentUpon>ItemsControl.xaml</DependentUpon>
     </Compile>
@@ -164,6 +173,7 @@
     <Compile Include="Resources\UserControls\ShowProductUC.xaml.cs">
       <DependentUpon>ShowProductUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
@@ -171,11 +181,18 @@
     <Compile Include="ViewModels\ExitButton.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\HumanResourcesViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainStaffViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProviderViewModel.cs" />
+    <Compile Include="ViewModels\SelectedItem.cs" />
+    <Compile Include="ViewModels\SelectedProductCartVM.cs" />
     <Compile Include="ViewModels\ShopItemsClickViewModel.cs" />
     <Compile Include="Views\Admin\AccountManagerWindow.xaml.cs">
       <DependentUpon>AccountManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Admin_Service\AddEditService.xaml.cs">
       <DependentUpon>AddEditService.xaml</DependentUpon>
@@ -200,6 +217,9 @@
     </Compile>
     <Compile Include="Views\Admin\InventoryInfo.xaml.cs">
       <DependentUpon>InventoryInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
@@ -278,6 +298,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Resources\UserControls\HumanResourceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\UserControls\ItemsControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -297,6 +321,10 @@
     <Page Include="Views\Admin\AccountManagerWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Admin\Admin_Service\AddEditService.xaml">
       <SubType>Designer</SubType>
@@ -318,19 +346,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\AdminWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\RelayCommand.cs" />
-    <Compile Include="Views\Admin\AdminWindow.xaml.cs">
-      <DependentUpon>AdminWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
     <Page Include="Resources\MainResource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -346,6 +366,10 @@
     <Page Include="Views\Admin\InventoryInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Staff\HomeWindow.xaml">
       <SubType>Designer</SubType>
@@ -488,6 +512,12 @@
     <Resource Include="Resources\Image\home.png" />
     <Resource Include="Resources\Image\necklace.png" />
     <Resource Include="Resources\Image\ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\passwordIcon.png" />
+    <Resource Include="Resources\Image\userIcon.png" />
+    <Resource Include="Resources\Image\loginWindowBG.png" />
+    <Resource Include="Resources\Image\madlife.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">

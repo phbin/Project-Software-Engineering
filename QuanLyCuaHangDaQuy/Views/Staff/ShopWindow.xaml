@@ -6,9 +6,10 @@
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
              xmlns:uc="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
              xmlns:self="clr-namespace:QuanLyCuaHangDaQuy"
-             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
-             d:DataContext="{d:DesignInstance Type=viewmodels:MainStaffViewModel}"
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:MainStaffViewModel}"
+             Name="wdShop"
              d:DesignHeight="702.75" d:DesignWidth="1080"         
              >
     <UserControl.Resources>
@@ -19,7 +20,7 @@
         </ResourceDictionary>
     </UserControl.Resources>
     <DockPanel>
-        <DockPanel DockPanel.Dock="Top">
+        <DockPanel Width="1080" DockPanel.Dock="Top">
             <uc:SearchBarUC></uc:SearchBarUC>
         </DockPanel>
         <!--category-->
@@ -27,33 +28,38 @@
             <Grid Margin="29.25,25,29.25,17.25">
                 <Border Width="223.5" BorderBrush="Silver" BorderThickness="1" CornerRadius="7.5,7.5,7.5,7.5"
                           Background="#FFF0F0F0"/>
-                <TextBlock Text="CATEGORY"
+                <TreeView Foreground="#ABABAB" 
+                  FontSize="10"
+                  FontWeight="SemiBold"
+                  FontFamily="/QuanLyCuaHangDaQuy;component/Resources/Fonts/#Lato">
+                    <TreeViewItem Name="trvCategory"
+                        Header="CATEGORY"
                                   FontFamily="Lato"
                                   FontSize="18.75"
                                   Foreground="#E0A645" 
                                   FontWeight="SemiBold"
                                   HorizontalAlignment="Center"
-                                  Margin="0,20.25">
-                </TextBlock>
-                <TreeView Name="trvCategory">
-                    
-                    <TreeViewItem
-                            Header="Ring"
+                                  Margin="0,20.25, 0 ,10" >
+                    </TreeViewItem>
+
+                    <TreeViewItem 
+                        Name="trvMaterial"
+                        Header="MATERIAL"
                                   FontFamily="Lato"
-                                  FontSize="12.75"
-                                  Foreground="#ABABAB" 
+                                  FontSize="18.75"
+                                  Foreground="#E0A645" 
                                   FontWeight="SemiBold"
-                                  HorizontalAlignment="Left"
-                                  Margin="30.75,73.5">
+                                  HorizontalAlignment="Center"
+                                  Margin="0,0, 0 ,22.75" >
+
                     </TreeViewItem>
                 </TreeView>
             </Grid>
         </DockPanel>
         <!--items-->
         <DockPanel>
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                
-                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" >
+            <ScrollViewer x:Name="wrp" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                <WrapPanel HorizontalAlignment="Center" VerticalAlignment="Top" Name="wrpItem" >
                     <WrapPanel.Resources>
                         <Style TargetType="{x:Type uc:ItemsControl}">
                             <Style.Setters>
@@ -61,13 +67,12 @@
                             </Style.Setters>
                         </Style>
                     </WrapPanel.Resources>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
-                    <uc:ItemsControl Margin="20"></uc:ItemsControl>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger>
+                            <i:InvokeCommandAction Command="{Binding LoadItemCommand}"
+                                                               CommandParameter="{Binding ElementName=wdShop}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </WrapPanel>
             </ScrollViewer>
         </DockPanel>

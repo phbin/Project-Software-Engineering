@@ -7,10 +7,15 @@
         xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"        
         xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:CartViewModel}"
              mc:Ignorable="d" 
+             Name="ucSelected"
              d:DesignHeight="135" d:DesignWidth="670"
              FontFamily="/Resources/Fonts/#Lato">
+    <UserControl.DataContext>
+        <viewmodels:CartViewModel></viewmodels:CartViewModel>
+    </UserControl.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="135"/>
@@ -24,31 +29,45 @@
                    Width="690"
                    VerticalAlignment="Bottom" 
                    Grid.ColumnSpan="5"></Rectangle>
-        <Image Grid.Column="0"                   
+        <Image Grid.Column="0"      
+               Name="imgItem"
                Source="/Resources/Image/avatar.png"/>
         <StackPanel Grid.Column="1" Margin="30 0 30 0">
             <TextBlock Text="=)))))"
+                       Name="txtName"
                        FontSize="23"
                        FontWeight="Bold" Margin="0,20,0,0"/>
             <TextBlock Text="Uyen ga blaaaaaaaa"
+                       Name="txtMaterial"
+                       FontSize="15.75"
+                       Foreground="#ABABAB"
+                       />
+            <TextBlock Text="Uyen ga blaaaaaaaa"
+                       Name="txtForm"
                        FontSize="15.75"
                        Foreground="#ABABAB"
                        />
         </StackPanel>
         <TextBlock Grid.Column="2"
                    Text="3.000.000d"
+                   Name="txtPrice"
                    FontSize="15.75"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"
                    Foreground="#ABABAB"/>
+        <TextBlock Visibility="Hidden"
+                   Name="txtIDItem"     />
         <WrapPanel Height="20" 
                     Grid.Column="3">
             <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
                     Height="18"
+                    Name="btnMinus"
                     Padding="0"
                     Margin="0 0 4 0"
                     Content="{materialDesign:PackIcon Minus}"
-                    Foreground="#ABABAB">
+                    Foreground="#ABABAB"
+                    Click="Button_Click"
+                >
             </Button>
 
 
@@ -56,17 +75,21 @@
                     Width="40"
                     Background="#DFDFDF"
                     CornerRadius="3.75">
-                <TextBlock Text="0"
+                <TextBlock 
+                           Name="txtQuantity"
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center"
+                           Padding="0"
                            Foreground="#ABABAB"
                            FontWeight="Bold"/>
             </Border>
             <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
                     Height="18"
+                    Name="btnPlus"
                     Padding="0"
                     Margin="4 0 0 0"
                     Content="{materialDesign:PackIcon Plus}"
+                    Click="btnPlus_Click"
                     Foreground="#ABABAB"
                     >
             </Button>
@@ -74,7 +97,10 @@
 
         <Button Grid.Column="4"
                 Width="30"
+                Name="btnExit"
                 Height="30"
+                Command="{Binding DeleteCommand}"
+                CommandParameter="{Binding ElementName=ucSelected}"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                    Style="{StaticResource MaterialDesignIconForegroundButton}">

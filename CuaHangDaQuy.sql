@@ -90,6 +90,7 @@ create table IMPORTEDITEMS
 	IDProd varchar(50) not null,
 	IDForm varchar(50) not null,
 	IDMaterial varchar(50) not null,
+	SellQty int,
 	Quantity int, --số lượng mỗi sản phẩm
 	PurchasePrice float not null default 0, --đơn giá mua vào từng sản phẩm
 	Price float, --đơn giá bán ra = PurchasePrice+(PurchasePrice*Profit)
@@ -109,18 +110,18 @@ create table ITEMBILLFORM
 	ID varchar(50) primary key,
 	IDProd varchar(50) not null,
 	DateBooking smalldatetime not null default getdate(), --ngày lập phiếu
-	constraint FK_ItemBillForm_InfoCustomer foreign key (IDProd) references InfoProvider(ID),
+	constraint FK_ItemBillForm_InfoCustomer foreign key (IDProd) references InfoProvider(ID)
 )
 go
 
 --Danh sách sản phẩm mua vào
 create table ITEMBILL
 (
+	ID varchar(50) primary key,
 	IDItemBillForm varchar(50) not null,
 	IDItem varchar(50) not null, 
 	constraint FK_IDItemBill_ItemBillForm foreign key (IDItemBillForm) references ItemBillForm(ID),
-	constraint FK_IDItemBill_ImportedItems foreign key (IDItem) references ImportedItems(ID),
-	constraint PK_IDItemBill primary key(IDItemBillForm,IDItem)
+	constraint FK_IDItemBill_ImportedItems foreign key (IDItem) references ImportedItems(ID)
 )
 go
 
@@ -138,15 +139,15 @@ go
 
 --Danh sách sản phẩm mỗi khách hàng mua
 create table ITEMS
-(
+(	
+	ID varchar(50) primary key,
 	IDItemForm varchar(50) not null,
 	IDItem varchar(50) not null, 
 	Total float not null, --thành tiền từng sản phẩm = Đơn giá*Số lượng
 	Quantity int, --số lượng mỗi sản phẩm
 	DateSell smalldatetime not null default getdate(), --ngày bán
 	constraint FK_Items_ItemForm foreign key (IDItemForm) references ItemForm(ID),
-	constraint FK_Items_ImportedItems foreign key (IDItem) references ImportedItems(ID),
-	constraint PK_Items primary key(IDItemForm,IDItem)
+	constraint FK_Items_ImportedItems foreign key (IDItem) references ImportedItems(ID)
 )
 go
 
@@ -171,6 +172,7 @@ go
 
 create table SERVICELIST --danh sách dịch vụ của mỗi khách hàng
 (
+	ID varchar(50) primary key,
 	IDCusService varchar(50) not null, --ID phiếu dịch vụ
 	IDService varchar(50) not null, --ID loại dịch vụ
 	Quantity int, --số lượng mỗi dịch vụ được chọn ở trên
@@ -183,7 +185,6 @@ create table SERVICELIST --danh sách dịch vụ của mỗi khách hàng
 	Stt nvarchar(50) not null --tình trạng (đã giao hoặc chưa giao)
 	constraint FK_ServiceList_ServiceCategory foreign key (IDService) references ServiceCategory(ID),
 	constraint FK_ServiceList_CusService foreign key (IDCusService) references CusService(ID),
-	constraint PK_ServiceList primary key(IDCusService,IDService),
 	--constraint Check_ServiceList check (Prepay >= Total*0.5)
 )
 go
@@ -191,6 +192,7 @@ go
 --Giỏ hàng
 create table CARTS
 (
+	ID varchar(50) primary key,
 	IDItem varchar(50) not null,
 	Quantity int, --số lượng
 	Total float, --thành tiền
@@ -314,9 +316,9 @@ insert into InfoStaff values('NV03', 'Thịnh', '23/03/2002', 'Nam', 'Kiên Gian
 insert into InfoStaff values('NV04', 'Bình', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','51244131', '1')
 insert into InfoStaff values('NV05', 'Tuấn', '23/03/2002', 'Nam', 'Kiên Giang', '0848867679', '20520857@gm.uit.edu.vn', '','125412', '1')
 
-insert into Account values('huynhthevi', '123456', 'NV01', '1')
-insert into Account values('neyu', '123456', 'NV02', '0')
-insert into Account values('thinh', '123456', 'NV03', '0')
+insert into Account values('huynhthevi', 'e10adc3949ba59abbe56e057f20f883e', 'NV01', '1')
+insert into Account values('neyu', 'e10adc3949ba59abbe56e057f20f883e', 'NV02', '0')
+insert into Account values('thinh', 'e10adc3949ba59abbe56e057f20f883e', 'NV03', '0')
 
 insert into InfoCustomer values('KH01', 'Khách hàng 1', '23/03/2002', '0123912312', 'kh@gm.com', '123123123', '10')
 insert into InfoCustomer values('KH02', 'Khách hàng 2', '23/03/2002', '0123912312', 'kh@gm.com', '123123133', '0')
@@ -327,23 +329,29 @@ insert into INFOPROVIDER values('NCC2', 'Nhà cung cấp 2', 'SG', '012312312')
 insert into INFOPROVIDER values('NCC3', 'Nhà cung cấp 3', 'SG', '012312312')
 
 select * from ImportedItems
-insert into ImportedItems values('SP1', N'Necklace', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
-insert into ImportedItems values('SP2', N'Ring', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
-insert into ImportedItems values('SP3', N'Bracelet', 'NCC2', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
-insert into ImportedItems values('SP4', N'Earrings', 'NCC1', 'F01', 'M01', 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP1', N'Necklace', 'NCC1', 'F01', 'M01',100, 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP2', N'Ring', 'NCC1', 'F01', 'M01', 100, 100,200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP3', N'Bracelet', 'NCC2', 'F01', 'M01',100, 100, 200000, '', '', '', 'abc', '')
+insert into ImportedItems values('SP4', N'Earrings', 'NCC1', 'F01', 'M01',100, 100, 200000, '', '', '', 'abc', '')
 exec USP_UpdateImportedItems 'SP1'
 exec USP_UpdateImportedItems 'SP2'
 exec USP_UpdateImportedItems 'SP3'
 exec USP_UpdateImportedItems 'SP4'
 
+update ImportedItems set Picture = (select * from openrowset(bulk N'C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\Image\necklace.png', single_blob) as img) where ID = 'SP1'
+update ImportedItems set Picture = (select * from openrowset(bulk N'C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\Image\ring.png', single_blob) as img) where ID = 'SP2'
+update ImportedItems set Picture = (select * from openrowset(bulk N'C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\Image\bracelet.png', single_blob) as img) where ID = 'SP3'
+update ImportedItems set Picture = (select * from openrowset(bulk N'C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\Image\earrings.png', single_blob) as img) where ID = 'SP4'
+
+
 select * from ITEMBILLFORM
 insert into ITEMBILLFORM values('B01', 'NCC1', '')
 
 select * from ITEMBILL
-insert into ITEMBILL values('B01', 'SP1')
-insert into ITEMBILL values('B01', 'SP2')
-insert into ITEMBILL values('B01', 'SP3')
-insert into ITEMBILL values('B01', 'SP4')
+insert into ITEMBILL values('IB1','B01', 'SP1')
+insert into ITEMBILL values('IB2','B01', 'SP2')
+insert into ITEMBILL values('IB3','B01', 'SP3')
+insert into ITEMBILL values('IB4','B01', 'SP4')
 
 
 select * from ITEMFORM
@@ -352,13 +360,13 @@ insert into ITEMFORM values('B02', 'KH01', 'NV01', '')
 insert into ITEMFORM values('B03', 'KH01', 'NV01', '')
 
 select * from Items
-insert into Items values('B01', 'SP1', '', 1, '')
-insert into Items values('B01', 'SP2', '', 1, '')
-insert into Items values('B01', 'SP3', '', 1, '')
-insert into Items values('B02', 'SP1', '', 3, '')
+insert into Items values('I01','B01', 'SP1', '', 1, '')
+insert into Items values('I02','B02', 'SP2', '', 1, '')
+insert into Items values('I03', 'B01','SP3', '', 1, '')
+insert into Items values('I04','B02', 'SP1', '', 3, '')
 
 exec USP_UpdateItems 'B01','SP1'
-exec USP_UpdateItems 'B01','SP2'
+exec USP_UpdateItems 'B02','SP2'
 exec USP_UpdateItems 'B01','SP3'
 exec USP_UpdateItems 'B02','SP1'
 
@@ -373,10 +381,10 @@ insert into CusService values('CS2', 'KH02', '', 'unfinish')
 insert into CusService values('CS3', 'KH02', '', 'unfinish')
 
 select * from SERVICELIST
-insert into SERVICELIST values('CS1', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
-insert into SERVICELIST values('CS2', 'SV3', 1, '', 0, '', 50000, '', '', 'unfinish')
-insert into SERVICELIST values('CS3', 'SV2', 1, '', 0, '', 50000, '', '', 'unfinish')
-insert into SERVICELIST values('CS3', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('S01','CS1', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('S02','CS2', 'SV3', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('S03','CS3', 'SV2', 1, '', 0, '', 50000, '', '', 'unfinish')
+insert into SERVICELIST values('S04','CS3', 'SV1', 1, '', 0, '', 50000, '', '', 'unfinish')
 
 exec USP_UpdateServiceList 'CS1','SV1'
 exec USP_UpdateServiceList 'CS2','SV3'
@@ -384,10 +392,10 @@ exec USP_UpdateServiceList 'CS3','SV2'
 exec USP_UpdateServiceList 'CS3','SV1'
 
 select * from CARTS
-insert into CARTS values('SP1', 1, '')
-insert into CARTS values('SP2', 2, '')
-insert into CARTS values('SP3', 5, '')
-insert into CARTS values('SP4', 1, '')
+insert into CARTS values('1','SP1', 1, '')
+insert into CARTS values('2','SP2', 2, '')
+insert into CARTS values('3','SP3', 5, '')
+insert into CARTS values('4','SP4', 1, '')
 exec USP_Carts 'SP1'
 exec USP_Carts 'SP2'
 exec USP_Carts 'SP3'

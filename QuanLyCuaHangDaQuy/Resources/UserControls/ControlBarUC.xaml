@@ -120,8 +120,8 @@
                      Width="113.75"
                      Height="33.75"
                      Margin="0,0,30,0"
-                     Content="Customer"
-                     >
+                     Content="Customer">
+
                     </Button>
                     <Button
                      Style="{StaticResource ButtonMenu}"

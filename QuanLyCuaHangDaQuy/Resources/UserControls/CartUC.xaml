@@ -6,9 +6,21 @@
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
              mc:Ignorable="d"
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
              d:DesignHeight="702.75" d:DesignWidth="1080"
+             d:DataContext="{d:DesignInstance Type=viewmodels:CartViewModel}"
+             Name="wdCart"
              FontFamily="/Resources/Fonts/#Lato">
+    <i:Interaction.Triggers>
+        <i:EventTrigger>
+            <i:InvokeCommandAction Command="{Binding LoadCartCommand}"
+                                   CommandParameter="{Binding ElementName=wdCart}" />
+        </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <UserControl.DataContext>
+        <viewmodels:CartViewModel></viewmodels:CartViewModel>
+    </UserControl.DataContext>
     <UserControl.Resources>
         <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
             <Setter Property="OverridesDefaultStyle" Value="true"/>
@@ -186,24 +198,124 @@
                            HorizontalAlignment="Center"
                            Margin="0 140 0 0"/>
             </Grid>
-            
-            
             <ScrollViewer Grid.Row="1" 
                           Margin="0 24 -16 0" 
                           Visibility="Visible"
                           >
-                <StackPanel>
-                <StackPanel.Resources>
+
+                <StackPanel x:Name="spCart" >
+                    <!--StackPanel.Resources>
                     <Style TargetType="{x:Type local:SelectedProductCartUC}">
                         <Setter Property="Margin" Value="0 0 0 28"/>
                     </Style>
                 </StackPanel.Resources>
-                <local:SelectedProductCartUC/>
-                <local:SelectedProductCartUC/>
-                <local:SelectedProductCartUC/>
-                <local:SelectedProductCartUC/>
-                <local:SelectedProductCartUC/>
-            </StackPanel>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger>
+                            <i:InvokeCommandAction Command="{Binding SPCart}"
+                                                               CommandParameter="{Binding ElementName=spCart}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers-->
+                    <ListView SelectedItem="{Binding Selected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="listViewCart" ItemsSource="{Binding SelectedItem}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="135"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Height="0"
+                                               Fill="#ABABAB"
+                                               Width="690"
+                                               VerticalAlignment="Bottom" 
+                                               Grid.ColumnSpan="5"/>
+                                    <Image Grid.Column="0"      
+                                           Name="imgItem"
+                                           Source="{Binding Picture}"/>
+                                                                <StackPanel Grid.Column="1" Margin="30 0 30 0">
+                                        <TextBlock Text="{Binding NameItem}"
+                                                   Name="txtName"
+                                                   FontSize="23"
+                                                   FontWeight="Bold" Margin="0,20,0,0"/>
+                                        <TextBlock Text="{Binding NameMaterial}"
+                                                   Name="txtMaterial"
+                                                   FontSize="15.75"
+                                                   Foreground="#ABABAB"
+                                                   />
+                                        <TextBlock Text="{Binding NameForm}"
+                                                   Name="txtForm"
+                                                   FontSize="15.75"
+                                                   Foreground="#ABABAB"
+                                                   />
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2"
+                                               x:Name="txtTotal"
+                                               Text="{Binding Total}"
+                                               FontSize="15.75"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="#ABABAB"/>
+                                    <TextBlock Visibility="Hidden"
+                                               Name="txtIDItem"  
+                                               Text="{Binding IDItem}"/>
+                                    <WrapPanel Height="20" 
+                                                Grid.Column="3">
+                                        <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                                                Height="18"
+                                                Name="btnMinus"
+                                                Padding="0"
+                                                Margin="0 0 4 0"                                         
+                                                CommandParameter="{Binding ElementName=wdCart}"
+                                                Command="{Binding MinusCommand}"
+                                                Content="{materialDesign:PackIcon Minus}"
+                                                Foreground="#ABABAB"
+                                            >
+                                        </Button>
+                                        <Border Height="20"
+                                                Width="40"
+                                                Background="#DFDFDF"
+                                                CornerRadius="3.75">
+                                            <TextBlock 
+                                                       Name="txtQuantity"
+                                                       Text="{Binding Quantity}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Padding="0"
+                                                       Foreground="#ABABAB"
+                                                       FontWeight="Bold"/>
+                                        </Border>
+                                        <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                                                Height="18"
+                                                Name="btnPlus"
+                                                Padding="0"
+                                                Command="{Binding PlusCommand}"
+                                                CommandParameter="{Binding ElementName=wdCart}"
+                                                Margin="4 0 0 0"
+                                                Content="{materialDesign:PackIcon Plus}"
+                                                Foreground="#ABABAB"
+                                                >
+                                        </Button>
+                                    </WrapPanel>
+
+                                    <Button Grid.Column="4"
+                                            Width="30"
+                                            Name="btnExit"
+                                            Height="30"
+                                            Command="{Binding DeleteCommand}"
+                                            CommandParameter="{Binding ElementName=wdCart}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                               Style="{StaticResource MaterialDesignIconForegroundButton}">
+                                        <materialDesign:PackIcon Kind="WindowClose" 
+                                         Foreground="#555555" />
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListView>
+                </StackPanel>
             </ScrollViewer>
         </Grid>
         <!--Order summary-->

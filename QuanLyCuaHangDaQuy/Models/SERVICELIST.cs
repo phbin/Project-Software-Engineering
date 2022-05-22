@@ -14,6 +14,7 @@ namespace QuanLyCuaHangDaQuy.Models
     
     public partial class SERVICELIST
     {
+        public string ID { get; set; }
         public string IDCusService { get; set; }
         public string IDService { get; set; }
         public Nullable<int> Quantity { get; set; }

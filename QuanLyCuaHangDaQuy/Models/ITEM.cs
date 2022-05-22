@@ -14,6 +14,7 @@ namespace QuanLyCuaHangDaQuy.Models
     
     public partial class ITEM
     {
+        public string ID { get; set; }
         public string IDItemForm { get; set; }
         public string IDItem { get; set; }
         public double Total { get; set; }

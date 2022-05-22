@@ -18,6 +18,33 @@ namespace QuanLyCuaHangDaQuy.Models
         {
             DB = new CuaHangDaQuyEntities();
         }
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        {
+            DataTable data = new DataTable();
+           
 
+                SqlCommand command = new SqlCommand(query);
+
+                if (parameter != null)
+                {
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
+                    {
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
+                        }
+                    }
+                }
+
+                SqlDataAdapter apdater = new SqlDataAdapter(command);
+
+                apdater.Fill(data);
+
+           
+            return data;
+        }
     }
 }

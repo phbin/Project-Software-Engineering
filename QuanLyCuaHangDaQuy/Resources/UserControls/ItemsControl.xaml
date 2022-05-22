@@ -5,38 +5,32 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
              xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
-             d:DataContext="{d:DesignInstance Type=viewmodels:ShopItemsClickViewModel}"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:ShopItemsClickViewModel}"
+
+             x:Name="ucSaleGoods"
+
     Margin="4,4,4,8"
     Cursor="Hand">
+
     <Grid>
         <Grid.InputBindings>
             <MouseBinding Gesture="LeftClick" Command="{Binding ItemClickCommand}"/>
         </Grid.InputBindings>
-        <Border Width="207" 
-            Height="231" 
+        <Border Width="222" 
+            Height="246" 
             Background="#FFFBFBFB" 
             BorderBrush="#FFF0F0F0"
             BorderThickness="1" 
-            CornerRadius="7.5">
+            CornerRadius="7.5"
+                Margin="15">
             <Grid Cursor="Hand">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="130"></RowDefinition>
-                    <RowDefinition Height="47"></RowDefinition>
+                    <RowDefinition Height="60"></RowDefinition>
                     <RowDefinition Height="51.5"></RowDefinition>
                 </Grid.RowDefinitions>
-                <TextBlock 
-                    x:Name="txbId" 
-                    Visibility="Hidden"/>
-                <TextBlock 
-                    x:Name="txbUnit" 
-                    Visibility="Hidden"/>
-                <TextBlock 
-                    x:Name="txbType" 
-                    Visibility="Hidden"/>
-                <TextBlock 
-                    x:Name="txbQuantity" 
-                    Visibility="Hidden"/>
                 <Image 
                     x:Name="imgGood" 
                     Grid.Row="0" 
@@ -45,7 +39,16 @@
                     Source="/Resources/Image/imageitem.png">
                 </Image>
                 <TextBlock 
-                    x:Name="txbName" 
+                    x:Name="txtID" 
+                    Visibility="Hidden"/>
+                <TextBlock 
+                    x:Name="txtDesc" 
+                    Visibility="Hidden"/>
+                <TextBlock 
+                    x:Name="txtQuantity" 
+                    Visibility="Hidden"/>
+                <TextBlock 
+                    x:Name="txtName" 
                     Text="Name Item" 
                     TextTrimming="CharacterEllipsis" 
                     Margin="16.5,7.5" 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangDaQuy.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,20 @@ namespace QuanLyCuaHangDaQuy.Views
         public ShopWindow()
         {
             InitializeComponent();
+            List<string> ItemsForm  = DataProvider.Ins.DB.FORMCATEGORies.Select(x => x.NameForm).ToList();
+
+            foreach (var items in ItemsForm)
+            {
+                trvCategory.Items.Add(items);
+                //trvCategory.ItemContainerStyle.Setters = new SolidColorBrush(Color.FromRgb(171, 171, 171));
+            }
+            List<string> ItemsMaterial = DataProvider.Ins.DB.MATERIALCATEGORies.Select(x => x.NameMaterial).ToList();
+
+            foreach (var items in ItemsMaterial)
+            {
+                trvMaterial.Items.Add(items);
+                //trvCategory.ItemContainerStyle.Setters = new SolidColorBrush(Color.FromRgb(171, 171, 171));
+            }
         }
     }
 }

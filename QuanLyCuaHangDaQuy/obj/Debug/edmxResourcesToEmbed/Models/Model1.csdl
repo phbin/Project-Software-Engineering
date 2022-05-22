@@ -10,6 +10,16 @@
     <Property Name="AccType" Type="Int32" Nullable="false" />
     <NavigationProperty Name="INFOSTAFF" Relationship="Self.FK_Account_ID" FromRole="ACCOUNT" ToRole="INFOSTAFF" />
   </EntityType>
+  <EntityType Name="CART">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="Total" Type="Double" />
+    <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_WishList_ImportedItems" FromRole="CARTS" ToRole="IMPORTEDITEMS" />
+  </EntityType>
   <EntityType Name="CUSSERVICE">
     <Key>
       <PropertyRef Name="ID" />
@@ -38,6 +48,7 @@
     <Property Name="IDProd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDMaterial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SellQty" Type="Int32" />
     <Property Name="Quantity" Type="Int32" />
     <Property Name="PurchasePrice" Type="Double" Nullable="false" />
     <Property Name="Price" Type="Double" />
@@ -45,12 +56,12 @@
     <Property Name="DatePurchase" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="Descript" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
     <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="CARTS" Relationship="Self.FK_WishList_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="CARTS" />
     <NavigationProperty Name="FORMCATEGORY" Relationship="Self.FK_ImportedItems_FormCategory" FromRole="IMPORTEDITEMS" ToRole="FORMCATEGORY" />
+    <NavigationProperty Name="ITEMBILLs" Relationship="Self.FK_IDItemBill_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="ITEMBILL" />
     <NavigationProperty Name="MATERIALCATEGORY" Relationship="Self.FK_ImportedItems_MaterialCategory" FromRole="IMPORTEDITEMS" ToRole="MATERIALCATEGORY" />
     <NavigationProperty Name="INFOPROVIDER" Relationship="Self.FK_ImportedItems_ProviderInfo" FromRole="IMPORTEDITEMS" ToRole="INFOPROVIDER" />
     <NavigationProperty Name="ITEMS" Relationship="Self.FK_Items_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="ITEMS" />
-    <NavigationProperty Name="CART" Relationship="Self.FK_WishList_ImportedItems" FromRole="IMPORTEDITEMS" ToRole="CARTS" />
-    <NavigationProperty Name="ITEMBILLFORMs" Relationship="Self.ITEMBILL" FromRole="IMPORTEDITEMS" ToRole="ITEMBILLFORM" />
   </EntityType>
   <EntityType Name="INFOCUSTOMER">
     <Key>
@@ -94,6 +105,16 @@
     <NavigationProperty Name="ACCOUNTs" Relationship="Self.FK_Account_ID" FromRole="INFOSTAFF" ToRole="ACCOUNT" />
     <NavigationProperty Name="ITEMFORMs" Relationship="Self.FK_ITEMFORM_InfoStaff" FromRole="INFOSTAFF" ToRole="ITEMFORM" />
   </EntityType>
+  <EntityType Name="ITEMBILL">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDItemBillForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_IDItemBill_ImportedItems" FromRole="ITEMBILL" ToRole="IMPORTEDITEMS" />
+    <NavigationProperty Name="ITEMBILLFORM" Relationship="Self.FK_IDItemBill_ItemBillForm" FromRole="ITEMBILL" ToRole="ITEMBILLFORM" />
+  </EntityType>
   <EntityType Name="ITEMBILLFORM">
     <Key>
       <PropertyRef Name="ID" />
@@ -102,7 +123,7 @@
     <Property Name="IDProd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="DateBooking" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="INFOPROVIDER" Relationship="Self.FK_ItemBillForm_InfoCustomer" FromRole="ITEMBILLFORM" ToRole="INFOPROVIDER" />
-    <NavigationProperty Name="IMPORTEDITEMS" Relationship="Self.ITEMBILL" FromRole="ITEMBILLFORM" ToRole="IMPORTEDITEMS" />
+    <NavigationProperty Name="ITEMBILLs" Relationship="Self.FK_IDItemBill_ItemBillForm" FromRole="ITEMBILLFORM" ToRole="ITEMBILL" />
   </EntityType>
   <EntityType Name="ITEMFORM">
     <Key>
@@ -118,9 +139,9 @@
   </EntityType>
   <EntityType Name="ITEM">
     <Key>
-      <PropertyRef Name="IDItemForm" />
-      <PropertyRef Name="IDItem" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDItemForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Total" Type="Double" Nullable="false" />
@@ -151,9 +172,9 @@
   </EntityType>
   <EntityType Name="SERVICELIST">
     <Key>
-      <PropertyRef Name="IDCusService" />
-      <PropertyRef Name="IDService" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDCusService" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDService" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Quantity" Type="Int32" />
@@ -175,15 +196,6 @@
     <Property Name="NameUnit" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="MATERIALCATEGORies" Relationship="Self.FK_MaterialCategory_Unit" FromRole="UNIT" ToRole="MATERIALCATEGORY" />
   </EntityType>
-  <EntityType Name="CART">
-    <Key>
-      <PropertyRef Name="IDItem" />
-    </Key>
-    <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Quantity" Type="Int32" />
-    <Property Name="Total" Type="Double" />
-    <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_WishList_ImportedItems" FromRole="CARTS" ToRole="IMPORTEDITEMS" />
-  </EntityType>
   <Association Name="FK_Account_ID">
     <End Role="INFOSTAFF" Type="Self.INFOSTAFF" Multiplicity="1" />
     <End Role="ACCOUNT" Type="Self.ACCOUNT" Multiplicity="*" />
@@ -193,6 +205,18 @@
       </Principal>
       <Dependent Role="ACCOUNT">
         <PropertyRef Name="ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WishList_ImportedItems">
+    <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
+    <End Role="CARTS" Type="Self.CART" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMPORTEDITEMS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CARTS">
+        <PropertyRef Name="IDItem" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -232,6 +256,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_IDItemBill_ImportedItems">
+    <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
+    <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMPORTEDITEMS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ITEMBILL">
+        <PropertyRef Name="IDItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ImportedItems_MaterialCategory">
     <End Role="MATERIALCATEGORY" Type="Self.MATERIALCATEGORY" Multiplicity="1" />
     <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="*" />
@@ -264,18 +300,6 @@
         <PropertyRef Name="ID" />
       </Principal>
       <Dependent Role="ITEMS">
-        <PropertyRef Name="IDItem" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_WishList_ImportedItems">
-    <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="1" />
-    <End Role="CARTS" Type="Self.CART" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="IMPORTEDITEMS">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="CARTS">
         <PropertyRef Name="IDItem" />
       </Dependent>
     </ReferentialConstraint>
@@ -316,6 +340,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_IDItemBill_ItemBillForm">
+    <End Role="ITEMBILLFORM" Type="Self.ITEMBILLFORM" Multiplicity="1" />
+    <End Role="ITEMBILL" Type="Self.ITEMBILL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ITEMBILLFORM">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ITEMBILL">
+        <PropertyRef Name="IDItemBillForm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Items_ItemForm">
     <End Role="ITEMFORM" Type="Self.ITEMFORM" Multiplicity="1" />
     <End Role="ITEMS" Type="Self.ITEM" Multiplicity="*" />
@@ -352,18 +388,16 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="ITEMBILL">
-    <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEM" Multiplicity="*" />
-    <End Role="ITEMBILLFORM" Type="Self.ITEMBILLFORM" Multiplicity="*" />
-  </Association>
   <EntityContainer Name="CuaHangDaQuyEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ACCOUNTs" EntityType="Self.ACCOUNT" />
+    <EntitySet Name="CARTS" EntityType="Self.CART" />
     <EntitySet Name="CUSSERVICEs" EntityType="Self.CUSSERVICE" />
     <EntitySet Name="FORMCATEGORies" EntityType="Self.FORMCATEGORY" />
     <EntitySet Name="IMPORTEDITEMS" EntityType="Self.IMPORTEDITEM" />
     <EntitySet Name="INFOCUSTOMERs" EntityType="Self.INFOCUSTOMER" />
     <EntitySet Name="INFOPROVIDERs" EntityType="Self.INFOPROVIDER" />
     <EntitySet Name="INFOSTAFFs" EntityType="Self.INFOSTAFF" />
+    <EntitySet Name="ITEMBILLs" EntityType="Self.ITEMBILL" />
     <EntitySet Name="ITEMBILLFORMs" EntityType="Self.ITEMBILLFORM" />
     <EntitySet Name="ITEMFORMs" EntityType="Self.ITEMFORM" />
     <EntitySet Name="ITEMS" EntityType="Self.ITEM" />
@@ -371,10 +405,13 @@
     <EntitySet Name="SERVICECATEGORies" EntityType="Self.SERVICECATEGORY" />
     <EntitySet Name="SERVICELISTs" EntityType="Self.SERVICELIST" />
     <EntitySet Name="UNITs" EntityType="Self.UNIT" />
-    <EntitySet Name="CARTS" EntityType="Self.CART" />
     <AssociationSet Name="FK_Account_ID" Association="Self.FK_Account_ID">
       <End Role="INFOSTAFF" EntitySet="INFOSTAFFs" />
       <End Role="ACCOUNT" EntitySet="ACCOUNTs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WishList_ImportedItems" Association="Self.FK_WishList_ImportedItems">
+      <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
+      <End Role="CARTS" EntitySet="CARTS" />
     </AssociationSet>
     <AssociationSet Name="FK_CusService_InfoCustomer" Association="Self.FK_CusService_InfoCustomer">
       <End Role="INFOCUSTOMER" EntitySet="INFOCUSTOMERs" />
@@ -388,6 +425,10 @@
       <End Role="FORMCATEGORY" EntitySet="FORMCATEGORies" />
       <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
     </AssociationSet>
+    <AssociationSet Name="FK_IDItemBill_ImportedItems" Association="Self.FK_IDItemBill_ImportedItems">
+      <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
+      <End Role="ITEMBILL" EntitySet="ITEMBILLs" />
+    </AssociationSet>
     <AssociationSet Name="FK_ImportedItems_MaterialCategory" Association="Self.FK_ImportedItems_MaterialCategory">
       <End Role="MATERIALCATEGORY" EntitySet="MATERIALCATEGORies" />
       <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
@@ -399,10 +440,6 @@
     <AssociationSet Name="FK_Items_ImportedItems" Association="Self.FK_Items_ImportedItems">
       <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
       <End Role="ITEMS" EntitySet="ITEMS" />
-    </AssociationSet>
-    <AssociationSet Name="FK_WishList_ImportedItems" Association="Self.FK_WishList_ImportedItems">
-      <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-      <End Role="CARTS" EntitySet="CARTS" />
     </AssociationSet>
     <AssociationSet Name="FK_ITEMFORM_InfoCustomer" Association="Self.FK_ITEMFORM_InfoCustomer">
       <End Role="INFOCUSTOMER" EntitySet="INFOCUSTOMERs" />
@@ -416,6 +453,10 @@
       <End Role="INFOSTAFF" EntitySet="INFOSTAFFs" />
       <End Role="ITEMFORM" EntitySet="ITEMFORMs" />
     </AssociationSet>
+    <AssociationSet Name="FK_IDItemBill_ItemBillForm" Association="Self.FK_IDItemBill_ItemBillForm">
+      <End Role="ITEMBILLFORM" EntitySet="ITEMBILLFORMs" />
+      <End Role="ITEMBILL" EntitySet="ITEMBILLs" />
+    </AssociationSet>
     <AssociationSet Name="FK_Items_ItemForm" Association="Self.FK_Items_ItemForm">
       <End Role="ITEMFORM" EntitySet="ITEMFORMs" />
       <End Role="ITEMS" EntitySet="ITEMS" />
@@ -427,10 +468,6 @@
     <AssociationSet Name="FK_ServiceList_ServiceCategory" Association="Self.FK_ServiceList_ServiceCategory">
       <End Role="SERVICECATEGORY" EntitySet="SERVICECATEGORies" />
       <End Role="SERVICELIST" EntitySet="SERVICELISTs" />
-    </AssociationSet>
-    <AssociationSet Name="ITEMBILL" Association="Self.ITEMBILL">
-      <End Role="IMPORTEDITEMS" EntitySet="IMPORTEDITEMS" />
-      <End Role="ITEMBILLFORM" EntitySet="ITEMBILLFORMs" />
     </AssociationSet>
     <FunctionImport Name="USP_Carts">
       <Parameter Name="iditem" Mode="In" Type="String" />

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         xmlns:uc="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
-        xmlns:viewModel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+        xmlns:viewModel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Height="768" Width="1080"
         WindowStartupLocation="CenterScreen"
@@ -13,6 +14,7 @@
     <Window.DataContext>
         <viewModel:MainStaffViewModel/>
     </Window.DataContext>
+
     <DockPanel>
         <!--search bar-->
         <DockPanel DockPanel.Dock="Top">
@@ -20,9 +22,9 @@
             </uc:ControlBarUC>
 
         </DockPanel>
-        <DockPanel DockPanel.Dock="Top" >
+        <DockPanel DockPanel.Dock="Top">
             <ContentControl Margin="0"
-                            Content="{Binding CurrentView}">
+                            Content="{Binding CurrentView}" >
             </ContentControl>
         </DockPanel>
     </DockPanel>

@@ -6,8 +6,16 @@
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
              xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             d:DataContext="{d:DesignInstance Type=viewmodels:ShopItemsClickViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="652.25" d:DesignWidth="1080">
+             d:DesignHeight="652.25" d:DesignWidth="1080"
+             Name="ucItemClick">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="17*"/>
@@ -19,119 +27,198 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Image Height="423.75"
+               Name="imgGood"
                Width="423.75"
-               Margin="83,1.6,63.4,192"
-               Source="/Resources/Image/imageitem.png" Grid.Row="1">
+               Margin="83,61.6,63.4,192"
+               Source="{Binding Picture}"
+               Grid.Row="1">
         </Image>
-        <TextBlock Margin="109,447.6,107.4,60"
-                   Text="Heart designs are simply enchanting and great for showing a loved one how much he means to you. And with this filigree ring in 14-carat white gold, the enchanting heart is set with 3"
+        <TextBlock Margin="109,507.6,107.4,60"
+                   Text="{Binding Description}"
                    TextWrapping="Wrap"
+                   Name="txtDesc"
                    FontSize="15"
                    FontFamily="Lato"
                    Foreground="#FF000000" Grid.Row="1" 
             >
         </TextBlock>
-        <StackPanel Margin="590,1.6,83,0" Grid.ColumnSpan="2" Grid.Row="1">
+        <StackPanel Margin="590,61.6,83,0" Grid.ColumnSpan="2" Grid.Row="1">
             <TextBlock 
+                x:Name="txtName"
                        Height="auto"
-                       Text="UNIQUE"
+                       Text="{Binding Name}"
                        TextWrapping="Wrap"
                        FontSize="37.5"
                        FontFamily="Lato"
                        Foreground="#000000" 
             >
             </TextBlock>
-            <TextBlock 
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
                        Margin="0 11.25"
                        Height="auto"
-                       Text="Item ID: 10036565"
-                       TextWrapping="Wrap"
+                       Content="Item ID: "
                        FontSize="15"
                        FontFamily="Lato"
                        Foreground="#BCBCBC" 
             >
-            </TextBlock>
-            <TextBlock 
-                       Margin="0 36"
+                </Label>
+                <TextBlock Grid.Column="1"
+                           Name="txtID"
+                       Margin="0 11.25"
                        Height="auto"
-                       Text="Size"
+                   Text="{Binding ID}"
+                       TextWrapping="Wrap"
+                       FontSize="15"
+                       FontFamily="Lato"
+                       Foreground="#BCBCBC" 
+                        VerticalAlignment="Center"
+            >
+                </TextBlock>
+            </Grid>
+
+            <TextBlock 
+                       Margin="0 36 0 10"
+                       Height="auto"
+                       Text="Quantity"
                        TextWrapping="Wrap"
                        FontSize="22.5"
                        FontFamily="Lato"
                        Foreground="#E0A645" 
             >
             </TextBlock>
-            <ComboBox 
-                      materialDesign:HintAssist.Hint="Please select size"
-                      Height="53.25" 
-                      Foreground="#BCBCBC"
-                      FontSize="22.5"
-                      Padding="10"
-                      VerticalAlignment="Center"
-                      BorderBrush="#E0A645"
-                      BorderThickness="0.75" RenderTransformOrigin="0.5,0.5"
-                      
-                      >
-                <ComboBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-4"/>
-                    </TransformGroup>
-                </ComboBox.RenderTransform>
-                <ComboBoxItem>item1</ComboBoxItem>
-            </ComboBox>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="24"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0"
+                        Name="btnMinus"
+                        Command="{Binding MinusClickCommand}"
+                        Background="#BCBCBC"
+                        Foreground="White"
+                        FontSize="24"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Width="24"
+                        Height="24"
+                        BorderBrush="#BCBCBC"
+                        BorderThickness="0">
+                    <TextBlock 
+                        Text="-"
+                        Foreground="White"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Width="24"
+                        Height="28"
+                        Margin="-8.5">
+                    </TextBlock>
 
-            <TextBlock 
+                </Button>
+                <TextBox Grid.Column="1"
+                         Name="txtQuantity"
+                         PreviewTextInput="TextBox_PreviewTextInput"
+                         Foreground="#000000"
+                         Background="Transparent"
+                         Text="{Binding Quantity}"
+                         FontSize="20"
+                         FontWeight="SemiBold"
+                         TextAlignment="Center"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Top"
+                         Width="25"
+                         IsReadOnly="True"
+                         >
+
+                </TextBox>
+                <Button Grid.Column="2"
+                        Name="btnPlus"
+                        Command="{Binding PlusClickCommand}"
+                        Background="#FCC871"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Width="24"
+                        Height="24"
+                        BorderThickness="0">
+                    <TextBlock 
+                        Text="+"
+                        Foreground="White"
+                        FontSize="20"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Width="24"
+                        Height="28"
+                        Margin="-11.5">
+                    </TextBlock>
+                </Button>
+            </Grid>
+
+            <TextBlock Name="txtPrice"
                        Margin="0 36"
                        Height="auto"
-                       Text="3.000.000đ"
+                       Text="{Binding Price}"
                        TextWrapping="Wrap"
                        FontSize="33.75"
                        FontFamily="Lato"
                        Foreground="#000000" 
             >
             </TextBlock>
-            <Button Margin="0 21.25 207 0"
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" 
                     Height="57.75"
                     Background="#FCC871" 
                     FontWeight="Normal"
+                        Command="{Binding BuyClickCommand}"
                     >
-                <Grid>
-                    <TextBlock
+                    <Grid>
+                        <TextBlock
                              Text="BUY NOW"
                              FontSize="21"
                              Foreground="#FFFFFF" Margin="14,0,41.4,0.2"/>
-                    <Image Source="/Resources/Image/Bag_fill.png"
+                        <Image Source="/Resources/Image/Bag_fill.png"
                            Height="31.5"
                            Width="32" RenderTransformOrigin="1.938,0.689" Margin="113,-3,0,3.2" HorizontalAlignment="Left">
 
-                    </Image>
-                </Grid>
-            </Button>
-        </StackPanel>
-        <Grid>
-            <Button HorizontalAlignment="Left"
-                    Margin="813,407,-408.6,-430.6"
+                        </Image>
+                    </Grid>
+                </Button>
+                <Button Grid.Column="1" HorizontalAlignment="Center"
+                        Margin="10 0 0 0"
                     Background="#ABABAB"
                     Height="57.75"
-                    BorderThickness="0"
+                    BorderBrush="Gray"
+                        Command="{Binding AddCommand}"
                     Width="186"
+                    FontWeight="Normal"
                     >
-                <Grid>
-                    <TextBlock
+                    <Grid HorizontalAlignment="Center">
+                        <TextBlock
                                 Text="ADD TO CART"
                                 FontSize="21"
                                 Foreground="#FFFFFF" 
-                                FontWeight="Normal" Margin="-13,-2,13.4,2"/>
-                    <Image Source="/Resources/Image/File_dock_duotone_line.png"
+                                FontWeight="Normal" Margin="-12,-2,12.4,2"/>
+                        <Image Source="/Resources/Image/File_dock_duotone_line.png"
                            Height="31.5"
-                           Width="32" Margin="118,-3,-19.6,-1" >
+                           Width="32" Margin="117,-3,-18.6,-1" >
 
-                    </Image>
-                </Grid>
-            </Button>
-        </Grid>
+                        </Image>
+                    </Grid>
+                </Button>
+            </Grid>
+
+        </StackPanel>
+
+
     </Grid>
 </UserControl>
