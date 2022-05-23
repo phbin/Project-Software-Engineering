@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDaQuy.Views
     /// <summary>
     /// Interaction logic for Staff_ListReceipt.xaml
     /// </summary>
-    public partial class Staff_ListReceipt : Window
+    public partial class Staff_ListReceipt : UserControl
     {
         public Staff_ListReceipt()
         {

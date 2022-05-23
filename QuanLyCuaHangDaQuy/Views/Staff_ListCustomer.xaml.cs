@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDaQuy.Views
     /// <summary>
     /// Interaction logic for Staff_ListCustomer.xaml
     /// </summary>
-    public partial class Staff_ListCustomer : Window
+    public partial class Staff_ListCustomer : UserControl
     {
         public Staff_ListCustomer()
         {

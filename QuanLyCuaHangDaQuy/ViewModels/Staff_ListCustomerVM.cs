@@ -184,10 +184,10 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     while (IDtemp >= 1)
                     {
                         string IDService = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault().ID;
-                        int IDtemp1 = DataProvider.Ins.DB.SERVICELISTs.ToList().Where(h => h.IDService == IDService).Count();
+                        int IDtemp1 = DataProvider.Ins.DB.SERVICELISTs.ToList().Where(h => h.IDCusService == IDService).Count();
                         while (IDtemp1 >= 1)
                         {
-                            DataProvider.Ins.DB.SERVICELISTs.Remove(DataProvider.Ins.DB.SERVICELISTs.Where(h => h.IDService == IDService).FirstOrDefault());
+                            DataProvider.Ins.DB.SERVICELISTs.Remove(DataProvider.Ins.DB.SERVICELISTs.Where(h => h.IDCusService == IDService).FirstOrDefault());
                             IDtemp1--;
                         }
                         DataProvider.Ins.DB.CUSSERVICEs.Remove(DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault());
