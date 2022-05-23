@@ -131,6 +131,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             {
                 IdReceipt = SelectedReceipt.ID;
                 Staff_ListService staff_ListService = new Staff_ListService();
+                staff_ListService.Titlee.Text += IdReceipt;
                 staff_ListService.ShowDialog();
                 ListReceipt.Clear();
                 LoadData();

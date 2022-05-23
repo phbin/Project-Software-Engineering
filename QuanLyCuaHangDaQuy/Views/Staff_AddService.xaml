@@ -6,14 +6,21 @@
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         mc:Ignorable="d"
           xmlns:System="clr-namespace:System;assembly=mscorlib" 
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         WindowStartupLocation="CenterScreen"
         x:Name="Staff_AddServiceClose"
         WindowStyle="None" Height="600" Width="870">
+    <Window.DataContext>
+        <vm:Staff_AddServiceVM></vm:Staff_AddServiceVM>
+    </Window.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Window.Resources>
         <Style x:Key="Pastday" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
-            <Setter Property="DisplayDateStart" Value="1/1/1111"></Setter>
-            <Setter Property="DisplayDateEnd" Value="{x:Static System:DateTime.Today}"/>
+            <Setter Property="DisplayDateStart" Value="{x:Static System:DateTime.Today}"></Setter>
         </Style>
     </Window.Resources>
     <Grid>
@@ -27,11 +34,11 @@
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="160"/>
+            <ColumnDefinition Width="135"/>
             <ColumnDefinition Width="225"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="150"/>
             <ColumnDefinition Width="225"/>
-            <ColumnDefinition Width="107"/>
+            <ColumnDefinition Width="82"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -47,7 +54,7 @@
             <RowDefinition Height="45"/>
         </Grid.RowDefinitions>
         <Button  Grid.Column="5"
-                 Margin="0,13,13,0"
+                 Margin="0,9,9,0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Right"
                  Height="40"
@@ -110,11 +117,19 @@
                     Grid.Row="2"
                     Grid.Column="3">
             <TextBlock Text="Repay"
-                       Style="{StaticResource TlbTitle}"/>
+                       Style="{StaticResource TlbTitle}"
+                       />
 
             <TextBox 
                      FontSize="20"
+                PreviewTextInput="ComboBox_PreviewTextInput"
+                     Text="{Binding Repay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                      Margin="5,11,0,0">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding RepayChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </TextBox>
             <!--Service-->
         </StackPanel>
@@ -126,17 +141,51 @@
             <Grid
                 Height="41"
                 Margin="0,11">
-                <ComboBox Grid.Column="1"
-                       Grid.Row="8"
+                <ComboBox 
                        Foreground="Black"
                        FontSize="20"
+                    DisplayMemberPath="NameService"
+                    ItemsSource="{Binding ListService,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding SelectedService,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                        FontFamily="Lato"
                               Margin="5 0 0 5">
-                    <ComboBoxItem Content="Lê Đặng Phương Uyên "></ComboBoxItem>
-                    <ComboBoxItem Content="asdasd"></ComboBoxItem>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </ComboBox>
             </Grid>
         </StackPanel>
+        <!--QTT-->
+        <StackPanel Orientation="Vertical"
+                    Grid.Row="2"
+                    Grid.Column="2">
+            <TextBlock Text="Quantity"
+                       Style="{StaticResource TlbTitle}"
+                       Margin="10,0,0,0"/>
+            <Grid
+                Height="41"
+                Margin="0,11">
+                <ComboBox     Grid.Row="2"
+                      Grid.Column="2"
+                      Foreground="Black"
+                      FontSize="20"
+                       ItemsSource="{Binding QTT,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    SelectedItem="{Binding QTTSL,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      PreviewTextInput="ComboBox_PreviewTextInput"
+                      FontFamily="Lato"
+                       Margin="10,0,89,0"
+                      VerticalAlignment="Top">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding QTTChangedCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
+            </Grid>
+        </StackPanel>
+      
         <!-- Remain-->
         <StackPanel Orientation="Vertical"
                     Grid.Row="6"
@@ -147,7 +196,7 @@
                 Background="#E5E5E5"
                 Height="41"
                 Margin="0,11">
-                <TextBlock Text="ABC"
+                <TextBlock Text="{Binding Remain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                            FontSize="20"
                           Margin="10"
                           VerticalAlignment="Center">
@@ -163,7 +212,15 @@
 
             <TextBox 
                      FontSize="20"
-                     Margin="5,11,0,0">
+                     PreviewTextInput="ComboBox_PreviewTextInput"
+                     Text="{Binding Cost,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     Margin="5,11,0,0"
+                >
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding CostChangedCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </TextBox>
         </StackPanel>
         <!--Return date-->
@@ -181,7 +238,7 @@
                     Style="{StaticResource Pastday}"
                  FontSize="20"
                  Margin="0,0,80,0"
-                 Text="{Binding Birthday,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 Text="{Binding ReturnDate_format,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Foreground="Black"
                  VerticalAlignment="Top"
                  Height="35.6">
@@ -208,8 +265,9 @@
                 Background="#E5E5E5"
                 Height="41"
                 Margin="0,11">
-                <TextBlock Text="ABC"
+                <TextBlock 
                            FontSize="20"
+                           Text="{Binding PriceDiscounted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                            Margin="10"
                           VerticalAlignment="Center">
                 </TextBlock>
@@ -242,10 +300,13 @@
                 Width="187"
                 Background="#FCC871"
                 HorizontalAlignment="Center"
-                Content="Confirm"
+                Content="ADD"
                 Foreground="White"
+                Command="{Binding AddCommand}"
                 BorderThickness="0"
                 FontSize="21"
+                  CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}"
                  materialDesign:ShadowAssist.ShadowDepth="Depth0" 
                 >
         </Button>

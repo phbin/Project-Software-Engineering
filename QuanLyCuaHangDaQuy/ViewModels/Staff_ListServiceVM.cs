@@ -15,6 +15,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
     public class Staff_ListServiceVM: BaseViewModel
     {
         public ObservableCollection<Service> ListService { get; set; } = new ObservableCollection<Service>();
+        public static string IDD;
 
         private Service _selectedService;
         public Service SelectedService
@@ -96,14 +97,19 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 {
                     Staff_AddService staff_AddService = new Staff_AddService();
                     staff_AddService.ShowDialog();
+                    ListService.Clear();
+                    LoadData();
                 }
             );
             Service.EditCommand = new RelayCommand<object>(
                (p) => { return true; },
                (p) =>
                {
+                   IDD = SelectedService.ID;
                    Staff_EditService staff_EditService = new Staff_EditService();   
                    staff_EditService.ShowDialog();
+                   ListService.Clear();
+                   LoadData();
                }
            );
             Service.DeleteCommand = new RelayCommand<object>(

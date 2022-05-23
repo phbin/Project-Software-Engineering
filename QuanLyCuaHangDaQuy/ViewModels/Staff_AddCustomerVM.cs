@@ -129,7 +129,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                    while (Flag == false)
                    {
                        Temp++;
-                       if (DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.ID == "CS" + (Temp).ToString()).FirstOrDefault() == null)
+                       if (DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == "Customer" + (Temp).ToString()).FirstOrDefault() == null)
                        {
                            Flag = true;
                        }
