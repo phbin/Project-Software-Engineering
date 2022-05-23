@@ -50,7 +50,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     DateBooking = item.DateBooking,
                     ID = item.ID,
                     Stt = item.Stt,
-                    ColorStt = (item.Stt != "unfinished") ? "#BCBCBC" : "#2CC33B",
+                    ColorStt = (item.Stt == "unfinished") ? "#BCBCBC" : "#2CC33B",
                 };
                 ListReceipt.Add(DatTen);
                 no++;
@@ -132,6 +132,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 IdReceipt = SelectedReceipt.ID;
                 Staff_ListService staff_ListService = new Staff_ListService();
                 staff_ListService.ShowDialog();
+                ListReceipt.Clear();
+                LoadData();
             }
             );
             TextSearchCommand = new RelayCommand<object>(
@@ -163,7 +165,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                                DateBooking = item.DateBooking,
                                ID = item.ID,
                                Stt = item.Stt,
-                               ColorStt = (item.Stt != "unfinished") ? "#BCBCBC" : "#2CC33B",
+                               ColorStt = (item.Stt == "unfinished") ? "#BCBCBC" : "#2CC33B",
                            });
                            no++;
                        }

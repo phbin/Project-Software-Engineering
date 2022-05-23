@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
         mc:Ignorable="d"
+          xmlns:System="clr-namespace:System;assembly=mscorlib" 
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         WindowStartupLocation="CenterScreen"
         x:Name="Staff_AddServiceClose"
-        WindowStyle="None" Height="658" Width="970">
+        WindowStyle="None" Height="600" Width="870">
+    <Window.Resources>
+        <Style x:Key="Pastday" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+            <Setter Property="DisplayDateStart" Value="1/1/1111"></Setter>
+            <Setter Property="DisplayDateEnd" Value="{x:Static System:DateTime.Today}"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid.Resources>
             <Style TargetType="TextBlock"
@@ -20,16 +27,16 @@
             </Style>
         </Grid.Resources>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="160"/>
             <ColumnDefinition Width="225"/>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="225"/>
-            <ColumnDefinition Width="157"/>
+            <ColumnDefinition Width="107"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="63"/>
-            <RowDefinition Height="43"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="70"/>
@@ -37,9 +44,7 @@
             <RowDefinition Height="70"/>
             <RowDefinition Height="25"/>
             <RowDefinition Height="70"/>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="45"/>
-            <RowDefinition Height="74"/>
         </Grid.RowDefinitions>
         <Button  Grid.Column="5"
                  Margin="0,13,13,0"
@@ -83,7 +88,7 @@
             Canvas.Top="25" 
             VerticalAlignment="Bottom"/>
         <!--Receipt ID-->
-        <StackPanel Orientation="Vertical"
+        <!--<StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="1">
             <TextBlock Text="Receipt ID"
@@ -98,8 +103,9 @@
                           VerticalAlignment="Center">
                 </TextBlock>
             </Grid>
-            <!--Repay-->
-        </StackPanel>
+
+        </StackPanel>-->
+        <!--Repay-->
         <StackPanel Orientation="Vertical"
                     Grid.Row="2"
                     Grid.Column="3">
@@ -113,7 +119,7 @@
             <!--Service-->
         </StackPanel>
         <StackPanel Orientation="Vertical"
-                    Grid.Row="4"
+                    Grid.Row="2"
                     Grid.Column="1">
             <TextBlock Text="Service"
                        Style="{StaticResource TlbTitle}"/>
@@ -133,7 +139,7 @@
         </StackPanel>
         <!-- Remain-->
         <StackPanel Orientation="Vertical"
-                    Grid.Row="4"
+                    Grid.Row="6"
                     Grid.Column="3">
             <TextBlock Text="Remain"
                        Style="{StaticResource TlbTitle}"/>
@@ -150,7 +156,7 @@
         </StackPanel>
         <!--Cost-->
         <StackPanel Orientation="Vertical"
-                    Grid.Row="6"
+                    Grid.Row="4"
                     Grid.Column="1">
             <TextBlock Text="Cost"
                        Style="{StaticResource TlbTitle}"/>
@@ -162,25 +168,39 @@
         </StackPanel>
         <!--Return date-->
         <StackPanel Orientation="Vertical"
-                    Grid.Row="6"
+                    Grid.Row="4"
                     Grid.Column="3">
             <TextBlock Text="Return date"
                        Style="{StaticResource TlbTitle}"/>
             <Grid
-                Background="#E5E5E5"
+                Background="Transparent"
                 Height="41"
                 Margin="0,11">
-                <TextBlock Text="ABC"
-                           FontSize="20"
-                           Margin="10"
-                           VerticalAlignment="Center">
-                </TextBlock>
+                <DatePicker Grid.Column="1"
+                 Grid.Row="8"
+                    Style="{StaticResource Pastday}"
+                 FontSize="20"
+                 Margin="0,0,80,0"
+                 Text="{Binding Birthday,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 Foreground="Black"
+                 VerticalAlignment="Top"
+                 Height="35.6">
+                    <DatePicker.CalendarStyle>
+                        <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                            <Style.Resources>
+                                <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FCC871" />
+                            </Style.Resources>
+                        </Style>
+
+                    </DatePicker.CalendarStyle>
+
+                </DatePicker>
             </Grid>
         </StackPanel>
 
         <!--Price discounted-->
         <StackPanel Orientation="Vertical"
-                    Grid.Row="8"
+                    Grid.Row="6"
                     Grid.Column="1">
             <TextBlock Text="Price discounted"
                        Style="{StaticResource TlbTitle}"/>
@@ -196,7 +216,7 @@
             </Grid>
         </StackPanel>
         <!--Status-->
-        <StackPanel Orientation="Vertical"
+        <!--<StackPanel Orientation="Vertical"
                     Grid.Row="8"
                     Grid.Column="3">
             <TextBlock Text="Status"
@@ -211,11 +231,11 @@
                           VerticalAlignment="Center">
                 </TextBlock>
             </Grid>
-        </StackPanel>
+        </StackPanel>-->
 
 
         <!--Confirm-->
-        <Button Grid.Row="10"
+        <Button Grid.Row="9"
                 Grid.Column="1"
                 Grid.ColumnSpan="3"
                 Height="45"

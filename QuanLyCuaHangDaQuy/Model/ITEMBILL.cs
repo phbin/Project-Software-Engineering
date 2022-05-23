@@ -12,13 +12,13 @@ namespace QuanLyCuaHangDaQuy.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class CART
+    public partial class ITEMBILL
     {
         public string ID { get; set; }
+        public string IDItemBillForm { get; set; }
         public string IDItem { get; set; }
-        public Nullable<int> Quantity { get; set; }
-        public Nullable<double> Total { get; set; }
     
         public virtual IMPORTEDITEM IMPORTEDITEM { get; set; }
+        public virtual ITEMBILLFORM ITEMBILLFORM { get; set; }
     }
 }

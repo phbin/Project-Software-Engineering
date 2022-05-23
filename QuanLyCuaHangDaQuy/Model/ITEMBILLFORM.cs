@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDaQuy.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ITEMBILLFORM()
         {
-            this.IMPORTEDITEMS = new HashSet<IMPORTEDITEM>();
+            this.ITEMBILLs = new HashSet<ITEMBILL>();
         }
     
         public string ID { get; set; }
@@ -26,6 +26,6 @@ namespace QuanLyCuaHangDaQuy.Model
     
         public virtual INFOPROVIDER INFOPROVIDER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
+        public virtual ICollection<ITEMBILL> ITEMBILLs { get; set; }
     }
 }

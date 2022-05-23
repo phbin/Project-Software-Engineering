@@ -75,7 +75,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 ID ="CS" +(Temp).ToString();
                 DateBooking = DateTime.Today;
                 DateBooking_format= DateBooking.ToShortDateString();
-                Stt = "unfinish";
+                Stt = "unfinished";
                 var List=  DataProvider.Ins.DB.INFOCUSTOMERs.ToList();
                 foreach (var item in List)
                 {

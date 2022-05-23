@@ -4,37 +4,39 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="7b2e17d7fdbb4bfcaabf54d1fe69de19" Name="Diagram1">
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.ACCOUNT" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.CUSSERVICE" Width="1.5" PointX="3" PointY="19.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.FORMCATEGORY" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.IMPORTEDITEM" Width="1.5" PointX="3" PointY="2.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOCUSTOMER" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOPROVIDER" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOSTAFF" Width="1.5" PointX="0.75" PointY="16.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEMBILLFORM" Width="1.5" PointX="5.25" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEMFORM" Width="1.5" PointX="3" PointY="15.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEM" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.MATERIALCATEGORY" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.SERVICECATEGORY" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.SERVICELIST" Width="1.5" PointX="5.25" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.UNIT" Width="1.5" PointX="1.5" PointY="10.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CuaHangDaQuyModel.CART" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
+      <Diagram DiagramId="4b4cd60ae74b4764a9f1baa1837c2464" Name="Diagram1">
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.ACCOUNT" Width="1.5" PointX="3" PointY="29" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.CART" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.CUSSERVICE" Width="1.5" PointX="3" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.FORMCATEGORY" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.IMPORTEDITEM" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOCUSTOMER" Width="1.5" PointX="0.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOPROVIDER" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.INFOSTAFF" Width="1.5" PointX="0.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEMBILL" Width="1.5" PointX="5.25" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEMBILLFORM" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEMFORM" Width="1.5" PointX="3" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.ITEM" Width="1.5" PointX="5.25" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.MATERIALCATEGORY" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.SERVICECATEGORY" Width="1.5" PointX="3" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.SERVICELIST" Width="1.5" PointX="5.25" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CuaHangDaQuyModel.UNIT" Width="1.5" PointX="1.5" PointY="14.125" IsExpanded="true" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_Account_ID" ManuallyRouted="false" />
+        <AssociationConnector Association="CuaHangDaQuyModel.FK_WishList_ImportedItems" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_CusService_InfoCustomer" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ServiceList_CusService" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ImportedItems_FormCategory" ManuallyRouted="false" />
+        <AssociationConnector Association="CuaHangDaQuyModel.FK_IDItemBill_ImportedItems" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ImportedItems_MaterialCategory" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ImportedItems_ProviderInfo" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_Items_ImportedItems" ManuallyRouted="false" />
-        <AssociationConnector Association="CuaHangDaQuyModel.FK_WishList_ImportedItems" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ITEMFORM_InfoCustomer" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ItemBillForm_InfoCustomer" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ITEMFORM_InfoStaff" ManuallyRouted="false" />
+        <AssociationConnector Association="CuaHangDaQuyModel.FK_IDItemBill_ItemBillForm" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_Items_ItemForm" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_MaterialCategory_Unit" ManuallyRouted="false" />
         <AssociationConnector Association="CuaHangDaQuyModel.FK_ServiceList_ServiceCategory" ManuallyRouted="false" />
-        <AssociationConnector Association="CuaHangDaQuyModel.ITEMBILL" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

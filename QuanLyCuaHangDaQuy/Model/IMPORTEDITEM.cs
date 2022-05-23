@@ -17,8 +17,9 @@ namespace QuanLyCuaHangDaQuy.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public IMPORTEDITEM()
         {
+            this.CARTS = new HashSet<CART>();
+            this.ITEMBILLs = new HashSet<ITEMBILL>();
             this.ITEMS = new HashSet<ITEM>();
-            this.ITEMBILLFORMs = new HashSet<ITEMBILLFORM>();
         }
     
         public string ID { get; set; }
@@ -26,6 +27,7 @@ namespace QuanLyCuaHangDaQuy.Model
         public string IDProd { get; set; }
         public string IDForm { get; set; }
         public string IDMaterial { get; set; }
+        public Nullable<int> SellQty { get; set; }
         public Nullable<int> Quantity { get; set; }
         public double PurchasePrice { get; set; }
         public Nullable<double> Price { get; set; }
@@ -34,13 +36,14 @@ namespace QuanLyCuaHangDaQuy.Model
         public string Descript { get; set; }
         public byte[] Picture { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CART> CARTS { get; set; }
         public virtual FORMCATEGORY FORMCATEGORY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ITEMBILL> ITEMBILLs { get; set; }
         public virtual MATERIALCATEGORY MATERIALCATEGORY { get; set; }
         public virtual INFOPROVIDER INFOPROVIDER { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ITEM> ITEMS { get; set; }
-        public virtual CART CART { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEMBILLFORM> ITEMBILLFORMs { get; set; }
     }
 }

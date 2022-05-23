@@ -11,6 +11,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CARTS">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
+        <MappingFragment StoreEntitySet="CARTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="CUSSERVICEs">
       <EntityTypeMapping TypeName="CuaHangDaQuyModel.CUSSERVICE">
         <MappingFragment StoreEntitySet="CUSSERVICE">
@@ -37,6 +47,7 @@
           <ScalarProperty Name="IDProd" ColumnName="IDProd" />
           <ScalarProperty Name="IDForm" ColumnName="IDForm" />
           <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="SellQty" ColumnName="SellQty" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
           <ScalarProperty Name="Price" ColumnName="Price" />
@@ -86,6 +97,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ITEMBILLs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILL">
+        <MappingFragment StoreEntitySet="ITEMBILL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="ITEMBILLFORMs">
       <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILLFORM">
         <MappingFragment StoreEntitySet="ITEMBILLFORM">
@@ -108,6 +128,7 @@
     <EntitySetMapping Name="ITEMS">
       <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEM">
         <MappingFragment StoreEntitySet="ITEMS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDItemForm" ColumnName="IDItemForm" />
           <ScalarProperty Name="IDItem" ColumnName="IDItem" />
           <ScalarProperty Name="Total" ColumnName="Total" />
@@ -138,6 +159,7 @@
     <EntitySetMapping Name="SERVICELISTs">
       <EntityTypeMapping TypeName="CuaHangDaQuyModel.SERVICELIST">
         <MappingFragment StoreEntitySet="SERVICELIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDCusService" ColumnName="IDCusService" />
           <ScalarProperty Name="IDService" ColumnName="IDService" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -159,23 +181,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="CARTS">
-      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
-        <MappingFragment StoreEntitySet="CARTS">
-          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <AssociationSetMapping Name="ITEMBILL" TypeName="CuaHangDaQuyModel.ITEMBILL" StoreEntitySet="ITEMBILL">
-      <EndProperty Name="IMPORTEDITEMS">
-        <ScalarProperty Name="ID" ColumnName="IDItem" />
-      </EndProperty>
-      <EndProperty Name="ITEMBILLFORM">
-        <ScalarProperty Name="ID" ColumnName="IDItemBillForm" />
-      </EndProperty>
-    </AssociationSetMapping>
     <FunctionImportMapping FunctionImportName="USP_Carts" FunctionName="CuaHangDaQuyModel.Store.USP_Carts" />
     <FunctionImportMapping FunctionImportName="USP_UpdateImportedItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateImportedItems" />
     <FunctionImportMapping FunctionImportName="USP_UpdateItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateItems" />

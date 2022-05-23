@@ -9,12 +9,11 @@
     <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="AccType" Type="int" Nullable="false" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="CARTS">
     <Key>
-      <PropertyRef Name="IDItem" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Quantity" Type="int" />
     <Property Name="Total" Type="float" />
@@ -44,6 +43,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
     <Property Name="IDProd" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDForm" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDMaterial" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SellQty" Type="int" />
     <Property Name="Quantity" Type="int" />
     <Property Name="PurchasePrice" Type="float" Nullable="false" />
     <Property Name="Price" Type="float" />
@@ -90,9 +90,9 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
   </EntityType>
   <EntityType Name="ITEMBILL">
     <Key>
-      <PropertyRef Name="IDItemBillForm" />
-      <PropertyRef Name="IDItem" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItemBillForm" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
@@ -115,9 +115,9 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
   </EntityType>
   <EntityType Name="ITEMS">
     <Key>
-      <PropertyRef Name="IDItemForm" />
-      <PropertyRef Name="IDItem" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItemForm" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Total" Type="float" Nullable="false" />
@@ -143,9 +143,9 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
   </EntityType>
   <EntityType Name="SERVICELIST">
     <Key>
-      <PropertyRef Name="IDCusService" />
-      <PropertyRef Name="IDService" />
+      <PropertyRef Name="ID" />
     </Key>
+    <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDCusService" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDService" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Quantity" Type="int" />
@@ -346,7 +346,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
   </Association>
   <Association Name="FK_WishList_ImportedItems">
     <End Role="IMPORTEDITEMS" Type="Self.IMPORTEDITEMS" Multiplicity="1" />
-    <End Role="CARTS" Type="Self.CARTS" Multiplicity="0..1" />
+    <End Role="CARTS" Type="Self.CARTS" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="IMPORTEDITEMS">
         <PropertyRef Name="ID" />
@@ -372,6 +372,7 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
   </Function>
   <EntityContainer Name="CuaHangDaQuyModelStoreContainer">
     <EntitySet Name="ACCOUNT" EntityType="Self.ACCOUNT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARTS" EntityType="Self.CARTS" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CUSSERVICE" EntityType="Self.CUSSERVICE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FORMCATEGORY" EntityType="Self.FORMCATEGORY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="IMPORTEDITEMS" EntityType="Self.IMPORTEDITEMS" Schema="dbo" store:Type="Tables" />
@@ -386,13 +387,6 @@ warning 6002: The table/view 'CuaHangDaQuy.dbo.CARTS' does not have a primary ke
     <EntitySet Name="SERVICECATEGORY" EntityType="Self.SERVICECATEGORY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SERVICELIST" EntityType="Self.SERVICELIST" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UNIT" EntityType="Self.UNIT" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="CARTS" EntityType="Self.CARTS" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [CARTS].[IDItem] AS [IDItem], 
-    [CARTS].[Quantity] AS [Quantity], 
-    [CARTS].[Total] AS [Total]
-    FROM [dbo].[CARTS] AS [CARTS]</DefiningQuery>
-    </EntitySet>
     <AssociationSet Name="FK_Account_ID" Association="Self.FK_Account_ID">
       <End Role="INFOSTAFF" EntitySet="INFOSTAFF" />
       <End Role="ACCOUNT" EntitySet="ACCOUNT" />

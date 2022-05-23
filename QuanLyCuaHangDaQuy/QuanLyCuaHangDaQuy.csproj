@@ -110,6 +110,9 @@
     <Compile Include="Model\ITEM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\ITEMBILL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\ITEMBILLFORM.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -157,12 +160,14 @@
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Receipt.cs" />
+    <Compile Include="ViewModels\Service.cs" />
     <Compile Include="ViewModels\Staff_AddCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_AddReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_EditCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_EditServiceVM.cs" />
     <Compile Include="ViewModels\Staff_ListCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_ListReceiptVM.cs" />
+    <Compile Include="ViewModels\Staff_ListServiceVM.cs" />
     <Compile Include="Views\AddAccountWindow.xaml.cs">
       <DependentUpon>AddAccountWindow.xaml</DependentUpon>
     </Compile>
