@@ -165,6 +165,7 @@
     <Compile Include="ViewModels\Staff_AddReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_AddServiceVM.cs" />
     <Compile Include="ViewModels\Staff_EditCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_EditReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_EditServiceVM.cs" />
     <Compile Include="ViewModels\Staff_ListCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_ListReceiptVM.cs" />

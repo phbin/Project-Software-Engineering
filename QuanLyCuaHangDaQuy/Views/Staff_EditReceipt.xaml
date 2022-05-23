@@ -11,8 +11,13 @@
         mc:Ignorable="d" 
         Height="489" Width="676">
     <Window.DataContext>
-        <vm:Staff_ListReceiptVM></vm:Staff_ListReceiptVM>
+        <vm:Staff_EditReceiptVM></vm:Staff_EditReceiptVM>
     </Window.DataContext>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="86"/>
@@ -128,8 +133,7 @@
                    FontFamily="Lato"
                    Margin="5,0,0,0"/>
         <ComboBox Grid.Column="1"
-                       Grid.Row="8"
-                  x:Name="Customer"
+                  Grid.Row="8"
                   DisplayMemberPath="FullName"
                   ItemsSource="{Binding ListCustomer,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                   SelectedItem="{Binding SelectedCustomer,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
@@ -165,7 +169,7 @@
                 Grid.ColumnSpan="3"
                 Height="45"
                 Width="187"
-                Command="{Binding FuntionEdit}"
+                Command="{Binding EditCommand}"
                     CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
                            AncestorType={x:Type Window}}}"
                 Background="#FCC871"
