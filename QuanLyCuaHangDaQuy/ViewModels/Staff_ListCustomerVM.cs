@@ -174,9 +174,11 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         while(IDtemp1 >=1)
                         {
                             DataProvider.Ins.DB.ITEMS.Remove(DataProvider.Ins.DB.ITEMS.Where(h => h.IDItemForm == IDItemform).FirstOrDefault());
+                            DataProvider.Ins.DB.SaveChanges();
                             IDtemp1--;
                         }
                         DataProvider.Ins.DB.ITEMFORMs.Remove(DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault());
+                        DataProvider.Ins.DB.SaveChanges();
                         IDtemp--;
 
                     }
@@ -188,9 +190,11 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         while (IDtemp1 >= 1)
                         {
                             DataProvider.Ins.DB.SERVICELISTs.Remove(DataProvider.Ins.DB.SERVICELISTs.Where(h => h.IDCusService == IDService).FirstOrDefault());
+                            DataProvider.Ins.DB.SaveChanges();
                             IDtemp1--;
                         }
                         DataProvider.Ins.DB.CUSSERVICEs.Remove(DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedCustomer.ID).FirstOrDefault());
+                        DataProvider.Ins.DB.SaveChanges();
                         IDtemp--;
 
                     }

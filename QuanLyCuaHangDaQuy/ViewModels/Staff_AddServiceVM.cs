@@ -116,10 +116,10 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     MessageBox.Show("Please fill in all the information");
                     return;
                 }    
-                if( Convert.ToInt32(Repay) < Convert.ToInt32(Remain))
+                if( Convert.ToInt64(Repay) < Convert.ToInt64(Remain)|| Convert.ToInt64(Remain) < 0)
                 {
-                    MessageBox.Show("Repay >= Total * 0.5");
-                    Repay = "0";
+                    MessageBox.Show("Total * 0.5 <= Prepay <= Total");
+                    Repay = "";
                     return;
                 }
                 bool Flag = false;
@@ -155,8 +155,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             (p) => { return true; },
             (p) =>
             {
-              PriceDiscounted = (Convert.ToInt32(DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == SelectedService.ID).FirstOrDefault().Price) + Convert.ToInt32(Cost)).ToString();
-                Remain = ((Convert.ToInt32(PriceDiscounted) * QTTSL) - Convert.ToInt32(Repay)).ToString();
+              PriceDiscounted = (Convert.ToInt64(DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == SelectedService.ID).FirstOrDefault().Price) + Convert.ToInt64(Cost)).ToString();
+                Remain = ((Convert.ToInt64(PriceDiscounted) * QTTSL) - Convert.ToInt64(Repay)).ToString();
             }
         );
             CostChangedCommand = new RelayCommand<object>(
@@ -171,8 +171,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 }
                 if (Cost!="" && SelectedService!=null && Repay!="")
                 {
-                    PriceDiscounted = (Convert.ToInt32(DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == SelectedService.ID).FirstOrDefault().Price) + Convert.ToInt32(Cost)).ToString();
-                    Remain = ((Convert.ToInt32(PriceDiscounted) * QTTSL) - Convert.ToInt32(Repay)).ToString();
+                    PriceDiscounted = (Convert.ToInt64(DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == SelectedService.ID).FirstOrDefault().Price) + Convert.ToInt64(Cost)).ToString();
+                    Remain = ((Convert.ToInt64(PriceDiscounted) * QTTSL) - Convert.ToInt64(Repay)).ToString();
                 }    
 
             }
@@ -189,7 +189,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 }    
                 if(Repay!= "" && SelectedService != null)
                 {
-                    Remain = ((Convert.ToInt32(PriceDiscounted) * QTTSL) - Convert.ToInt32(Repay)).ToString();
+                    Remain = ((Convert.ToInt64(PriceDiscounted) * QTTSL) - Convert.ToInt64(Repay)).ToString();
                 }    
   
 
@@ -201,7 +201,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             {
                 if (Repay != "" && SelectedService != null)
                 {
-                    Remain = ((Convert.ToInt32(PriceDiscounted) * QTTSL) - Convert.ToInt32(Repay)).ToString();
+                    Remain = ((Convert.ToInt64(PriceDiscounted) * QTTSL) - Convert.ToInt64(Repay)).ToString();
                 }
             }
         );
