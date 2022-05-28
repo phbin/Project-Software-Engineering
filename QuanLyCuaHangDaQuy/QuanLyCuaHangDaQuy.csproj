@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{52AE58EE-C668-4652-89EB-5C7B6114E589}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyCuaHangDaQuy</RootNamespace>
+    <AssemblyName>QuanLyCuaHangDaQuy</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.5.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.5\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.4.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.4.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ConvertImage.cs" />
+    <Compile Include="Models\ACCOUNT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CART.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CUSSERVICE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataProvider.cs" />
+    <Compile Include="Models\FORMCATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMPORTEDITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOCUSTOMER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOPROVIDER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOSTAFF.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMBILL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMBILLFORM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMFORM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MATERIALCATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICECATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICELIST.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UNIT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\CartUC.xaml.cs">
+      <DependentUpon>CartUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ControlBarUC.xaml.cs">
+      <DependentUpon>ControlBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\CustomerControl.xaml.cs">
+      <DependentUpon>CustomerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ExitButton.xaml.cs">
+      <DependentUpon>ExitButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\HumanResourceControl.xaml.cs">
+      <DependentUpon>HumanResourceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ItemsControl.xaml.cs">
+      <DependentUpon>ItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\SearchBarUC.xaml.cs">
+      <DependentUpon>SearchBarUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\SelectedProductCartUC.xaml.cs">
+      <DependentUpon>SelectedProductCartUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\UserControls\ShowProductUC.xaml.cs">
+      <DependentUpon>ShowProductUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AccountViewModel.cs" />
+    <Compile Include="ViewModels\Add_AddServiceVM.cs" />
+    <Compile Include="ViewModels\Add_EditServiceVM.cs" />
+    <Compile Include="ViewModels\Add_ListServiceVM.cs" />
+    <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\CustomerViewModel.cs" />
+    <Compile Include="ViewModels\ExitButton.cs" />
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\HumanResourcesViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MainStaffViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProviderViewModel.cs" />
+    <Compile Include="ViewModels\SelectedItem.cs" />
+    <Compile Include="ViewModels\SelectedProductCartVM.cs" />
+    <Compile Include="ViewModels\ShopItemsClickViewModel.cs" />
+    <Compile Include="Views\Admin\AccountManagerWindow.xaml.cs">
+      <DependentUpon>AccountManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\AddService.xaml.cs">
+      <DependentUpon>AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\EditService.xaml.cs">
+      <DependentUpon>EditService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\ListService.xaml.cs">
+      <DependentUpon>ListService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\CustomerInfoWindow.xaml.cs">
+      <DependentUpon>CustomerInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\FormCatelogyManagerWindow.xaml.cs">
+      <DependentUpon>FormCatelogyManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\HumanResourceEditWindow.xaml.cs">
+      <DependentUpon>HumanResourceEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml.cs">
+      <DependentUpon>ReceiptImportedItems.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml.cs">
+      <DependentUpon>ImportecItemsInList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml.cs">
+      <DependentUpon>ImportItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\InventoryInfo.xaml.cs">
+      <DependentUpon>InventoryInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\HomeWindow.xaml.cs">
+      <DependentUpon>HomeWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\MainStaffWindow.xaml.cs">
+      <DependentUpon>MainStaffWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\MaterialCatelogyManagerWindow.xaml.cs">
+      <DependentUpon>MaterialCatelogyManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\PersonalInfoWindow.xaml.cs">
+      <DependentUpon>PersonalInfoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\ProviderManagerWindow.xaml.cs">
+      <DependentUpon>ProviderManagerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ShopItemsClick.xaml.cs">
+      <DependentUpon>ShopItemsClick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ShopWindow.xaml.cs">
+      <DependentUpon>ShopWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_AddCustomer.xaml.cs">
+      <DependentUpon>Staff_AddCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml.cs">
+      <DependentUpon>Staff_AddReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_AddService.xaml.cs">
+      <DependentUpon>Staff_AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_Customer.xaml.cs">
+      <DependentUpon>Staff_Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml.cs">
+      <DependentUpon>Staff_DetailCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_EditCustomer.xaml.cs">
+      <DependentUpon>Staff_EditCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml.cs">
+      <DependentUpon>Staff_EditReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_EditService.xaml.cs">
+      <DependentUpon>Staff_EditService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml.cs">
+      <DependentUpon>Staff_InfoCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Customer\Staff_ListCustomer.xaml.cs">
+      <DependentUpon>Staff_ListCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_ListReceipt.xaml.cs">
+      <DependentUpon>Staff_ListReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_ListService.xaml.cs">
+      <DependentUpon>Staff_ListService.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Resources\ResourceDictionary\ScrollBarStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\CartUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\UserControls\ControlBarUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\UserControls\CustomerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\ExitButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\HumanResourceControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\UserControls\ItemsControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\UserControls\SearchBarUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\SelectedProductCartUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\UserControls\ShowProductUC.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\AccountManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\EditService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\ListService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\CustomerInfoWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\FormCatelogyManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\HumanResourceEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModels\RelayCommand.cs" />
+    <Page Include="Resources\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\InventoryInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\MainStaffWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\MaterialCatelogyManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\PersonalInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\ProviderManagerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\ShopItemsClick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\ShopWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_AddCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_AddService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_Customer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_EditCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_EditService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Customer\Staff_ListCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_ListReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_ListService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Resource Include="Resources\Fonts\Lato Black.ttf" />
+    <Resource Include="Resources\Fonts\Lato Bold.ttf" />
+    <Resource Include="Resources\Fonts\Lato Hairline.ttf" />
+    <Resource Include="Resources\Fonts\Lato Heavy.ttf" />
+    <Resource Include="Resources\Fonts\Lato Italic.ttf" />
+    <Resource Include="Resources\Fonts\Lato Light.ttf" />
+    <Resource Include="Resources\Fonts\Lato Medium.ttf" />
+    <Resource Include="Resources\Fonts\Lato Regular.ttf" />
+    <Resource Include="Resources\Fonts\Lato Semibold.ttf" />
+    <Resource Include="Resources\Fonts\Lato Thin.ttf" />
+    <None Include="Resources\Fonts\NghienDesign.com.url" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Arrow_drop_left.png" />
+    <Resource Include="Resources\Image\avatar.png" />
+    <Resource Include="Resources\Image\Iconography - Caesarzkn.png" />
+    <Resource Include="Resources\Image\imageitem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\Bag_fill.png" />
+    <Resource Include="Resources\Image\File_dock_duotone_line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\bracelet.png" />
+    <Resource Include="Resources\Image\earrings.png" />
+    <Resource Include="Resources\Image\home.png" />
+    <Resource Include="Resources\Image\necklace.png" />
+    <Resource Include="Resources\Image\ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\passwordIcon.png" />
+    <Resource Include="Resources\Image\userIcon.png" />
+    <Resource Include="Resources\Image\loginWindowBG.png" />
+    <Resource Include="Resources\Image\madlife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>

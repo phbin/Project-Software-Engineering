@@ -1,0 +1,208 @@
+﻿<UserControl x:Class="QuanLyCuaHangDaQuy.Views.Staff.HomeWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" 
+             xmlns:uc="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="702.75" d:DesignWidth="1080">
+    <Grid>
+        <StackPanel Height="315" Margin="0 0 0 388">
+            <Image Source="/Resources/Image/home.png">
+
+            </Image>
+        </StackPanel>
+        <Grid Margin="0 315 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Border Width="218.25" 
+            Height="317.25" 
+            Background="#FFFBFBFB" 
+            BorderBrush="#FFF0F0F0"
+            BorderThickness="1" 
+            CornerRadius="7.5">
+                <Grid Cursor="Hand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="203.25"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Grid.Row="0" 
+                    Margin="0,22.5,0,8.75" 
+                    HorizontalAlignment="Center"
+                    Source="/Resources/Image/ring.png">
+                    </Image>
+                    <TextBlock 
+                    Text="RINGS" 
+                    Margin="16.5,0" 
+                    Grid.Row="1" 
+                    MaxWidth="140"
+                    Foreground="#FF000000" 
+                    HorizontalAlignment="Left"
+                    FontSize="28.5"/>
+                    <TextBlock 
+                    Text="Collection" 
+                    TextTrimming="CharacterEllipsis" 
+                    HorizontalAlignment="Left"
+                    MaxWidth="140"
+                    Margin="16.5 0" 
+                    Grid.Row="2" 
+                    Foreground="#FFE0A645"
+                    FontSize="15.75"/>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect
+                         ShadowDepth="4"
+                         Direction="315"
+                         Color="#FF545454"
+                         Opacity="0.25"
+                         BlurRadius="3"
+                        />
+                </Border.Effect>
+            </Border>
+            <Border Grid.Column="1" Width="218.25" 
+            Height="317.25" 
+            Background="#FFFBFBFB" 
+            BorderBrush="#FFF0F0F0"
+            BorderThickness="1" 
+            CornerRadius="7.5">
+                <Grid Cursor="Hand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="203.25"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Grid.Row="0" 
+                    Margin="0,22.5,0,8.75" 
+                    HorizontalAlignment="Center"
+                    Source="/Resources/Image/earrings.png">
+                    </Image>
+                    <TextBlock 
+                    Text="EARRINGS" 
+                    Margin="16.5,0" 
+                    Grid.Row="1" 
+                    MaxWidth="140"
+                    Foreground="#FF000000" 
+                    HorizontalAlignment="Left"
+                    FontSize="28.5"/>
+                    <TextBlock 
+                    Text="Collection" 
+                    TextTrimming="CharacterEllipsis" 
+                    HorizontalAlignment="Left"
+                    MaxWidth="140"
+                    Margin="16.5 0" 
+                    Grid.Row="2" 
+                    Foreground="#FFE0A645"
+                    FontSize="15.75"/>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect
+                         ShadowDepth="4"
+                         Direction="315"
+                         Color="#FF545454"
+                         Opacity="0.25"
+                         BlurRadius="3"
+                        />
+                </Border.Effect>
+            </Border>
+            <Border Grid.Column="2" Width="218.25" 
+            Height="317.25" 
+            Background="#FFFBFBFB" 
+            BorderBrush="#FFF0F0F0"
+            BorderThickness="1" 
+            CornerRadius="7.5">
+                <Grid Cursor="Hand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="203.25"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Grid.Row="0" 
+                    Margin="0,22.5,0,8.75" 
+                    HorizontalAlignment="Center"
+                    Source="/Resources/Image/bracelet.png">
+                    </Image>
+                    <TextBlock 
+                    Text="BRACELETS" 
+                    Margin="16.5,0" 
+                    Grid.Row="1" 
+                    MaxWidth="140"
+                    Foreground="#FF000000" 
+                    HorizontalAlignment="Left"
+                    FontSize="28.5"/>
+                    <TextBlock 
+                    Text="Collection" 
+                    TextTrimming="CharacterEllipsis" 
+                    HorizontalAlignment="Left"
+                    MaxWidth="140"
+                    Margin="16.5 0" 
+                    Grid.Row="2" 
+                    Foreground="#FFE0A645"
+                    FontSize="15.75"/>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect
+                         ShadowDepth="4"
+                         Direction="315"
+                         Color="#FF545454"
+                         Opacity="0.25"
+                         BlurRadius="3"
+                        />
+                </Border.Effect>
+            </Border>
+            <Border Grid.Column="3" Width="218.25" 
+            Height="317.25" 
+            Background="#FFFBFBFB" 
+            BorderBrush="#FFF0F0F0"
+            BorderThickness="1" 
+            CornerRadius="7.5">
+                <Grid Cursor="Hand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="203.25"></RowDefinition>
+                        <RowDefinition Height="40 "></RowDefinition>
+                        <RowDefinition Height="50"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image 
+                    Grid.Row="0" 
+                    Margin="0,22.5,0,8.75" 
+                    HorizontalAlignment="Center"
+                    Source="/Resources/Image/necklace.png">
+                    </Image>
+                    <TextBlock 
+                    Text="NECKLACES" 
+                    Margin="16,0,0,50.2" 
+                    Grid.Row="1" 
+                    Foreground="#FF000000" 
+                    HorizontalAlignment="Left"
+                    FontSize="28.5" Grid.RowSpan="2" Width="169"/>
+                    <TextBlock 
+                    Text="Collection" 
+                    TextTrimming="CharacterEllipsis" 
+                    HorizontalAlignment="Left"
+                    MaxWidth="140"
+                    Margin="16.5 0" 
+                    Grid.Row="2" 
+                    Foreground="#FFE0A645"
+                    FontSize="15.75"/>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect
+                         ShadowDepth="4"
+                         Direction="315"
+                         Color="#FF545454"
+                         Opacity="0.25"
+                         BlurRadius="3"
+                        />
+                </Border.Effect>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

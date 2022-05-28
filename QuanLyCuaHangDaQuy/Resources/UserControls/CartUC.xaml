@@ -1,0 +1,385 @@
+﻿<UserControl x:Class="QuanLyCuaHangDaQuy.Resources.UserControls.CartUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+             mc:Ignorable="d"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
+             d:DesignHeight="702.75" d:DesignWidth="1080"
+             d:DataContext="{d:DesignInstance Type=viewmodels:CartViewModel}"
+             Name="wdCart"
+             FontFamily="/Resources/Fonts/#Lato">
+    <i:Interaction.Triggers>
+        <i:EventTrigger>
+            <i:InvokeCommandAction Command="{Binding LoadCartCommand}"
+                                   CommandParameter="{Binding ElementName=wdCart}" />
+        </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <UserControl.DataContext>
+        <viewmodels:CartViewModel></viewmodels:CartViewModel>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style x:Key="ScrollBarThumb" TargetType="{x:Type Thumb}">
+            <Setter Property="OverridesDefaultStyle" Value="true"/>
+            <Setter Property="IsTabStop" Value="false"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Thumb}">
+                        <Border x:Name="rectangle"
+                                SnapsToDevicePixels="True"
+                                Background="#ABABAB"
+                                CornerRadius="3"
+                                Height="{TemplateBinding Height}"
+                                Width="{TemplateBinding Width}"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type ScrollBar}">
+            <Setter Property="Stylus.IsPressAndHoldEnabled" Value="false"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="false"/>
+            <Setter Property="Width" Value="14"/>
+            <Setter Property="Margin" Value="-14 0 0 0" />
+            <Setter Property="MinWidth" Value="{Binding Width, RelativeSource={RelativeSource Self}}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollBar}">
+                        <Grid x:Name="Bg" SnapsToDevicePixels="true" Background="Transparent">
+                            <Border Padding="0 4">
+                                <Track x:Name="PART_Track"
+                               IsDirectionReversed="true"
+                               IsEnabled="{TemplateBinding IsMouseOver}"
+                               Width="6"
+                               HorizontalAlignment="Center">
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageUpCommand}" />
+                                    </Track.DecreaseRepeatButton>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageDownCommand}" />
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.Thumb>
+                                        <Thumb Style="{StaticResource ScrollBarThumb}" />
+                                    </Track.Thumb>
+                                </Track>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="Orientation" Value="Horizontal">
+                    <Setter Property="Width" Value="Auto"/>
+                    <Setter Property="MinWidth" Value="0"/>
+                    <Setter Property="Height" Value="14"/>
+                    <Setter Property="MinHeight" Value="{Binding Height, RelativeSource={RelativeSource Self}}"/>
+                    <Setter Property="Margin" Value="0 -14 0 0" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid x:Name="Bg" SnapsToDevicePixels="true">
+                                    <Track x:Name="PART_Track"
+                                    IsEnabled="{TemplateBinding IsMouseOver}"
+                                    Height="6"
+                                       >
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageLeftCommand}"/>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Opacity="0" Command="{x:Static ScrollBar.PageRightCommand}"/>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb Style="{StaticResource ScrollBarThumb}" />
+                                        </Track.Thumb>
+                                    </Track>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                        <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle x:Name="Corner" Grid.Column="1" Fill="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" Grid.Row="1"/>
+                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" Grid.Column="0" Margin="{TemplateBinding Padding}" Grid.Row="0"/>
+                            <ScrollBar x:Name="PART_VerticalScrollBar" 
+                                   Opacity="0.2"
+                                   AutomationProperties.AutomationId="VerticalScrollBar" 
+                                   Cursor="Arrow" 
+                                   Grid.Column="1"
+                                   Maximum="{TemplateBinding ScrollableHeight}" 
+                                   Minimum="0" 
+                                   Grid.Row="0" 
+                                   Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                                   Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                                   ViewportSize="{TemplateBinding ViewportHeight}"/>
+                            <ScrollBar x:Name="PART_HorizontalScrollBar"
+                                   Opacity="0.2"
+                                   AutomationProperties.AutomationId="HorizontalScrollBar"
+                                   Cursor="Arrow" 
+                                   Grid.Column="0"
+                                   Maximum="{TemplateBinding ScrollableWidth}"
+                                   Minimum="0" 
+                                   Orientation="Horizontal"
+                                   Grid.Row="1" 
+                                   Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                                   Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   ViewportSize="{TemplateBinding ViewportWidth}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <EventTrigger RoutedEvent="MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation To="1" Duration="0:0:0.3" Storyboard.TargetName="PART_VerticalScrollBar" Storyboard.TargetProperty="Opacity" />
+                                        <DoubleAnimation To="1" Duration="0:0:0.3" Storyboard.TargetName="PART_HorizontalScrollBar" Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <DoubleAnimation To="0.2" Duration="0:0:0.3" Storyboard.TargetName="PART_VerticalScrollBar" Storyboard.TargetProperty="Opacity" />
+                                        <DoubleAnimation To="0.2" Duration="0:0:0.3" Storyboard.TargetName="PART_HorizontalScrollBar" Storyboard.TargetProperty="Opacity" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="762"/>
+            <ColumnDefinition Width="318"/>
+        </Grid.ColumnDefinitions>
+        <!--CART-->
+        <Grid Grid.Column="0" 
+              Margin="36 36 36 18">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="108"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Height="108" Grid.Row="0">
+                <Rectangle Height="1"
+                           Width="762"
+                           Fill="#ABABAB"
+                           VerticalAlignment="Bottom"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="CART" FontSize="37.5"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+            </Grid>
+            
+            <!--NULL-->
+            <Grid Visibility="Collapsed"
+                  Grid.Row="1"
+                  x:Name="NullCart">
+                <TextBlock Text="You have nothing at Cart"
+                           FontSize="25.5"
+                           FontWeight="SemiBold"
+                           Foreground="#ABABAB"
+                           HorizontalAlignment="Center"
+                           Margin="0 140 0 0"/>
+            </Grid>
+            <ScrollViewer Grid.Row="1" 
+                          Margin="0 24 -16 0" 
+                          Visibility="Visible"
+                          >
+
+                <StackPanel x:Name="spCart" >
+                    <!--StackPanel.Resources>
+                    <Style TargetType="{x:Type local:SelectedProductCartUC}">
+                        <Setter Property="Margin" Value="0 0 0 28"/>
+                    </Style>
+                </StackPanel.Resources>
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger>
+                            <i:InvokeCommandAction Command="{Binding SPCart}"
+                                                               CommandParameter="{Binding ElementName=spCart}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers-->
+                    <ListView SelectedItem="{Binding Selected,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="listViewCart" ItemsSource="{Binding SelectedItem}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="135"/>
+                                        <ColumnDefinition Width="200"/>
+                                        <ColumnDefinition Width="180"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Height="0"
+                                               Fill="#ABABAB"
+                                               Width="690"
+                                               VerticalAlignment="Bottom" 
+                                               Grid.ColumnSpan="5"/>
+                                    <Image Grid.Column="0"      
+                                           Name="imgItem"
+                                           Source="{Binding Picture}"/>
+                                                                <StackPanel Grid.Column="1" Margin="30 0 30 0">
+                                        <TextBlock Text="{Binding NameItem}"
+                                                   Name="txtName"
+                                                   FontSize="23"
+                                                   FontWeight="Bold" Margin="0,20,0,0"/>
+                                        <TextBlock Text="{Binding NameMaterial}"
+                                                   Name="txtMaterial"
+                                                   FontSize="15.75"
+                                                   Foreground="#ABABAB"
+                                                   />
+                                        <TextBlock Text="{Binding NameForm}"
+                                                   Name="txtForm"
+                                                   FontSize="15.75"
+                                                   Foreground="#ABABAB"
+                                                   />
+                                    </StackPanel>
+                                    <TextBlock Grid.Column="2"
+                                               x:Name="txtTotal"
+                                               Text="{Binding Total}"
+                                               FontSize="15.75"
+                                               VerticalAlignment="Center"
+                                               HorizontalAlignment="Center"
+                                               Foreground="#ABABAB"/>
+                                    <TextBlock Visibility="Hidden"
+                                               Name="txtIDItem"  
+                                               Text="{Binding IDItem}"/>
+                                    <WrapPanel Height="20" 
+                                                Grid.Column="3">
+                                        <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                                                Height="18"
+                                                Name="btnMinus"
+                                                Padding="0"
+                                                Margin="0 0 4 0"                                         
+                                                CommandParameter="{Binding ElementName=wdCart}"
+                                                Command="{Binding MinusCommand}"
+                                                Content="{materialDesign:PackIcon Minus}"
+                                                Foreground="#ABABAB"
+                                            >
+                                        </Button>
+                                        <Border Height="20"
+                                                Width="40"
+                                                Background="#DFDFDF"
+                                                CornerRadius="3.75">
+                                            <TextBlock 
+                                                       Name="txtQuantity"
+                                                       Text="{Binding Quantity}"
+                                                       HorizontalAlignment="Center"
+                                                       VerticalAlignment="Center"
+                                                       Padding="0"
+                                                       Foreground="#ABABAB"
+                                                       FontWeight="Bold"/>
+                                        </Border>
+                                        <Button Style="{StaticResource MaterialDesignFlatDarkButton}"                       
+                                                Height="18"
+                                                Name="btnPlus"
+                                                Padding="0"
+                                                Command="{Binding PlusCommand}"
+                                                CommandParameter="{Binding ElementName=wdCart}"
+                                                Margin="4 0 0 0"
+                                                Content="{materialDesign:PackIcon Plus}"
+                                                Foreground="#ABABAB"
+                                                >
+                                        </Button>
+                                    </WrapPanel>
+
+                                    <Button Grid.Column="4"
+                                            Width="30"
+                                            Name="btnExit"
+                                            Height="30"
+                                            Command="{Binding DeleteCommand}"
+                                            CommandParameter="{Binding ElementName=wdCart}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                               Style="{StaticResource MaterialDesignIconForegroundButton}">
+                                        <materialDesign:PackIcon Kind="WindowClose" 
+                                         Foreground="#555555" />
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        <!--Order summary-->
+        <Grid Grid.Column="1" Background="#ECECEC" Width="318">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="144"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Margin="18 0 18 0">
+                <TextBlock Text="Order Summary"
+                           FontSize="27"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+            </Grid>
+
+            <DockPanel Grid.Row="1" Margin="18 36 18 36">
+                <DockPanel DockPanel.Dock="Top">
+                    <DockPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="18"/>
+                            <Setter Property="Foreground" Value="#5D5D5D"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                            <Setter Property="Margin" Value="0 0 0 14"/>
+                        </Style>
+                    </DockPanel.Resources>
+                    
+                    <StackPanel DockPanel.Dock="Left" Width="141">
+                        <TextBlock Text="1 item"/>
+                        <TextBlock Text="Tax" />
+                    </StackPanel>
+
+
+                    <StackPanel DockPanel.Dock="Right" Width="141" >
+                        <TextBlock Text="3.000.100đ"
+                                   HorizontalAlignment="Right"/>
+                        <TextBlock Text="1.000đ" 
+                                   HorizontalAlignment="Right"/>
+                    </StackPanel>
+                </DockPanel>
+                
+                <DockPanel DockPanel.Dock="Top" Margin="0 12 0 12">
+                    <DockPanel.Resources>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="FontSize" Value="19"/>
+                            <Setter Property="Foreground" Value="#000000"/>
+                            <Setter Property="FontWeight" Value="SemiBold"/>
+                        </Style>
+                    </DockPanel.Resources>
+                    
+                    <TextBlock Text="Total" DockPanel.Dock="Left"/>
+                    <TextBlock Text="4.000.000đ" DockPanel.Dock="Right" HorizontalAlignment="Right"/>
+                </DockPanel>
+
+                <Button DockPanel.Dock="Top" 
+                        Width="250" Height="47" 
+                        Background="#FCC871"
+                        BorderThickness="0">
+                    <TextBlock Text="PROCEED TO CHECKOUT"
+                               Foreground="#FFFFFF"
+                               FontSize="17"
+                               FontWeight="SemiBold"/>
+                </Button>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</UserControl>
