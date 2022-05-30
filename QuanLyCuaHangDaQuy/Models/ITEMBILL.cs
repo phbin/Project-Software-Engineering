@@ -17,6 +17,7 @@ namespace QuanLyCuaHangDaQuy.Models
         public string ID { get; set; }
         public string IDItemBillForm { get; set; }
         public string IDItem { get; set; }
+        public Nullable<int> Quantity { get; set; }
     
         public virtual IMPORTEDITEM IMPORTEDITEM { get; set; }
         public virtual ITEMBILLFORM ITEMBILLFORM { get; set; }

@@ -103,6 +103,7 @@
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
           <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

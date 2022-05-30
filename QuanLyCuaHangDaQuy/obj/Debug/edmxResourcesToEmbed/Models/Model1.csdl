@@ -112,6 +112,7 @@
     <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDItemBillForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" />
     <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_IDItemBill_ImportedItems" FromRole="ITEMBILL" ToRole="IMPORTEDITEMS" />
     <NavigationProperty Name="ITEMBILLFORM" Relationship="Self.FK_IDItemBill_ItemBillForm" FromRole="ITEMBILL" ToRole="ITEMBILLFORM" />
   </EntityType>

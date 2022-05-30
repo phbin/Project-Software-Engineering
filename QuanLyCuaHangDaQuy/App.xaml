@@ -8,7 +8,7 @@
              xmlns:view1="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" 
              xmlns:view11="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
              x:Class="QuanLyCuaHangDaQuy.App"
-             StartupUri="/Views/Admin/Admin_Service/ListService.xaml">  
+             StartupUri="/Views/Admin/Admin_ImportedItems/Admin_ListReceipt.xaml">  
 
     <Application.Resources>
         <ResourceDictionary>

@@ -100,6 +100,7 @@
           <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDItemBillForm" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
         </EntityType>
         <EntityType Name="ITEMBILLFORM">
           <Key>
@@ -575,6 +576,7 @@
           <Property Name="ID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDItemBillForm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="IDItem" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
           <NavigationProperty Name="IMPORTEDITEM" Relationship="Self.FK_IDItemBill_ImportedItems" FromRole="ITEMBILL" ToRole="IMPORTEDITEMS" />
           <NavigationProperty Name="ITEMBILLFORM" Relationship="Self.FK_IDItemBill_ItemBillForm" FromRole="ITEMBILL" ToRole="ITEMBILLFORM" />
         </EntityType>
@@ -1056,6 +1058,7 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
                 <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -174,10 +174,14 @@
       <DependentUpon>ShowProductUC.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AccountViewModel.cs" />
-    <Compile Include="ViewModels\Add_AddServiceVM.cs" />
-    <Compile Include="ViewModels\Add_EditServiceVM.cs" />
-    <Compile Include="ViewModels\Add_ListServiceVM.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\Admin_AddReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_AddServiceVM.cs" />
+    <Compile Include="ViewModels\Admin_EditReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_EditServiceVM.cs" />
+    <Compile Include="ViewModels\Admin_ListImportItemVM.cs" />
+    <Compile Include="ViewModels\Admin_ListReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_ListServiceVM.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
@@ -197,14 +201,32 @@
     <Compile Include="Views\Admin\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_Service\AddService.xaml.cs">
-      <DependentUpon>AddService.xaml</DependentUpon>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml.cs">
+      <DependentUpon>Admin_AddImportItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_Service\EditService.xaml.cs">
-      <DependentUpon>EditService.xaml</DependentUpon>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml.cs">
+      <DependentUpon>Admin_AddReceipt.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_Service\ListService.xaml.cs">
-      <DependentUpon>ListService.xaml</DependentUpon>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_EditImportItem.xaml.cs">
+      <DependentUpon>Admin_EditImportItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml.cs">
+      <DependentUpon>Admin_EditReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml.cs">
+      <DependentUpon>Admin_ListImportItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml.cs">
+      <DependentUpon>Admin_ListReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_AddService.xaml.cs">
+      <DependentUpon>Admin_AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_EditService.xaml.cs">
+      <DependentUpon>Admin_EditService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_ListService.xaml.cs">
+      <DependentUpon>Admin_ListService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\CustomerInfoWindow.xaml.cs">
       <DependentUpon>CustomerInfoWindow.xaml</DependentUpon>
@@ -214,15 +236,6 @@
     </Compile>
     <Compile Include="Views\Admin\HumanResourceEditWindow.xaml.cs">
       <DependentUpon>HumanResourceEditWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml.cs">
-      <DependentUpon>ReceiptImportedItems.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml.cs">
-      <DependentUpon>ImportecItemsInList.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml.cs">
-      <DependentUpon>ImportItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\InventoryInfo.xaml.cs">
       <DependentUpon>InventoryInfo.xaml</DependentUpon>
@@ -335,15 +348,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_Service\AddService.xaml">
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_Service\EditService.xaml">
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_Service\ListService.xaml">
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_EditImportItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_EditService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_ListService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -359,24 +396,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Page Include="Resources\MainResource.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

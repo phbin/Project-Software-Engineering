@@ -95,6 +95,7 @@
     <Property Name="ID" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItemBillForm" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="IDItem" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
   </EntityType>
   <EntityType Name="ITEMBILLFORM">
     <Key>
