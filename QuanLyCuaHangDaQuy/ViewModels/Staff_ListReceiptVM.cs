@@ -96,6 +96,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         public ICommand SelectedReceiptCommand { get; set; }
         public ICommand LoadCommand { get; set; }
         public ICommand AddCommand { get; set; }
+        public ICommand ExportCommand { get; set; }
         public ICommand TextSearchCommand { get; set; }
       
         public Staff_ListReceiptVM()
@@ -195,6 +196,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                   }
               }
           );
+            ExportCommand = new RelayCommand<object>(
+             (p) => { return true; },
+             (p) =>
+             {
+                 Staff_BillListReceipt  staff_BillListReceipt= new Staff_BillListReceipt();
+                 staff_BillListReceipt.ShowDialog();
+             }
+             );
         }
     }
 }

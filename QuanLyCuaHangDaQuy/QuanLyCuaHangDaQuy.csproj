@@ -164,6 +164,7 @@
     <Compile Include="ViewModels\Staff_AddCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_AddReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_AddServiceVM.cs" />
+    <Compile Include="ViewModels\Staff_BillListReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_EditCustomerVM.cs" />
     <Compile Include="ViewModels\Staff_EditReceiptVM.cs" />
     <Compile Include="ViewModels\Staff_EditServiceVM.cs" />
@@ -187,6 +188,9 @@
     </Compile>
     <Compile Include="Views\Staff_AddService.xaml.cs">
       <DependentUpon>Staff_AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff_BillListReceipt.xaml.cs">
+      <DependentUpon>Staff_BillListReceipt.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff_EditCustomer.xaml.cs">
       <DependentUpon>Staff_EditCustomer.xaml</DependentUpon>
@@ -259,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff_AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff_BillListReceipt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -346,6 +354,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\Image\madlife.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
