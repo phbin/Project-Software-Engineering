@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CuaHangDaQuyModelStoreContainer" CdmEntityContainer="CuaHangDaQuyEntities">
+    <EntitySetMapping Name="ACCOUNTs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ACCOUNT">
+        <MappingFragment StoreEntitySet="ACCOUNT">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pass" ColumnName="Pass" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccType" ColumnName="AccType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARTS">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CART">
+        <MappingFragment StoreEntitySet="CARTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSSERVICEs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.CUSSERVICE">
+        <MappingFragment StoreEntitySet="CUSSERVICE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="DateBooking" ColumnName="DateBooking" />
+          <ScalarProperty Name="Stt" ColumnName="Stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FORMCATEGORies">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.FORMCATEGORY">
+        <MappingFragment StoreEntitySet="FORMCATEGORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameForm" ColumnName="NameForm" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMPORTEDITEMS">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.IMPORTEDITEM">
+        <MappingFragment StoreEntitySet="IMPORTEDITEMS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameItem" ColumnName="NameItem" />
+          <ScalarProperty Name="IDProd" ColumnName="IDProd" />
+          <ScalarProperty Name="IDForm" ColumnName="IDForm" />
+          <ScalarProperty Name="IDMaterial" ColumnName="IDMaterial" />
+          <ScalarProperty Name="SellQty" ColumnName="SellQty" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="DatePurchase" ColumnName="DatePurchase" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Picture" ColumnName="Picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFOCUSTOMERs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.INFOCUSTOMER">
+        <MappingFragment StoreEntitySet="INFOCUSTOMER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="IDPersonal" ColumnName="IDPersonal" />
+          <ScalarProperty Name="Points" ColumnName="Points" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFOPROVIDERs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.INFOPROVIDER">
+        <MappingFragment StoreEntitySet="INFOPROVIDER">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameProd" ColumnName="NameProd" />
+          <ScalarProperty Name="Addr" ColumnName="Addr" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="INFOSTAFFs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.INFOSTAFF">
+        <MappingFragment StoreEntitySet="INFOSTAFF">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="DoB" ColumnName="DoB" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Addr" ColumnName="Addr" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="IDPersonal" ColumnName="IDPersonal" />
+          <ScalarProperty Name="stt" ColumnName="stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMBILLs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILL">
+        <MappingFragment StoreEntitySet="ITEMBILL">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDItemBillForm" ColumnName="IDItemBillForm" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMBILLFORMs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMBILLFORM">
+        <MappingFragment StoreEntitySet="ITEMBILLFORM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDProd" ColumnName="IDProd" />
+          <ScalarProperty Name="DateBooking" ColumnName="DateBooking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMFORMs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEMFORM">
+        <MappingFragment StoreEntitySet="ITEMFORM">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDCustomer" ColumnName="IDCustomer" />
+          <ScalarProperty Name="IDStaff" ColumnName="IDStaff" />
+          <ScalarProperty Name="DateBooking" ColumnName="DateBooking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ITEMS">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.ITEM">
+        <MappingFragment StoreEntitySet="ITEMS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDItemForm" ColumnName="IDItemForm" />
+          <ScalarProperty Name="IDItem" ColumnName="IDItem" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="DateSell" ColumnName="DateSell" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MATERIALCATEGORies">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.MATERIALCATEGORY">
+        <MappingFragment StoreEntitySet="MATERIALCATEGORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDUnit" ColumnName="IDUnit" />
+          <ScalarProperty Name="NameMaterial" ColumnName="NameMaterial" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICECATEGORies">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.SERVICECATEGORY">
+        <MappingFragment StoreEntitySet="SERVICECATEGORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameService" ColumnName="NameService" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SERVICELISTs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.SERVICELIST">
+        <MappingFragment StoreEntitySet="SERVICELIST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IDCusService" ColumnName="IDCusService" />
+          <ScalarProperty Name="IDService" ColumnName="IDService" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Costs" ColumnName="Costs" />
+          <ScalarProperty Name="PriceDiscounted" ColumnName="PriceDiscounted" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Prepay" ColumnName="Prepay" />
+          <ScalarProperty Name="Remain" ColumnName="Remain" />
+          <ScalarProperty Name="DateReturn" ColumnName="DateReturn" />
+          <ScalarProperty Name="Stt" ColumnName="Stt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UNITs">
+      <EntityTypeMapping TypeName="CuaHangDaQuyModel.UNIT">
+        <MappingFragment StoreEntitySet="UNIT">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NameUnit" ColumnName="NameUnit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="USP_Carts" FunctionName="CuaHangDaQuyModel.Store.USP_Carts" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateImportedItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateImportedItems" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateItems" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateItems" />
+    <FunctionImportMapping FunctionImportName="USP_UpdateServiceList" FunctionName="CuaHangDaQuyModel.Store.USP_UpdateServiceList" />
+  </EntityContainerMapping>
+</Mapping>

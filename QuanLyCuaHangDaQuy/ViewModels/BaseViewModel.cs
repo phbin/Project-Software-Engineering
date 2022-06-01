@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyCuaHangDaQuy.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -21,7 +22,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

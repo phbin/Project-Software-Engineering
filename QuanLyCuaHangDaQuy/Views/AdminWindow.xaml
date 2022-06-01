@@ -69,6 +69,27 @@
             <Setter Property="Foreground" Value="White"/>
 
         </Style>
+
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Height" Value="42"></Setter>
+            <Setter Property="Background" Value="Transparent"></Setter>
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="FontFamily" Value="Lato"/>
+            <Setter Property="FontSize" Value="22.85"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Foreground" Value="Black"></Setter>
+            <Setter Property="FontSize" Value="15.24"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,12,0,0"/>
+            <Setter Property="IsEnabled" Value="true"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
     </Window.Resources>
 
     <Grid>
@@ -265,7 +286,63 @@
 
 
             <Grid Grid.Row="0">
+                <!--ds-->
+                <DockPanel x:Name="btSwitchTableCatelogy" 
+                    Width="166" HorizontalAlignment="Left" Visibility="Collapsed">
+                    <Button Style="{StaticResource MaterialDesignPaperSecondaryButton}"
+                            x:Name="btMaterial"
+                            Uid="60"
+                            Padding="0"
+                            Height="36"
+                            Width="83"
+                            Content="Material"
+                            BorderBrush="#BCBCBC"   
+                            Foreground="#BCBCBC"
+                            FontSize="19.5"
+                            BorderThickness="1.5"
+                            DockPanel.Dock="Left"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="0"
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding ElementName=wdAdmin}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btMaterial}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+
+
+                    <Button Style="{StaticResource MaterialDesignPaperSecondaryButton}"
+                            x:Name="btForm"
+                            Uid="70"
+                            Padding="0"
+                            Height="36"
+                            Width="83"
+                            Content="Form"
+                            DockPanel.Dock="Right"  
+                            BorderBrush="#BCBCBC"
+                            Foreground="#BCBCBC"                
+                            FontSize="19.5"
+                            materialDesign:ShadowAssist.ShadowDepth="Depth0"
+                            materialDesign:ButtonAssist.CornerRadius="0"
+                            BorderThickness="1.5"                             
+                            Command="{Binding NavigateCommand}"
+                            CommandParameter="{Binding ElementName=wdAdmin}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="MouseMove">
+                                <i:InvokeCommandAction Command="{Binding GetUidCommand}"
+                                                   CommandParameter="{Binding ElementName=btForm}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
+                </DockPanel>
+
+
+                <!--add-->
                 <Button
+                    x:Name="btAdd"
                     Style="{StaticResource MaterialDesignFlatDarkButton}"
                     Height="36"
                     Width="106"
@@ -275,7 +352,11 @@
                     Background="#FCC871"
                     Foreground="Black"
                     HorizontalAlignment="Left"
-                    BorderBrush="#BCBCBC">
+                    BorderBrush="#BCBCBC"
+                    Command="{Binding AddCommand}"
+                    CommandParameter="{Binding ElementName=wdAdmin}"
+                    IsEnabled="False"
+                    Visibility="Visible">
                     <DockPanel Width="75" LastChildFill="False">
                         <TextBlock Text="Add"
                                    DockPanel.Dock="Left"
@@ -295,7 +376,7 @@
                         </Border>
                     </DockPanel>
                 </Button>
-                
+
                 <!--search Bar-->
                 <Border BorderThickness="1"
                         CornerRadius="21"
@@ -303,11 +384,13 @@
                         VerticalAlignment="Center"
                         Width="356"
                         Height="36"
-                        HorizontalAlignment="Right">
-                    <DockPanel Margin="15 0 0 0">
-                        <TextBox 
+                        HorizontalAlignment="Right"
+                        DataContext="">
+                    <DockPanel Margin="15 0 0 0"
+                               x:Name="SearchBar">
+                        <TextBox
                             x:Name="txtSearch"
-                            Width="294"
+                            Width="300"
                             materialDesign:HintAssist.Hint="Tim sthing"
                             FontSize="18" 
                             FontWeight="Medium" 
@@ -317,7 +400,7 @@
                             Background="Transparent"
                             BorderThickness="0" 
                             DockPanel.Dock="Left"
-                            />
+                            Text="{Binding TextSearch ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         <Button 
                             Height="30"
                             Width="30"
@@ -328,7 +411,8 @@
                             FocusVisualStyle="{x:Null}"
                             HorizontalAlignment="Right"
                             Padding="0" 
-                            DockPanel.Dock="Right">
+                            DockPanel.Dock="Right"
+                            Command="{Binding LoadCommand}">
                             <materialDesign:PackIcon 
                                 Kind="Magnify" 
                                 Height="24"
@@ -345,292 +429,392 @@
             <!--HR grid-->
             <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grHR">
+                  x:Name="grHR"
+                  DataContext="{StaticResource HumanResourcesVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
+                    <RowDefinition Height="42"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0"
                         BorderThickness="0"
                         CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="275"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition />
-
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Full Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Phone Number" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                        <TextBlock
-                                Text="ID Number" 
-                                Grid.Column="3"
-                                Style="{StaticResource TextHeader}"/>
-                    </Grid>
+                        Background="#FCC871" Grid.ColumnSpan="2">
                 </Border>
                 <Border
                         Grid.Row="1"
                         BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
                 </Border>
+                <DataGrid Grid.RowSpan="2"
+                  AutoGenerateColumns = "false "
+                  Background="Transparent"
+                  ItemsSource="{Binding ListStaff, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  SelectionUnit="FullRow"  
+               
+                  SelectedItem="{Binding Path=SelectedStaff, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                            <i:InvokeCommandAction Command="{Binding OpenInformationWindowCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No." Width="107"  Binding="{Binding No}" />
+                        <DataGridTextColumn Header="Full Name" Width="275" Binding="{Binding FullName}" />
+                        <DataGridTextColumn Header="Phone number" Width="180" Binding="{Binding Phone}" />
+                        <DataGridTextColumn Header="ID Number" Width="200" Binding="{Binding ID}" />
+                        <DataGridTemplateColumn Header="" Width="70" >
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" Background="Transparent">
+                                        <Button Background="Transparent"
+                                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        BorderThickness="0"
+                                        Width="20"
+                                        Command="{Binding EditCommand}"
+                                        Height="20"
+                                         Padding="0">
+
+                                            <materialDesign:PackIcon Kind="Pencil" Width="20"
+                                                             Height="20"
+                                                             Padding="0"
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource AncestorType={x:Type Button}}}">
+                                            </materialDesign:PackIcon>
+
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="30" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                                        <Button Background="Transparent"
+                                        BorderThickness="0"
+                                        Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                        Width="20"
+                                       Command="{Binding DeleteCommand}"
+                                        Height="20"
+                                         Padding="0">
+                                            <materialDesign:PackIcon Kind="Delete" 
+                                                             Width="20"
+                                                             Padding="0"
+                                                            Foreground="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                                                             HorizontalAlignment="Left"
+                                                             Height="20"/>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
             </Grid>
-            
             <!--Account-->
-            <Grid Grid.Row="1"
-                  Visibility="Collapsed"
-                  x:Name="grAccount">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="275"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition />
-
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Full Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Username" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
-                </Border>
-            </Grid>
 
             <!--Customer Grid-->
-            <Grid Grid.Row="1"
-                  Visibility="Collapsed"
-                  x:Name="grCustomer">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0"
-                        BorderThickness="0"
-                        CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="250"/>
-                            <ColumnDefinition Width="125"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition Width="175"/>
-                            <ColumnDefinition Width="75"/>
-                            <ColumnDefinition/>
 
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Full Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Birthday" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                        <TextBlock
-                                Text="Phone Number" 
-                                Grid.Column="3"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Email" 
-                                Grid.Column="4"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Point" 
-                                Grid.Column="5"
-                                Style="{StaticResource TextHeader}"/>
-                    </Grid>
-                </Border>
-                <Border
-                        Grid.Row="1"
-                        BorderBrush="#ABABAB"
-                        Background="#FBFBFB"
-                        CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
-                </Border>
-            </Grid>
-            
             <!--Provider-->
             <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grProvider">
+                  x:Name="grProvider"
+                  DataContext="{StaticResource ProviderVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
+                    <RowDefinition Height="42"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0"
                         BorderThickness="0"
                         CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="275"/>
-                            <ColumnDefinition Width="275"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition />
-
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Full Name" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Address" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-                        <TextBlock
-                                Text="Phone Number" 
-                                Grid.Column="3"
-                                Style="{StaticResource TextHeader}"/>
-                    </Grid>
+                        Background="#FCC871" Grid.ColumnSpan="2">
                 </Border>
                 <Border
                         Grid.Row="1"
                         BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" Grid.RowSpan="2">
+                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
                 </Border>
+                <DataGrid Grid.RowSpan="2"
+                  AutoGenerateColumns = "false "
+                  Background="Transparent"
+                  ItemsSource="{Binding ListProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  SelectionUnit="FullRow"
+                  SelectedItem="{Binding Path=SelectedProvider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No." Width="107"  Binding="{Binding No}" />
+                        <DataGridTextColumn Header="Name Of Provider" Width="275" Binding="{Binding NameProd}" />
+                        <DataGridTextColumn Header="Address" Width="275" Binding="{Binding Addr}"/>
+                        <DataGridTextColumn Header="Phone number" Width="180" Binding="{Binding Phone}" />
+
+                        <DataGridTemplateColumn Header="" Width="70" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Button Background="Transparent"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                BorderThickness="0"
+                                                Width="28"                                  
+                                                Height="28"
+                                                Command="{Binding EditCommand}"
+                                                 Padding="0">
+                                            <materialDesign:PackIcon Kind="Pencil" Width="20"
+                                                             Height="20"
+                                                             Padding="0"
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871">
+                                            </materialDesign:PackIcon>
+
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="50" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" >
+                                        <Button 
+                                                BorderThickness="0"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Width="28"                                       
+                                                Height="28"
+                                                Background="Transparent"
+                                                Command="{Binding DeleteCommand}"
+                                                Padding="0">
+                                            <materialDesign:PackIcon Kind="Delete" 
+                                                             Width="20"
+                                                             Padding="0" 
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871"
+                                                             Height="20"/>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
 
             <!--Catelogy grid-->
             <!--Material-->
+
             <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grMaterial">
+                  x:Name="grMaterial"
+                  DataContext="{StaticResource MaterialCategoryVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
+                    <RowDefinition Height="42"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0"
                         BorderThickness="0"
                         CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="300"/>
-                            <ColumnDefinition Width="200"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Name of Material" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Profit" 
-                                Grid.Column="2"
-                                Style="{StaticResource TextHeader}" />
-
-                    </Grid>
+                        Background="#FCC871" Grid.ColumnSpan="2">
                 </Border>
                 <Border
                         Grid.Row="1"
-                        BorderBrush="#ABABAB"                        
+                        BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" 
-                        >
+                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
                 </Border>
+                <DataGrid Grid.RowSpan="2"
+                  AutoGenerateColumns = "false "
+                  Background="Transparent"
+                  ItemsSource="{Binding ListMaterial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  SelectionUnit="FullRow"
+                  SelectedItem="{Binding Path=SelectedMaterial, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No." Width="107"  Binding="{Binding No}" />
+                        <DataGridTextColumn Header="Name of Material" Width="300" Binding="{Binding NameMaterial}" />
+                        <DataGridTextColumn Header="Profit" Width="200" Binding="{Binding Profit}"/>
+
+                        <DataGridTemplateColumn Header="" Width="" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Button Background="Transparent"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                BorderThickness="0"
+                                                Width="28"                                  
+                                                Height="28"
+                                                Command="{Binding EditCommand}"
+                                                 Padding="0">
+                                            <materialDesign:PackIcon Kind="Pencil" Width="20"
+                                                             Height="20"
+                                                             Padding="0"
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871">
+                                            </materialDesign:PackIcon>
+
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="50" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" >
+                                        <Button 
+                                                BorderThickness="0"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Width="28"                                       
+                                                Height="28"
+                                                Background="Transparent"
+                                                Command="{Binding DeleteCommand}"
+                                                Padding="0">
+                                            <materialDesign:PackIcon Kind="Delete" 
+                                                             Width="20"
+                                                             Padding="0" 
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871"
+                                                             Height="20"/>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
+            
             
             <!--Form-->
             <Grid Grid.Row="1"
                   Visibility="Collapsed"
-                  x:Name="grForm">
+                  x:Name="grForm"
+                  DataContext="{StaticResource FormCategoryVM}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="58"/>
+                    <RowDefinition Height="42"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0"
                         BorderThickness="0"
                         CornerRadius="10,10,0,0"
-                        Background="#FCC871">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="107"/>
-                            <ColumnDefinition Width="300"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock
-                                Text="No." 
-                                Grid.Column="0"
-                                Style="{StaticResource TextHeader}"/>
-                        <TextBlock
-                                Text="Name of Form" 
-                                Grid.Column="1"
-                                Style="{StaticResource TextHeader}"/>
-
-                    </Grid>
+                        Background="#FCC871" Grid.ColumnSpan="2">
                 </Border>
                 <Border
                         Grid.Row="1"
-                        BorderBrush="#ABABAB"                        
+                        BorderBrush="#ABABAB"
                         Background="#FBFBFB"
                         CornerRadius="0,0,10,10"
-                        BorderThickness="2,0,2,2" 
-                        >
+                        BorderThickness="2,0,2,2" Grid.ColumnSpan="2">
                 </Border>
+                <DataGrid Grid.RowSpan="2"
+                  AutoGenerateColumns = "false "
+                  Background="Transparent"
+                  ItemsSource="{Binding ListForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  d:ItemsSource="{d:SampleData ItemCount=5}"
+                  IsEnabled="True"
+                  IsReadOnly="True"
+                  SelectionUnit="FullRow"
+                  SelectedItem="{Binding Path=SelectedForm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="No." Width="107"  Binding="{Binding No}" />
+                        <DataGridTextColumn Header="Name of Form" Width="300" Binding="{Binding NameForm}" />
+
+                        <DataGridTemplateColumn Header="" Width="" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                        <Button Background="Transparent"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                BorderThickness="0"
+                                                Width="28"                                  
+                                                Height="28"
+                                                Command="{Binding EditCommand}"
+                                                 Padding="0">
+                                            <materialDesign:PackIcon Kind="Pencil" Width="20"
+                                                             Height="20"
+                                                             Padding="0"
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871">
+                                            </materialDesign:PackIcon>
+
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="50" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0 -10 0 0" >
+                                        <Button 
+                                                BorderThickness="0"
+                                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                                Width="28"                                       
+                                                Height="28"
+                                                Background="Transparent"
+                                                Command="{Binding DeleteCommand}"
+                                                Padding="0">
+                                            <materialDesign:PackIcon Kind="Delete" 
+                                                             Width="20"
+                                                             Padding="0" 
+                                                             HorizontalAlignment="Right"
+                                                             Foreground="#FCC871"
+                                                             Height="20"/>
+                                        </Button>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
-            <!--Inventory grid-->
             
+            
+            <!--Inventory grid-->
+
+
             <!--Service Grid-->
 
 
             <!--report grid-->
 
-            
+
         </Grid>
     </Grid>
+
 </Window>

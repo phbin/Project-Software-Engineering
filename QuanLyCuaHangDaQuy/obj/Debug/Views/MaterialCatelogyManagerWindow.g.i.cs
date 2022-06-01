@@ -44,6 +44,22 @@ namespace QuanLyCuaHangDaQuy.Views {
     /// </summary>
     public partial class MaterialCatelogyManagerWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 108 "..\..\..\Views\MaterialCatelogyManagerWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtbName;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 117 "..\..\..\Views\MaterialCatelogyManagerWindow.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox txtbProfit;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -79,6 +95,15 @@ namespace QuanLyCuaHangDaQuy.Views {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.txtbName = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 2:
+            this.txtbProfit = ((System.Windows.Controls.TextBox)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

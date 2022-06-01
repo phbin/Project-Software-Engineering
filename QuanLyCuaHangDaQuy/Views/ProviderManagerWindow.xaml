@@ -6,15 +6,17 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        xmlns:viewmodel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         mc:Ignorable="d"
         Height="540" Width="676"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        FontFamily="Lato">
-    <Window.Resources>
+        FontFamily="Lato"
+        DataContext="{StaticResource ProviderVM}">
 
+    <Window.Resources>
 
         <Style TargetType="{x:Type Label}"
                 x:Key="labelStyle">
@@ -106,7 +108,9 @@
                         Margin="0 42 0 13" />
                     <TextBox 
                         materialDesign:HintAssist.Hint="Enter name"
-                        HorizontalAlignment="Left"/>
+                        HorizontalAlignment="Left"
+                        x:Name="txtbName"
+                        Text="{Binding NameProd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                     <Label
                         Style="{StaticResource labelStyle}" 
@@ -114,19 +118,21 @@
                        Margin="0 50 0 13"
                            Uid="50"/>
                     <TextBox 
-
                         materialDesign:HintAssist.Hint="Enter address"
-                           HorizontalAlignment="Left" />
+                        HorizontalAlignment="Left" 
+                        x:Name="txtbAddress"
+                        Text="{Binding Addr, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                     <Label
                         Style="{StaticResource labelStyle}" 
                        Content="Phone number"     
                        Margin="0 50 0 13"/>
                     <TextBox 
-                            Uid="60"
-                           materialDesign:HintAssist.Hint="Enter phone number"
-                           HorizontalAlignment="Left"
-                           />
+                            materialDesign:HintAssist.Hint="Enter phone number"
+                            HorizontalAlignment="Left"
+                            MaxLength="11"
+                            x:Name="txtbPhone"
+                            Text="{Binding Phone ,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
 
 
@@ -145,7 +151,9 @@
                     Content="Confirm"
                     FontSize="21"
                     Background="#FCC871"
-                    Foreground="#FFFFFF"/>
+                    Foreground="#FFFFFF"
+                    Command="{Binding SaveCommand}"
+                    x:Name="btSave"/>
 
 
             </Grid>

@@ -23,5 +23,6 @@ namespace QuanLyCuaHangDaQuy.Views
         {
             InitializeComponent();
         }
+
     }
 }

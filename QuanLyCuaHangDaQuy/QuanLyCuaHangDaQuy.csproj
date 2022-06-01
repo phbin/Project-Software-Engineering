@@ -52,6 +52,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.5.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.5\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -62,7 +68,11 @@
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -84,6 +94,61 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ACCOUNT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CART.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CUSSERVICE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FORMCATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\IMPORTEDITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOCUSTOMER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOPROVIDER.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INFOSTAFF.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMBILL.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMBILLFORM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ITEMFORM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MATERIALCATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataProvider.cs" />
     <Compile Include="Resources\UserControls\CartUC.xaml.cs">
       <DependentUpon>CartUC.xaml</DependentUpon>
     </Compile>
@@ -96,6 +161,9 @@
     <Compile Include="Resources\UserControls\ExitButton.xaml.cs">
       <DependentUpon>ExitButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Resources\UserControls\HumanResourceControl.xaml.cs">
+      <DependentUpon>HumanResourceControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Resources\UserControls\ProductCatelogyUC.xaml.cs">
       <DependentUpon>ProductCatelogyUC.xaml</DependentUpon>
     </Compile>
@@ -105,29 +173,45 @@
     <Compile Include="Resources\UserControls\ShowProductUC.xaml.cs">
       <DependentUpon>ShowProductUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\SERVICECATEGORY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SERVICELIST.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UNIT.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
-    <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ExitButtonViewModel.cs" />
+    <Compile Include="ViewModels\FormCategory.cs" />
+    <Compile Include="ViewModels\FormCategoryViewModel.cs" />
     <Compile Include="ViewModels\HumanResourcesViewModel.cs" />
+    <Compile Include="ViewModels\MaterialCategoryViewModel.cs" />
+    <Compile Include="ViewModels\MaterialCategory.cs" />
+    <Compile Include="ViewModels\Provider.cs" />
+    <Compile Include="ViewModels\Staff.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ProviderViewModel.cs" />
     <Compile Include="Views\AccountManagerWindow.xaml.cs">
       <DependentUpon>AccountManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerInfoWindow.xaml.cs">
       <DependentUpon>CustomerInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FormCatelogyManagerWindow.xaml.cs">
-      <DependentUpon>FormCatelogyManagerWindow.xaml</DependentUpon>
+    <Compile Include="Views\FormCategoryManagerWindow.xaml.cs">
+      <DependentUpon>FormCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HumanResourceEditWindow.xaml.cs">
       <DependentUpon>HumanResourceEditWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MaterialCatelogyManagerWindow.xaml.cs">
-      <DependentUpon>MaterialCatelogyManagerWindow.xaml</DependentUpon>
+    <Compile Include="Views\HumanResourceInformationWindow.xaml.cs">
+      <DependentUpon>HumanResourceInformationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PersonalInfoWindow.xaml.cs">
-      <DependentUpon>PersonalInfoWindow.xaml</DependentUpon>
+    <Compile Include="Views\MaterialCategoryManagerWindow.xaml.cs">
+      <DependentUpon>MaterialCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ProviderManagerWindow.xaml.cs">
       <DependentUpon>ProviderManagerWindow.xaml</DependentUpon>
@@ -149,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\UserControls\ExitButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\UserControls\HumanResourceControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -185,7 +273,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FormCatelogyManagerWindow.xaml">
+    <Page Include="Views\FormCategoryManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,11 +281,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MaterialCatelogyManagerWindow.xaml">
+    <Page Include="Views\HumanResourceInformationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\PersonalInfoWindow.xaml">
+    <Page Include="Views\MaterialCategoryManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,6 +312,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -234,7 +329,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="DAL\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Fonts\Lato Black.ttf" />
@@ -265,6 +360,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\bin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
