@@ -24,7 +24,8 @@ namespace QuanLyCuaHangDaQuy.Models
         public string IDUnit { get; set; }
         public string NameMaterial { get; set; }
         public Nullable<double> Profit { get; set; }
-    
+        public Nullable<int> stt { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
         public virtual UNIT UNIT { get; set; }

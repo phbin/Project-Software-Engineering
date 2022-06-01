@@ -25,7 +25,9 @@ namespace QuanLyCuaHangDaQuy.Models
         public string NameProd { get; set; }
         public string Addr { get; set; }
         public string Phone { get; set; }
-    
+
+        public Nullable<int> stt { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

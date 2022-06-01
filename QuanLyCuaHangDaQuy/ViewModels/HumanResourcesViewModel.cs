@@ -13,26 +13,29 @@ using System.Windows.Input;
 using System.Windows.Forms;
 using System.Windows.Media;
 using System.Windows.Data;
+using System.Drawing;
 using System.Data;
 using System.Globalization;
 using System.Collections.ObjectModel;
 using System.Data.Entity.Validation;
+using System.IO;
 
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
     class HumanResourcesViewModel : BaseViewModel
     {
         public ObservableCollection<Staff> ListStaff { get; set; } = new ObservableCollection<Staff>();
-
         private int isEdit = 0;
         private string imgLocation = "";
+        private byte[] img;
+            
         private string _fullname;
         public string FullName 
         { 
             get { return _fullname; }
             set { _fullname = value; OnPropertyChanged(nameof(FullName)); }
         }
-
+        
         private string _sex;
         public string Sex 
         {   get { return _sex; }
@@ -117,11 +120,11 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 dialog.ShowDialog();
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-                    imgLocation=dialog.FileName.ToString();
-                    
-                }    
-            });
 
+                }
+            })
+            {
+            };
             Staff.EditCommand = new RelayCommand<object>((p) => true, (p) => OpenHumanResourceEditWindow());
 
             Staff.DeleteCommand = new RelayCommand<object>((p) => true, (p) => Delete());
@@ -147,21 +150,24 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             int no = 1;
             foreach (var item in List)
             {
-                var Staff = new Staff
+                if(item.stt==1)
                 {
-                    No = no,
-                    DoB = item.DoB,
-                    Dob_Format = item.DoB.ToShortDateString(),
-                    FullName = item.FullName,
-                    ID = item.ID,
-                    IDPersonal = item.IDPersonal,
-                    Phone = item.Phone,
-                    Email = item.Email,
-                    Addr = item.Addr,
-                    Sex = item.Sex
-                };
-                ListStaff.Add(Staff);
-                no++;
+                    var Staff = new Staff
+                    {
+                        No = no,
+                        DoB = item.DoB,
+                        Dob_Format = item.DoB.ToShortDateString(),
+                        FullName = item.FullName,
+                        ID = item.ID,
+                        IDPersonal = item.IDPersonal,
+                        Phone = item.Phone,
+                        Email = item.Email,
+                        Addr = item.Addr,
+                        Sex = item.Sex
+                    };
+                    ListStaff.Add(Staff);
+                    no++;
+                }    
             }
             if (no >= 2) { SelectedStaff = ListStaff[0]; }
         }
@@ -181,20 +187,23 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 {
                     if (item.FullName.Contains(TextSearch))
                     {
-                        ListStaff.Add(new Staff
+                        if (item.stt == 1)
                         {
-                            No = no,
-                            DoB = item.DoB,
-                            Dob_Format = item.DoB.ToShortDateString(),
-                            FullName = item.FullName,
-                            ID = item.ID,
-                            IDPersonal = item.IDPersonal,
-                            Phone = item.Phone,
-                            Email = item.Email,
-                            Addr = item.Addr,
-                            Sex = item.Sex
-                        });
-                        no++;
+                            ListStaff.Add(new Staff
+                            {
+                                No = no,
+                                DoB = item.DoB,
+                                Dob_Format = item.DoB.ToShortDateString(),
+                                FullName = item.FullName,
+                                ID = item.ID,
+                                IDPersonal = item.IDPersonal,
+                                Phone = item.Phone,
+                                Email = item.Email,
+                                Addr = item.Addr,
+                                Sex = item.Sex
+                            });
+                            no++;
+                        }   
                     }
                     if (no >= 2) { SelectedStaff = ListStaff[0]; }
 
@@ -219,41 +228,33 @@ namespace QuanLyCuaHangDaQuy.ViewModels
 
         public void Delete()
         {
-            DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this customer?", "", (MessageBoxButtons)MessageBoxButton.YesNo);
-            //if (result == System.Windows.Forms.DialogResult.Yes)
-            //{
-            //    int IDtemp = DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).Count();
-            //    while (IDtemp >= 1)
-            //    {
-            //        string IDItemform = DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).FirstOrDefault().ID;
-            //        int IDtemp1 = DataProvider.Ins.DB.ITEMS.ToList().Where(h => h.IDItemForm == IDItemform).Count();
-            //        while (IDtemp1 >= 1)
-            //        {
-            //            DataProvider.Ins.DB.ITEMS.Remove(DataProvider.Ins.DB.ITEMS.Where(h => h.IDItemForm == IDItemform).FirstOrDefault());
-            //            IDtemp1--;
-            //        }
-            //        DataProvider.Ins.DB.ITEMFORMs.Remove(DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).FirstOrDefault());
-            //        IDtemp--;
-
-            //    }
-            //    IDtemp = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).Count();
-            //    while (IDtemp >= 1)
-            //    {
-            //        string IDService = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).FirstOrDefault().ID;
-            //        int IDtemp1 = DataProvider.Ins.DB.SERVICELISTs.ToList().Where(h => h.IDService == IDService).Count();
-            //        while (IDtemp1 >= 1)
-            //        {
-            //            DataProvider.Ins.DB.SERVICELISTs.Remove(DataProvider.Ins.DB.SERVICELISTs.Where(h => h.IDService == IDService).FirstOrDefault());
-            //            IDtemp1--;
-            //        }
-            //        DataProvider.Ins.DB.CUSSERVICEs.Remove(DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.IDCustomer == SelectedStaff.ID).FirstOrDefault());
-            //        IDtemp--;
-
-            //    }
-            //    DataProvider.Ins.DB.INFOCUSTOMERs.Remove(DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault());
-            //    DataProvider.Ins.DB.SaveChanges();
-            //    LoadDataAfterTextSearch();
-            //}
+            DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this Staff?", "", (MessageBoxButtons)MessageBoxButton.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                bool canDelete = true;
+                int count = DataProvider.Ins.DB.ITEMFORMs.ToList().Where(h => h.IDStaff == SelectedStaff.ID).Count();
+                if (count >=1)
+                {
+                    canDelete = false;
+                }
+                if (canDelete)
+                {
+                    int countACC = DataProvider.Ins.DB.ACCOUNTs.ToList().Where(h => h.ID == SelectedStaff.ID).Count();
+                    while (countACC > 0)
+                    {
+                        DataProvider.Ins.DB.ACCOUNTs.Remove(DataProvider.Ins.DB.ACCOUNTs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault());
+                        DataProvider.Ins.DB.SaveChanges();
+                        countACC--;
+                    }    
+                    DataProvider.Ins.DB.INFOSTAFFs.Remove(DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault());
+                }
+                else
+                {
+                    DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().stt = 0;
+                }
+            }
+            DataProvider.Ins.DB.SaveChanges();
+            LoadDataAfterTextSearch();
         }
         bool IsValidEmail(string eMail)
         {
@@ -274,7 +275,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         }
         void AddOrUpdateStaff()
         {
-            if(FullName == null || Email== null|| IDPersonal == null || DoB == null || Addr == null || Phone == null)
+            if(FullName == null || Email== null|| IDPersonal == null || DoB == null || Addr == null || Phone == null )
             {
                 System.Windows.MessageBox.Show("Please fill in all the information");
                 return;
@@ -296,7 +297,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 Phone = "";
                 return;
             }
-            
+
             if (isEdit == 1)
             {
                 if (SelectedStaff.IDPersonal != long.Parse(IDPersonal))
@@ -318,6 +319,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().FullName = FullName;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().IDPersonal = long.Parse(IDPersonal);
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().DoB = DateTime.Parse(DoB, CultureInfo.InvariantCulture);
+                DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Sex= Sex.ToString();
                 DataProvider.Ins.DB.SaveChanges();
             }
             else
@@ -343,15 +345,15 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     }
                 }
                 DataProvider.Ins.DB.INFOSTAFFs.Add(new INFOSTAFF 
-                { 
+                {
+                    ID = "Staff" + (Temp).ToString(),
+                    FullName = FullName,
                     DoB = DateTime.Parse(DoB, CultureInfo.InvariantCulture),
-                    Phone = Phone, 
+                    Sex = Sex.ToString(),
+                    Addr = Addr,
+                    Phone = Phone,
+                    Email = Email,
                     IDPersonal = long.Parse(IDPersonal), 
-                    FullName = FullName, 
-                    Addr = Addr, 
-                    Email = Email, 
-                    Sex= Sex,
-                    ID = "Staff" + (Temp).ToString(), 
                     stt = 1 
                 });
                 DataProvider.Ins.DB.SaveChanges();

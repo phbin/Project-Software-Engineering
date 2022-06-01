@@ -66,16 +66,19 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             int no = 1;
             foreach (var item in List)
             {
-                var Provider = new Provider
-                {                 
-                    No = no,
-                    ID = item.ID,
-                    NameProd = item.NameProd,
-                    Addr= item.Addr,
-                    Phone= item.Phone
-                };
-                ListProvider.Add(Provider);
-                no++;
+                if( item.stt==1)
+                {
+                    var Provider = new Provider
+                    {
+                        No = no,
+                        ID = item.ID,
+                        NameProd = item.NameProd,
+                        Addr = item.Addr,
+                        Phone = item.Phone
+                    };
+                    ListProvider.Add(Provider);
+                    no++;
+                }    
             }
             if (no >= 2) { SelectedProvider = ListProvider[0]; }
         }
@@ -95,15 +98,18 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 {
                     if (item.NameProd.Contains(TextSearch))
                     {
-                        ListProvider.Add(new Provider
+                        if(item.stt==1)
                         {
-                            No = no,
-                            ID = item.ID,
-                            NameProd = item.NameProd,
-                            Addr = item.Addr,
-                            Phone = item.Phone
-                        });
-                        no++;
+                            ListProvider.Add(new Provider
+                            {
+                                No = no,
+                                ID = item.ID,
+                                NameProd = item.NameProd,
+                                Addr = item.Addr,
+                                Phone = item.Phone
+                            });
+                            no++;
+                        }    
                     }
                     if (no >= 2) { SelectedProvider = ListProvider[0]; }
 
@@ -121,7 +127,25 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         }
         public void Delete()
         {
-
+            DialogResult result = System.Windows.Forms.MessageBox.Show("Are you sure you want to delete this Provider?", "", (MessageBoxButtons)MessageBoxButton.YesNo);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                bool canDelete = true;
+                int count = DataProvider.Ins.DB.IMPORTEDITEMS.ToList().Where(h => h.IDProd == SelectedProvider.ID).Count();
+                int count1 = DataProvider.Ins.DB.ITEMBILLFORMs.ToList().Where(h => h.IDProd == SelectedProvider.ID).Count();
+                if (count1 >=1 && count >= 1)
+                    canDelete = false;
+                if (canDelete)
+                {
+                    DataProvider.Ins.DB.INFOPROVIDERs.Remove(DataProvider.Ins.DB.INFOPROVIDERs.ToList().Where(h => h.ID == SelectedProvider.ID).FirstOrDefault());
+                }
+                else
+                {
+                    DataProvider.Ins.DB.INFOPROVIDERs.ToList().Where(h => h.ID == SelectedProvider.ID).FirstOrDefault().stt = 0;
+                }
+                DataProvider.Ins.DB.SaveChanges();
+                LoadDataAfterTextSearch();
+            }
         }
         public void AddOrUpdateProvider()
         {
@@ -166,7 +190,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         Flag = true;
                     }
                 }
-                DataProvider.Ins.DB.INFOPROVIDERs.Add(new INFOPROVIDER { Phone = Phone, NameProd = NameProd, Addr = Addr, ID = "Provider" + (Temp).ToString() });
+                DataProvider.Ins.DB.INFOPROVIDERs.Add(new INFOPROVIDER { Phone = Phone, NameProd = NameProd, Addr = Addr, ID = "Provider" + (Temp).ToString() , stt=1});
                 DataProvider.Ins.DB.SaveChanges();
             }
             isEdit = 0;

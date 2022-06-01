@@ -30,7 +30,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
 
         private string _phone;
         public string Phone { get { return _phone; } set { _phone = value; OnPropertyChanged(nameof(Phone)); } }
-
-
+        public Nullable<int> stt { get; set; }
     }
 }

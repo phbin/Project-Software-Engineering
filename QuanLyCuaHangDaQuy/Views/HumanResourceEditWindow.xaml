@@ -153,6 +153,7 @@
                         Height="28"
                         Width="223"
                         HorizontalAlignment="Left"
+                        FontSize="20"
                         x:Name="dpDayOfBirth"
                         Text="{Binding DoB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
@@ -165,7 +166,11 @@
                         Height="41"
                         Width="225"
                         x:Name="cbSex"
-                        SelectedItem="{Binding Sex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        SelectedIndex="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="18"
+                        SelectedValue="{Binding Sex}"
+                        SelectedValuePath="Content">
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
                     </ComboBox>
