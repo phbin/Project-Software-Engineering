@@ -153,6 +153,7 @@
                   Background="Transparent"
                   d:ItemsSource="{d:SampleData ItemCount=5}"
                   IsEnabled="True"
+                  
                   IsReadOnly="True"
                   >
             <i:Interaction.Triggers>

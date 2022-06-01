@@ -39,12 +39,12 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     DateReturn = item.DateReturn,
                     IDCusService = item.IDCusService,
                     Quantity = item.Quantity.ToString(),
-                    Cost = item.Costs.ToString(),
-                    Prepay = item.Prepay.ToString(),
-                    PriceDiscounted = item.PriceDiscounted.ToString(),
-                    Remain = item.Remain.ToString(),
+                    Cost = (item.Costs != 0) ? (string.Format("{0:0,0đ}", item.Costs)) : ("0đ"),
+                    Prepay = (item.Prepay != 0) ? (string.Format("{0:0,0đ}", item.Prepay)) : ("0đ"),
+                    PriceDiscounted = (item.PriceDiscounted != 0) ? (string.Format("{0:0,0đ}", item.PriceDiscounted)) : ("0đ"),
+                    Remain = (item.Remain != 0) ? (string.Format("{0:0,0đ}", item.Remain)) : ("0đ"),
                     Stt = item.Stt,
-                    Total = item.Total.ToString(),
+                    Total = (item.Total != 0) ? (string.Format("{0:0,0đ}", item.Total)) : ("0đ"),
                     NameService = DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == item.IDService).FirstOrDefault().NameService,
                     ColorStt = (item.Stt == "unfinished") ? "#BCBCBC" : "#2CC33B",
                 };
@@ -57,6 +57,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
      
         public ICommand LoadCommand { get; set; }
         public ICommand AddCommand { get; set; }
+        public ICommand ExportCommand { get; set; }
         public Staff_ListServiceVM()
         {
             LoadCommand = new RelayCommand<object>(
@@ -77,12 +78,12 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                             DateReturn = item.DateReturn,
                             IDCusService = item.IDCusService,
                             Quantity = item.Quantity.ToString(),
-                            Cost = item.Costs.ToString(),
-                            Prepay = item.Prepay.ToString(),
-                            PriceDiscounted = item.PriceDiscounted.ToString(),
-                            Remain = item.Remain.ToString(),
+                            Cost = (item.Costs != 0) ? (string.Format("{0:0,0đ}", item.Costs)) : ("0đ"),
+                            Prepay = (item.Prepay!=0)? (string.Format("{0:0,0đ}", item.Prepay)):("0đ"),
+                            PriceDiscounted = (item.PriceDiscounted != 0) ? (string.Format("{0:0,0đ}", item.PriceDiscounted)) : ("0đ"),
+                            Remain = (item.Remain != 0) ? (string.Format("{0:0,0đ}", item.Remain)) : ("0đ"),
                             Stt = item.Stt,
-                            Total = item.Total.ToString(),
+                            Total = (item.Total != 0) ? (string.Format("{0:0,0đ}", item.Total)) : ("0đ"),
                             NameService = DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == item.IDService).FirstOrDefault().NameService,
                             ColorStt = (item.Stt == "unfinished") ? "#BCBCBC" : "#2CC33B",
                         };
@@ -101,6 +102,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     LoadData();
                 }
             );
+            ExportCommand = new RelayCommand<object>(
+              (p) => { return true; },
+              (p) =>
+              {
+                  Staff_BillListService staff_BillListService = new Staff_BillListService();
+                  staff_BillListService.ShowDialog();
+              }
+          );
             Service.EditCommand = new RelayCommand<object>(
                (p) => { return true; },
                (p) =>

@@ -7,9 +7,9 @@
         mc:Ignorable="d"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         WindowStartupLocation="CenterScreen"
-        x:Name="BillListReceiptClose"
+        x:Name="BillListServiceClose"
         WindowStyle="None"
-        Height="762.66" Width="1000">
+        Height="auto" Width="1000">
 
     <Window.DataContext>
         <vm:Staff_BillListReceiptVM></vm:Staff_BillListReceiptVM>
@@ -26,23 +26,23 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="15"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Button  Grid.Column="2"
-                 Margin="-15,13,13,0"
+                 Margin="-30,13,13,0"
                  VerticalAlignment="Top"
                  HorizontalAlignment="Right"
                  Height="40"
                  Padding="0"
                  Width="40"
-                 x:Name="Close"
+                 x:Name="Closee"
                  Background="Transparent"
                  BorderThickness="0">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <ei:CallMethodAction TargetObject="{Binding ElementName=BillListReceiptClose}" MethodName="Close"/>
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=BillListServiceClose}" MethodName="Close"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
@@ -81,20 +81,21 @@
         <DataGrid Grid.Column="1"
                   Grid.Row="1"
                   Grid.RowSpan="2"
-                  IsEnabled="False"
-                  ItemsSource="{Binding ListBillReceipt}"
+                  ItemsSource="{Binding ListBillReceipt,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                   Background="Transparent"
-                 
+                  IsReadOnly="True"
+                  Height="Auto"
+                  AutoGenerateColumns="False"
                   >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="No." Width="60"  Binding="{Binding No}" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Receipt ID" Width="90" Binding="{Binding ID}"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Date" Width="150" Binding="{Binding Date}" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Customer" Width="180" Binding="{Binding Customer}"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Total" Width="60" Binding="{Binding Total}"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Prepay" Width="150" Binding="{Binding Prepay}" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Remain" Width="150" Binding="{Binding Remain}"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Status" Width="100" Binding="{Binding Stt}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="No." Width="60"  Binding="{Binding No,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Receipt ID" Width="90" Binding="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Date" Width="150" Binding="{Binding Date,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Customer" Width="180" Binding="{Binding Customer,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Total" Width="60" Binding="{Binding Total,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Prepay" Width="150" Binding="{Binding Prepay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Remain" Width="150" Binding="{Binding Remain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="100" Binding="{Binding Stt,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></DataGridTextColumn>
             </DataGrid.Columns>
             
             

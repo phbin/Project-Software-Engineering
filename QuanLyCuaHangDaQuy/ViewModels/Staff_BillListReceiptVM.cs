@@ -92,9 +92,9 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                           Date = item.DateBooking.ToShortDateString(),
                           ID = item.ID,
                           Stt=item.Stt,
-                          Prepay=prepayT.ToString(),
-                          Total=toitalT.ToString(),
-                          Remain=remainT.ToString()
+                          Prepay = (prepayT != 0) ? (string.Format("{0:0,0đ}", prepayT)) : ("0đ"),
+                          Total = (toitalT != 0) ? (string.Format("{0:0,0đ}", toitalT)) : ("0đ"),
+                          Remain = (remainT != 0) ? (string.Format("{0:0,0đ}", remainT)) : ("0đ"),
                       };
                       ListBillReceipt.Add(DatTen);
                       no++;

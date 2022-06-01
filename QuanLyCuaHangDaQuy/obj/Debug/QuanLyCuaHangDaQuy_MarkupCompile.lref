@@ -1,4 +1,4 @@
-﻿D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
+﻿
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\UserControls\ControlBarUC.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Resources\UserControls\CustomerControl.xaml;;
@@ -11,6 +11,7 @@ FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_AddCustom
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_AddReceipt.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_AddService.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_BillListReceipt.xaml;;
+FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_BillListService.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_EditCustomer.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_EditReceipt.xaml;;
 FD:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\Views\Staff_EditService.xaml;;

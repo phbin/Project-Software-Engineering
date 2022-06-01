@@ -29,7 +29,7 @@ namespace QuanLyCuaHangDaQuy.Views
             try
             {
                 this.IsEnabled = false;
-                Close.Visibility =Visibility.Hidden;
+                Closee.Visibility =Visibility.Hidden;
                 PrintDialog printDialog = new PrintDialog();
                 if (printDialog.ShowDialog() == true)
                 {
@@ -38,7 +38,7 @@ namespace QuanLyCuaHangDaQuy.Views
             }
             finally
             {
-                Close.Visibility = Visibility.Visible;
+                Closee.Visibility = Visibility.Visible;
                 this.IsEnabled = true;
             }
         }

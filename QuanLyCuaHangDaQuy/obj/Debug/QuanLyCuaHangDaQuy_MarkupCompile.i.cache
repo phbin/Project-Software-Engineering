@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-191601371433
+20-1229571450
 2739969757
-601246181680
+6235739124
 24-969971361
-Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;Views\Staff_AddCustomer.xaml;Views\Staff_AddReceipt.xaml;Views\Staff_AddService.xaml;Views\Staff_BillListReceipt.xaml;Views\Staff_EditCustomer.xaml;Views\Staff_EditReceipt.xaml;Views\Staff_EditService.xaml;Views\Staff_InfoCustomer.xaml;Views\Staff_ListCustomer.xaml;Views\Staff_ListReceipt.xaml;Views\Staff_ListService.xaml;
+Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;Views\Staff_AddCustomer.xaml;Views\Staff_AddReceipt.xaml;Views\Staff_AddService.xaml;Views\Staff_BillListReceipt.xaml;Views\Staff_BillListService.xaml;Views\Staff_EditCustomer.xaml;Views\Staff_EditReceipt.xaml;Views\Staff_EditService.xaml;Views\Staff_InfoCustomer.xaml;Views\Staff_ListCustomer.xaml;Views\Staff_ListReceipt.xaml;Views\Staff_ListService.xaml;
 
 True
 

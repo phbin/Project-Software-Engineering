@@ -243,3 +243,5 @@ D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Prism.pdb
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Prism.xml
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff_BillListReceipt.g.cs
 D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff_BillListReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff_BillListService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff_BillListService.baml
