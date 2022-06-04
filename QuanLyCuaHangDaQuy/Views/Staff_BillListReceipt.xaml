@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         x:Name="BillListServiceClose"
         WindowStyle="None"
-        Height="auto" Width="1000">
+        Height="762.66" Width="1000">
 
     <Window.DataContext>
         <vm:Staff_BillListReceiptVM></vm:Staff_BillListReceiptVM>
@@ -76,8 +76,7 @@
             Source="\Resources\Image\madlife.png"></Image>
         <Border Grid.Column="1" 
                 Grid.Row="1"
-                Background="Black">
-        </Border>
+                Background="Black"/>
         <DataGrid Grid.Column="1"
                   Grid.Row="1"
                   Grid.RowSpan="2"
@@ -97,8 +96,8 @@
                 <DataGridTextColumn Header="Remain" Width="150" Binding="{Binding Remain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"  ></DataGridTextColumn>
                 <DataGridTextColumn Header="Status" Width="100" Binding="{Binding Stt,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" ></DataGridTextColumn>
             </DataGrid.Columns>
-            
-            
+
+
             <DataGrid.Resources>
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalAlignment" Value="Center"></Setter>

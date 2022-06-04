@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
     public class BillListService : BaseViewModel
@@ -71,9 +72,47 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             get { return _stt; }
             set { _stt = value; OnPropertyChanged(nameof(Stt)); }
         }
+       
     }
+    
     public class Staff_BillListServiceVM : BaseViewModel
     {
+        private string _today;
+        public string Today
+        {
+            get { return _today; }
+            set { _today = value; OnPropertyChanged(nameof(Today)); }
+        }
+        private string _namecustomer;
+        public string NameCustomer
+        {
+            get { return _namecustomer; }
+            set { _namecustomer = value; OnPropertyChanged(nameof(NameCustomer)); }
+        }
+        private string _phone;
+        public string Phone
+        {
+            get { return _phone; }
+            set { _phone = value; OnPropertyChanged(nameof(Phone)); }
+        }
+        private string _totalprepay;
+        public string TotalPrepay
+        {
+            get { return _totalprepay; }
+            set { _totalprepay = value; OnPropertyChanged(nameof(TotalPrepay)); }
+        }
+        private string _totalremain;
+        public string TotalRemain
+        {
+            get { return _totalremain; }
+            set { _totalremain = value; OnPropertyChanged(nameof(TotalRemain)); }
+        }
+        private string _id;
+        public string ID
+        {
+            get { return _id; }
+            set { _id = value; OnPropertyChanged(nameof(ID)); }
+        }
         public ObservableCollection<BillListService> ListBillService { get; set; } = new ObservableCollection<BillListService>();
         public ICommand LoadCommand { get; set; }
         public Staff_BillListServiceVM()
@@ -84,7 +123,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
               {
                   var List = DataProvider.Ins.DB.SERVICELISTs.ToList().Where(h=>h.IDCusService== Staff_ListReceiptVM.IdReceipt);
                   int no = 1;
-
+                  ID ="Receipt #"+ Staff_ListReceiptVM.IdReceipt;
+                  Today="Date: "+ DateTime.Now.ToString("MM/dd/yyyy");
+                  string IDCS;
+                  IDCS = DataProvider.Ins.DB.CUSSERVICEs.ToList().Where(h => h.ID == Staff_ListReceiptVM.IdReceipt).FirstOrDefault().IDCustomer;
+                  NameCustomer = DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == IDCS).FirstOrDefault().FullName;
+                  Phone ="Phone number:"+ DataProvider.Ins.DB.INFOCUSTOMERs.ToList().Where(h => h.ID == IDCS).FirstOrDefault().Phone;
+                  double? TotalPrepayT = 0;
+                  double? TotalRemainT = 0;
                   foreach (var item in List)
                   {
                       var UnitPriceT = DataProvider.Ins.DB.SERVICECATEGORies.ToList().Where(h => h.ID == item.IDService).FirstOrDefault().Price;
@@ -102,8 +148,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         Amount=(item.Total != 0) ? (string.Format("{0:0,0đ}", item.Total)) : ("0đ"),
                       };
                       ListBillService.Add(DatTen);
+                      TotalPrepayT += item.Remain;
+                      TotalRemainT += item.Prepay;
                       no++;
                   }
+                  TotalRemain =(TotalRemainT != 0) ? (string.Format("{0:0,0 VNĐ}", TotalRemainT)) : ("0 VNĐ");
+                  TotalRemain = "Total remain:" + TotalRemain;
+                  TotalPrepay = (TotalPrepayT != 0) ? (string.Format("{0:0,0 VNĐ}", TotalPrepayT)) : ("0 VNĐ");
+                  TotalPrepay = "Total prepay:" + TotalPrepay;
               }
           );
         }

@@ -24,6 +24,7 @@
             <RowDefinition Height="219"></RowDefinition>
             <RowDefinition Height="38"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="90"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="15"></ColumnDefinition>
@@ -78,56 +79,112 @@
                 Grid.Row="1"
                 Background="Black">
         </Border>
-        <StackPanel Grid.Column="1"
-                  Grid.Row="1"
-                  Grid.RowSpan="2"
-                   Orientation="Horizontal">
-            <DataGrid 
+        <DataGrid 
+            Grid.Row="1"
+            Grid.RowSpan="2"
+            Grid.Column="1"
                   IsEnabled="False"
                   ItemsSource="{Binding ListBillService}"
                   Background="Transparent"
-                Height="auto"
+                  Height="auto"
                   AutoGenerateColumns="False"
                   >
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="No." Width="50"  Binding="{Binding No}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Service" Width="75" Binding="{Binding Service}"  ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Unit Price" Width="110" Binding="{Binding UnitPrice}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Price discounted" Width="140" Binding="{Binding PriceDiscounted}"  ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Quantity" Width="75" Binding="{Binding Quantity}"  ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Amount" Width="100" Binding="{Binding Amount}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Pre pay" Width="100" Binding="{Binding Prepay}"  ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Remain" Width="100" Binding="{Binding Remain}" ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Return date" Width="100" Binding="{Binding ReturnDate}"  ></DataGridTextColumn>
-                    <DataGridTextColumn Header="Status" Width="70" Binding="{Binding Stt}" ></DataGridTextColumn>
-                </DataGrid.Columns>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="No." Width="50"  Binding="{Binding No}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Service" Width="75" Binding="{Binding Service}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Unit Price" Width="110" Binding="{Binding UnitPrice}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Price discounted" Width="140" Binding="{Binding PriceDiscounted}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Quantity" Width="75" Binding="{Binding Quantity}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Amount" Width="100" Binding="{Binding Amount}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Pre pay" Width="100" Binding="{Binding Prepay}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Remain" Width="100" Binding="{Binding Remain}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Return date" Width="100" Binding="{Binding ReturnDate}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Status" Width="70" Binding="{Binding Stt}" ></DataGridTextColumn>
+            </DataGrid.Columns>
 
 
-                <DataGrid.Resources>
-                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                        <Setter Property="Height" Value="38"></Setter>
-                        <Setter Property="Background" Value="Black"></Setter>
-                        <Setter Property="Foreground" Value="White"></Setter>
-                        <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
-                        <Setter Property="FontSize" Value="18"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                    </Style>
-                    <Style TargetType="DataGridCell">
-                        <Setter Property="Foreground" Value="Black"></Setter>
-                        <Setter Property="FontSize" Value="13"/>
-                        <Setter Property="HorizontalAlignment" Value="Center"/>
-                        <Setter Property="Height" Value="34"/>
-                        <Setter Property="VerticalAlignment" Value="Center"/>
-                        <Setter Property="Margin" Value="0,13,0,0"/>
-                        <Setter Property="IsEnabled" Value="true"/>
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="Background" Value="Transparent"/>
-                    </Style>
-                </DataGrid.Resources>
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                    <Setter Property="Height" Value="38"></Setter>
+                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Foreground" Value="White"></Setter>
+                    <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
+                    <Setter Property="FontSize" Value="18"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                    <Setter Property="FontSize" Value="13"/>
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                    <Setter Property="Height" Value="34"/>
+                    <Setter Property="VerticalAlignment" Value="Center"/>
+                    <Setter Property="Margin" Value="0,13,0,0"/>
+                    <Setter Property="IsEnabled" Value="true"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="Transparent"/>
+                </Style>
+            </DataGrid.Resources>
 
-            </DataGrid>
+        </DataGrid>
+        <!--Total-->
+        <StackPanel Orientation="Vertical"
+                        Grid.Row="3"
+                        Grid.Column="1">
+            <TextBlock Text="{Binding TotalPrepay,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="24"
+                       Margin="0 15 0 7"
+                       FontFamily="Lato"
+                       Foreground="Black"/>
+            <TextBlock Text="{Binding TotalRemain,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="24"
+                       FontFamily="Lato"
+                       Foreground="Black"/>
         </StackPanel>
-      
+        <!--in4 receipt-->
+        <StackPanel Orientation="Vertical"
+                        Grid.Row="0"
+                        Grid.Column="1">
+            <TextBlock Text="RECEIPT"
+                       FontSize="37.24"
+                       Margin="0 30 0 27"
+                       FontFamily="Lato"
+                       Foreground="Black"/>
+            <TextBlock Text="{Binding ID,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="24"
+                       FontFamily="Lato"
+                       Margin="0 0 0 10"
+                       Foreground="Black"/>
+            <TextBlock Text="{Binding Today,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="24"
+                       FontFamily="Lato"
+                       Foreground="Black"/>
+        </StackPanel>
+        <!--in4 customer-->
+        <StackPanel Orientation="Vertical"
+                        Grid.Row="0"
+                    HorizontalAlignment="Right"
+                    Margin="0 0 50 0"
+                        Grid.Column="1">
+            <TextBlock Text="Invoice to:"
+                       FontSize="20"
+                       Margin="0 45 0 15"
+                       FontFamily="Lato"
+                       Background="#EEEEEE"
+                       HorizontalAlignment="Right"
+                       Foreground="Black"/>
+            <TextBlock Text="{Binding NameCustomer,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="25"
+                       FontFamily="Lato"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Right"
+                       Margin="0 0 0 10"
+                       Foreground="Black"/>
+            <TextBlock Text="{Binding Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       FontSize="24"
+                       HorizontalAlignment="Right"
+                       FontFamily="Lato"
+                       Foreground="Black"/>
+        </StackPanel>
     </Grid>
 </Window>
