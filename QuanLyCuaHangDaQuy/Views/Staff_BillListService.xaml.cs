@@ -23,5 +23,24 @@ namespace QuanLyCuaHangDaQuy.Views
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.IsEnabled = false;
+                Closee.Visibility = Visibility.Hidden;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(print, "Invoice");
+                }
+            }
+            finally
+            {
+                Closee.Visibility = Visibility.Visible;
+                this.IsEnabled = true;
+            }
+        }
     }
 }

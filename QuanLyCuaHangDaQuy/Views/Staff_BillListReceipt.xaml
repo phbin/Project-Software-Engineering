@@ -76,7 +76,7 @@
             Source="\Resources\Image\madlife.png"></Image>
         <Border Grid.Column="1" 
                 Grid.Row="1"
-                Background="Black"/>
+                Background="#585858"/>
         <DataGrid Grid.Column="1"
                   Grid.Row="1"
                   Grid.RowSpan="2"
@@ -102,7 +102,7 @@
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                     <Setter Property="Height" Value="38"></Setter>
-                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Background" Value="#585858"></Setter>
                     <Setter Property="Foreground" Value="White"></Setter>
                     <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
                     <Setter Property="FontSize" Value="18"/>

@@ -62,6 +62,7 @@
                 BorderThickness="1"
                 BorderBrush="Black"
                 Padding="0"
+                Click="Button_Click"
                 materialDesign:ShadowAssist.ShadowDepth="Depth0" 
                 
 >
@@ -77,7 +78,7 @@
             Source="\Resources\Image\madlife.png"></Image>
         <Border Grid.Column="1" 
                 Grid.Row="1"
-                Background="Black">
+                Background="#585858">
         </Border>
         <DataGrid 
             Grid.Row="1"
@@ -107,7 +108,7 @@
                 <Style TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalAlignment" Value="Center"></Setter>
                     <Setter Property="Height" Value="38"></Setter>
-                    <Setter Property="Background" Value="Black"></Setter>
+                    <Setter Property="Background" Value="#585858"></Setter>
                     <Setter Property="Foreground" Value="White"></Setter>
                     <Setter Property="FontFamily" Value="{StaticResource Lato}"/>
                     <Setter Property="FontSize" Value="18"/>
