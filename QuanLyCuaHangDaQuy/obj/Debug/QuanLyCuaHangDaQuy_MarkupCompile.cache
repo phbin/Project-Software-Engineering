@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
 QuanLyCuaHangDaQuy
 none
 false
 DEBUG;TRACE
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-15721950018
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
+471059715403
+2-1223955081
+94-167279435
+261301976835
+Resources\ResourceDictionary\ScrollBarStyle.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ExitButton.xaml;Resources\UserControls\HumanResourceControl.xaml;Resources\UserControls\ItemsControl.xaml;Resources\UserControls\SearchBarUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\Admin\AccountManagerWindow.xaml;Views\Admin\AdminWindow.xaml;Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml;Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml;Views\Admin\Admin_ImportedItems\Admin_BillListImported.xaml;Views\Admin\Admin_ImportedItems\Admin_EditImportItem.xaml;Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml;Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml;Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml;Views\Admin\Admin_Service\Admin_AddService.xaml;Views\Admin\Admin_Service\Admin_EditService.xaml;Views\Admin\Admin_Service\Admin_ListService.xaml;Views\Admin\CustomerInfoWindow.xaml;Views\Admin\FormCatelogyManagerWindow.xaml;Views\Admin\HumanResourceEditWindow.xaml;Resources\MainResource.xaml;Views\Admin\InventoryInfo.xaml;Views\LoginWindow.xaml;Views\Staff\HomeWindow.xaml;Views\Staff\MainStaffWindow.xaml;Views\Admin\MaterialCatelogyManagerWindow.xaml;Views\Admin\PersonalInfoWindow.xaml;Views\Admin\ProviderManagerWindow.xaml;Views\Staff\ShopItemsClick.xaml;Views\Staff\ShopWindow.xaml;Views\Staff\Staff_Customer\Staff_AddCustomer.xaml;Views\Staff\Staff_Service\Staff_AddReceipt.xaml;Views\Staff\Staff_Service\Staff_AddService.xaml;Views\Staff\Staff_Customer\Staff_Customer.xaml;Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml;Views\Staff\Staff_Customer\Staff_EditCustomer.xaml;Views\Staff\Staff_Service\Staff_EditReceipt.xaml;Views\Staff\Staff_Service\Staff_EditService.xaml;Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml;Views\Staff\Staff_Customer\Staff_ListCustomer.xaml;Views\Staff\Staff_Service\Staff_ListReceipt.xaml;Views\Staff\Staff_Service\Staff_ListService.xaml;
 
-24-1179484933
-25-430739517
-Resources\ResourceDictionary\ScrollBarStyle.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Resources\UserControls\SearchBarUC.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\MainStaffWindow.xaml;Views\PersonalInfoWindow.xaml;Views\ReportDay.xaml;Views\ReportMonth.xaml;Views\ReportYear.xaml;Views\ShopItemsClick.xaml;Views\ShopWindow.xaml;
-
-True
+False
 

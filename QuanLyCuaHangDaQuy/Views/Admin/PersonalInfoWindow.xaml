@@ -1,0 +1,177 @@
+﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.PersonalInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        mc:Ignorable="d"
+        Title="Thông tin cá nhân"
+        Height="540" Width="676"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        DataContext="{StaticResource HumanResourcesVM}">
+    <Window.Resources>
+        
+        <Style TargetType="{x:Type Label}"
+                x:Key="labelStyle">
+            <Style.Setters>
+                <Setter Property="Height" Value="18"/>
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="Foreground" Value="#BCBCBC"/>
+                <Setter Property="FontWeight" Value="Regular"/>
+                <Setter Property="Padding" Value="0"/>
+
+                <!--<Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding}"/>
+                                <TextBlock Text=" *" Foreground="Red"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>-->
+            </Style.Setters>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}"
+               x:Key="InformationTextBlockStyle">
+            <Style.Setters>
+                <Setter Property="Height" Value="41"/>
+                <Setter Property="Width" Value="225"/>
+                <Setter Property="Background" Value="#E5E5E5"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            </Style.Setters>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="10" BorderBrush="{x:Null}"
+            Background="#FFFFFF"
+            BorderThickness="1">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.4,0.4">
+                <UserControls:ExitButton VerticalAlignment="Top"
+                                         HorizontalAlignment="Right"
+                                         Height="40"
+                                         Width="40"
+                                     Margin="15"/>
+                <Border VerticalAlignment="Bottom"
+                    HorizontalAlignment="Center"
+                    BorderThickness="0 0 0 4" BorderBrush="#FCC871">
+                <TextBlock Text="HUMAN RESOURCES"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="32"
+                       Margin="-4"
+                       Foreground="#FCC871"
+                       FontWeight="ExtraBold"
+                       />
+            </Border>
+        </Grid>
+        
+        <!--Main-->
+
+            <Grid Grid.Row="1" Margin="103 40 68 0 ">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" HorizontalAlignment="Left">
+                
+                <!--Image-->
+                <Grid Margin="-40 0 0 0 ">
+                    <Ellipse Width="124"
+                             Height="124">
+                        <Ellipse.Fill>
+                            <ImageBrush>
+                                <ImageBrush.ImageSource>
+                                    <BitmapImage UriSource="\Resources\Images\b.jpg" />
+                                </ImageBrush.ImageSource>
+                            </ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                </Grid>
+                
+                <!--info-->
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Full name"
+                       Margin="0 12 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="Nguyễn Hoàng Tuấn"
+                           HorizontalAlignment="Left"
+                           x:Name="txtbName"/>
+
+
+                <Label Style="{StaticResource labelStyle}" 
+                    Content="Day of birth"
+                       Margin="0 21 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="12/27/2002"
+                           HorizontalAlignment="Left"
+                           x:Name="txtbDayOfBirth"/>
+
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Sex"
+                       Margin="0 21 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="Male"
+                           HorizontalAlignment="Left"/>
+
+                
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="1" HorizontalAlignment="Right">
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Address"
+                       Margin="0 38 0 13"
+                       />
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="bla bla bla "
+                           HorizontalAlignment="Left"
+                           x:Name="txtbAddress"/>
+
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Phone number"
+                       Margin="0 26 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="0833627xxx"
+                           HorizontalAlignment="Left"
+                           x:Name="txtbPhoneNumber"/>
+
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Email"     
+                       Margin="0 21 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="20520344@gm.uit.edu.vn"
+                           HorizontalAlignment="Left"
+                           TextTrimming="CharacterEllipsis"
+                           x:Name="txtbEmail"/>
+
+                <Label Style="{StaticResource labelStyle}" 
+                       Content="Personal ID"
+                       Margin="0 21 0 13"/>
+                <TextBlock Style="{StaticResource InformationTextBlockStyle}"
+                           Text="20520344"
+                           HorizontalAlignment="Left"
+                           x:Name="txtbPersonalID"/>
+                
+            </StackPanel>
+        </Grid>
+        </Grid>
+    </Border>
+</Window>

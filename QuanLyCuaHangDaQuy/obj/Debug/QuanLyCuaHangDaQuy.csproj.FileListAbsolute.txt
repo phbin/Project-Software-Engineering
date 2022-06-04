@@ -119,14 +119,9 @@ C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\M
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.AssemblyReference.cache
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
@@ -135,10 +130,7 @@ C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\A
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.baml
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
@@ -146,183 +138,380 @@ C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Q
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.g.cs
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
-C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.baml
 C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe.config
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.xml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csprojAssemblyReference.cache
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.lref
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.baml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CoreCompileInputs.cache
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.g.cs
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.dll
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.xml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.pdb
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.xml
-C:\Users\PC\OneDrive - Trường ĐH CNTT - University of Information Technology\Tài liệu\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe.config
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.dll
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.xml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.xml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csprojAssemblyReference.cache
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.lref
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CoreCompileInputs.cache
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportMonth.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportMonth.baml
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportDay.g.cs
-D:\GitHub\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportDay.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe.config
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.pdb
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.dll
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.pdb
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.xml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.pdb
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\LiveCharts.Wpf.xml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.pdb
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csprojAssemblyReference.cache
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\PersonalInfoWindow.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportDay.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportMonth.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.lref
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AddAccountWindow.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\AdminWindow.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\MainStaffWindow.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportDay.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportMonth.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ReportYear.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopItemsClick.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\ShopWindow.baml
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CoreCompileInputs.cache
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
-D:\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.xml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\AddEditService.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ReceiptImportedItems.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ImportecItemsInList.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ImportItem.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\AddEditService.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ReceiptImportedItems.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ImportecItemsInList.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\ImportItem.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_Content.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.baml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Imaging.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\stdole.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.IO.Pipelines.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Telemetry.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Memory.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Buffers.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RemoteControl.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.Internal.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.xml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\en\Microsoft.VisualStudio.Imaging.resources.dll
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe.config
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.g.cs
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.AssemblyReference.cache
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.SuggestedBindingRedirects.cache
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe.config
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_Content.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.lref
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe.config
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.pdb
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Collections.Immutable.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\stdole.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.IO.Pipelines.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Telemetry.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Memory.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Buffers.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RemoteControl.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.Internal.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Numerics.Vectors.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.pdb
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\en\Microsoft.VisualStudio.Imaging.resources.dll
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CoreCompileInputs.cache
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddImportItem.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditImportItem.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListImportItem.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddImportItem.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditImportItem.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListImportItem.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_AddService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_EditService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_ListService.g.cs
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_AddService.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_EditService.baml
+D:\Visual\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_ListService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe.config
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.exe
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\QuanLyCuaHangDaQuy.pdb
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Collections.Immutable.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\stdole.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RpcContracts.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.IO.Pipelines.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Telemetry.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Memory.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Buffers.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.RemoteControl.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.Internal.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Numerics.Vectors.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\EntityFramework.SqlServer.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignColors.pdb
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.Expression.Interactions.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Imaging.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\System.Windows.Interactivity.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Threading.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\Microsoft.VisualStudio.Utilities.xml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\bin\Debug\en\Microsoft.VisualStudio.Imaging.resources.dll
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.AssemblyReference.cache
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.SuggestedBindingRedirects.cache
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe.config
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\ResourceDictionary\ScrollBarStyle.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddImportItem.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditImportItem.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListImportItem.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_AddService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_EditService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_ListService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_Content.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.cache
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy_MarkupCompile.lref
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\App.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CartUC.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ControlBarUC.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\CustomerControl.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ExitButton.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\HumanResourceControl.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ItemsControl.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SearchBarUC.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\SelectedProductCartUC.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\UserControls\ShowProductUC.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AccountManagerWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\AdminWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddImportItem.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_AddReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditImportItem.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_EditReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListImportItem.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_ListReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_AddService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_EditService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_Service\Admin_ListService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\CustomerInfoWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\FormCatelogyManagerWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\HumanResourceEditWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Resources\MainResource.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\InventoryInfo.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\LoginWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\HomeWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\MainStaffWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\MaterialCatelogyManagerWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\PersonalInfoWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\ProviderManagerWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopItemsClick.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\ShopWindow.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_AddCustomer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_AddService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_Customer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_DetailCustomer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_EditCustomer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_EditService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_InfoCustomer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Customer\Staff_ListCustomer.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListReceipt.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Staff\Staff_Service\Staff_ListService.baml
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.g.resources
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.Properties.Resources.resources
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.GenerateResource.cache
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CoreCompileInputs.cache
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.csproj.CopyComplete
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.exe
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\QuanLyCuaHangDaQuy.pdb
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_BillListImported.g.cs
+D:\UYEN\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\Views\Admin\Admin_ImportedItems\Admin_BillListImported.baml
