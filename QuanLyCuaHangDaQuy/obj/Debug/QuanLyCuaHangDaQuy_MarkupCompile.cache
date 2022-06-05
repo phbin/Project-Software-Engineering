@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\hoang\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
 QuanLyCuaHangDaQuy
 none
 false
 DEBUG;TRACE
-C:\Users\hoang\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
+C:\Users\hoang\OneDrive\Documents\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
 17-2139846021
 2-1223955081
-54-2086708485
-23-127295086
+55126170193
+23-532136466
 Resources\MainResources.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ExitButton.xaml;Resources\UserControls\HumanResourceControl.xaml;Resources\UserControls\ProductCatelogyUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\AccountManagerWindow.xaml;Views\AdminWindow.xaml;Views\CustomerInfoWindow.xaml;Views\FormCategoryManagerWindow.xaml;Views\HumanResourceEditWindow.xaml;Views\HumanResourceInformationWindow.xaml;Views\MaterialCategoryManagerWindow.xaml;Views\ProviderManagerWindow.xaml;
 
-False
+True
 

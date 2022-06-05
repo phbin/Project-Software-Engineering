@@ -54,9 +54,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             {
                 if (menubar_flag == 0)
                 {
-                    window.MenuSrV.CanContentScroll = true;
                     window.grdMenuButton.Width = 330;
-                    window.MenuSrV.ScrollToHorizontalOffset(5);
+                    window.MenuSrV.ScrollToHorizontalOffset(554);
                     window.IconSwitchBt.Kind = PackIconKind.ChevronLeft;
                     menubar_flag = 1;
                 }
@@ -65,12 +64,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     window.grdMenuButton.Width = 550;
                     window.MenuSrV.ScrollToHome();
                     window.IconSwitchBt.Kind = PackIconKind.ChevronRight;
-                    window.MenuSrV.CanContentScroll = false;
                     menubar_flag = 0;
                 }
-
-
-
             }
             void MouseLeave(Button btn)
             {
@@ -88,6 +83,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 window.grMaterial.Visibility = Visibility.Collapsed;
                 window.grMaterial.Visibility=Visibility.Collapsed;
                 window.grForm.Visibility = Visibility.Collapsed;
+
+                window.btSearch.IsEnabled = false;
                 window.btAdd.IsEnabled = false;
                 string backgr_enable = "#E0A645";
                 string backgr_disable = "#585858";
@@ -116,15 +113,18 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         Navigate_id = 10;
 
                         window.SearchBar.DataContext = window.grHR.DataContext;
+                        window.btSearch.IsEnabled = true;
                         break;
 
                     case 20:
                         window.btAccount.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                         window.btAdd.IsEnabled = true; Navigate_id = 20;
+                        window.btSearch.IsEnabled = true;
                         break;
                     case 30:
                         window.btCustomer.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                         window.btAdd.IsEnabled = true; Navigate_id = 30;
+                        window.btSearch.IsEnabled = true;
                         break;
                     case 40:
                         window.grProvider.Visibility = Visibility.Visible;
@@ -132,12 +132,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         window.btAdd.IsEnabled = true; 
                         Navigate_id = 40;
                         window.SearchBar.DataContext = window.grProvider.DataContext;
+                        window.btSearch.IsEnabled = true;
                         break;
                     case 50:
                         window.btAdd.Margin = new Thickness(180, 0, 0, 0);
                         window.btSwitchTableCatelogy.Visibility=Visibility.Visible;
                         window.btCatelogy.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                         Navigate_id = 50;
+                        window.btSearch.IsEnabled = false;
                         break;
 
                     case 60:
@@ -149,6 +151,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         window.btAdd.IsEnabled = true;
                         Navigate_id = 60;
                         window.SearchBar.DataContext = window.grMaterial.DataContext;
+                        window.btSearch.IsEnabled = true;
                         break;
 
 
@@ -161,6 +164,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         window.btAdd.IsEnabled = true;
                         Navigate_id = 70;
                         window.SearchBar.DataContext = window.grForm.DataContext;
+                        window.btSearch.IsEnabled = true;
                         break;
 
                 }
