@@ -97,11 +97,8 @@
                         <Ellipse Width="124"
                              Height="124">
                             <Ellipse.Fill>
-                                <ImageBrush>
-                                    <ImageBrush.ImageSource>
-                                        <BitmapImage UriSource="\Resources\Images\b.jpg" />
-                                    </ImageBrush.ImageSource>
-                                </ImageBrush>
+                                
+                                <ImageBrush ImageSource="{Binding BitmapImage}" x:Name="ProfileImage"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </Grid>

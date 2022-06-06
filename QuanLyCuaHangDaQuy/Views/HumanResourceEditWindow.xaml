@@ -122,11 +122,7 @@
                         <Ellipse Width="124"
                              Height="124">
                             <Ellipse.Fill>
-                                <ImageBrush>
-                                    <ImageBrush.ImageSource>
-                                        <BitmapImage UriSource="\Resources\Images\b.jpg" x:Name="ProfileImage"/>
-                                    </ImageBrush.ImageSource>
-                                </ImageBrush>
+                                <ImageBrush ImageSource="{Binding BitmapImage, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="ProfileImage"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </Grid>
@@ -144,7 +140,7 @@
                         x:Name="TxtbName"
                         materialDesign:HintAssist.Hint="Enter Name"  
                         HorizontalAlignment="Left"
-                        Text="{Binding FullName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                        Text="{Binding FullName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                     <Label Style="{StaticResource labelStyle}" 
                                Content="Day of birth"
                                Margin="0 21 0 13"/>

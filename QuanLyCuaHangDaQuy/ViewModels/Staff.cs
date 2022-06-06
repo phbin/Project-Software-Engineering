@@ -45,6 +45,13 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         private long _idpersonal;
         public long IDPersonal { get { return _idpersonal; } set { _idpersonal = value; OnPropertyChanged(nameof (IDPersonal)); } }
 
+        private byte[] _avatar;
+        public byte[] Avatar
+        {
+            get { return _avatar; }
+            set { _avatar = value; OnPropertyChanged(nameof(Avatar)); }
+        }
+
     }
 
 }

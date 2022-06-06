@@ -1,24 +1,17 @@
 ﻿using QuanLyCuaHangDaQuy.Views;
 using QuanLyCuaHangDaQuy.Models;
-using QuanLyCuaHangDaQuy.ViewModels;
-using QuanLyCuaHangDaQuy.Resources.UserControls;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Forms;
-using System.Windows.Media;
-using System.Windows.Data;
-using System.Drawing;
 using System.Data;
 using System.Globalization;
 using System.Collections.ObjectModel;
-using System.Data.Entity.Validation;
 using System.IO;
+using System.Windows.Media.Imaging;
+using System.Windows.Media;
 
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
@@ -26,8 +19,20 @@ namespace QuanLyCuaHangDaQuy.ViewModels
     {
         public ObservableCollection<Staff> ListStaff { get; set; } = new ObservableCollection<Staff>();
         private int isEdit = 0;
-        private string imgLocation = "";
-        private byte[] img;
+
+        private BitmapImage _bitmapImage;
+        public BitmapImage BitmapImage
+        {
+            get { return _bitmapImage; }
+            set { _bitmapImage = value; OnPropertyChanged(nameof(BitmapImage)); }
+        }
+
+        private byte[] _avatar;
+        public byte[] Avatar
+        {
+            get { return _avatar; }
+            set { _avatar = value; OnPropertyChanged(nameof(Avatar)); }
+        }
             
         private string _fullname;
         public string FullName 
@@ -116,15 +121,19 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             BrowseImageCommand = new RelayCommand<object>((p) => true, (p) =>
             {
                 OpenFileDialog dialog = new OpenFileDialog();
-                dialog.Filter = "png file(*.png)|*.png|jpg files(*.jpg)|*.jpg|All files(*.*)|(*.*)";
-                dialog.ShowDialog();
+                dialog.Title = "Choose a picture";
+                dialog.Filter = "All supported graphics|*.jpg;*.jpeg;*.png|" + "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" + "Portable Network Graphic (*.png)|*.png";
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
-
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.UriSource = new Uri(dialog.FileName);
+                    bitmap.EndInit();
+                    BitmapImage = bitmap;
                 }
-            })
-            {
-            };
+
+            });
             Staff.EditCommand = new RelayCommand<object>((p) => true, (p) => OpenHumanResourceEditWindow());
 
             Staff.DeleteCommand = new RelayCommand<object>((p) => true, (p) => Delete());
@@ -141,7 +150,9 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             humanResourceInformationWindow.txtbPersonalID.Text=SelectedStaff.IDPersonal.ToString();
             humanResourceInformationWindow.txtbSex.Text=SelectedStaff.Sex.ToString();
             humanResourceInformationWindow.txtbAddress.Text=SelectedStaff.Addr.ToString();
+            humanResourceInformationWindow.ProfileImage.ImageSource = Extension.ConvertByteToBitmapImage(SelectedStaff.Avatar);
             humanResourceInformationWindow.ShowDialog();
+
         }    
         public void Load()
         {
@@ -163,7 +174,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         Phone = item.Phone,
                         Email = item.Email,
                         Addr = item.Addr,
-                        Sex = item.Sex
+                        Sex = item.Sex,
+                        Avatar = item.Avatar
                     };
                     ListStaff.Add(Staff);
                     no++;
@@ -200,7 +212,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                                 Phone = item.Phone,
                                 Email = item.Email,
                                 Addr = item.Addr,
-                                Sex = item.Sex
+                                Sex = item.Sex,
+                                Avatar=item.Avatar
                             });
                             no++;
                         }   
@@ -222,6 +235,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             humanResourceEditWindow.cbSex.Text = SelectedStaff.Sex.ToString();
             humanResourceEditWindow.dpDayOfBirth.Text = SelectedStaff.Dob_Format.ToString();
             humanResourceEditWindow.TxtbID.Text = SelectedStaff.IDPersonal.ToString();
+            humanResourceEditWindow.ProfileImage.ImageSource= Extension.ConvertByteToBitmapImage(SelectedStaff.Avatar);      
             humanResourceEditWindow.ShowDialog();
             LoadDataAfterTextSearch();
         }
@@ -298,6 +312,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 return;
             }
 
+            Avatar = Extension.ConvertBitmapImageToBytes(BitmapImage);
+
             if (isEdit == 1)
             {
                 if (SelectedStaff.IDPersonal != long.Parse(IDPersonal))
@@ -313,12 +329,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         }
                     }
                 }    
+             
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Phone = Phone;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Email = Email;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Addr = Addr;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().FullName = FullName;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().IDPersonal = long.Parse(IDPersonal);
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().DoB = DateTime.Parse(DoB, CultureInfo.InvariantCulture);
+                DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Avatar = Avatar;
                 DataProvider.Ins.DB.INFOSTAFFs.ToList().Where(h => h.ID == SelectedStaff.ID).FirstOrDefault().Sex= Sex.ToString();
                 DataProvider.Ins.DB.SaveChanges();
             }
@@ -354,6 +372,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                     Phone = Phone,
                     Email = Email,
                     IDPersonal = long.Parse(IDPersonal), 
+                    Avatar = Avatar,
                     stt = 1 
                 });
                 DataProvider.Ins.DB.SaveChanges();

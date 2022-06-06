@@ -99,11 +99,6 @@
         </Grid.RowDefinitions>
 
 
-
-
-
-
-
         <!--menu-->
 
         <DockPanel Grid.Row="0"
@@ -135,9 +130,7 @@
                                              Width="30"
                                              Height="30" VerticalAlignment="Bottom"
                                              HorizontalAlignment="Center"
-                                             x:Name="IconSwitchBt"
-                                             />
-
+                                             x:Name="IconSwitchBt"/>
                 </Grid>
             </Button>
 
@@ -148,7 +141,7 @@
                 <ScrollViewer
                     x:Name="MenuSrV"
                     VerticalScrollBarVisibility="Disabled"
-                    HorizontalScrollBarVisibility="Disabled"
+                    HorizontalScrollBarVisibility="Hidden"
                     IsDeferredScrollingEnabled="False">
 
                     <StackPanel Orientation="Horizontal"
@@ -234,7 +227,7 @@
                         <Button 
                     x:Name="btInventory"
                     Content="Inventory"
-                    Uid="60"
+                    Uid="80"
                     Command="{Binding NavigateCommand}"
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
@@ -250,7 +243,7 @@
                         <Button 
                     x:Name="btService"
                     Content="Service"
-                    Uid="70"
+                    Uid="90"
                     Command="{Binding NavigateCommand}"                   
                     CommandParameter="{Binding ElementName=wdAdmin}"
                     Style="{DynamicResource MenuBarBtStyle}">
@@ -266,7 +259,7 @@
                         <Button 
                     x:Name="Report"
                     Content="Report" 
-                    Uid="80"
+                    Uid="100"
                     Command="{Binding NavigateCommand}"
                     Style="{DynamicResource MenuBarBtStyle}"
                             />
@@ -283,8 +276,7 @@
                 <RowDefinition Height="78"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-
-
+            
             <Grid Grid.Row="0">
                 <!--ds-->
                 <DockPanel x:Name="btSwitchTableCatelogy" 
@@ -402,6 +394,7 @@
                             DockPanel.Dock="Left"
                             Text="{Binding TextSearch ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         <Button 
+                            x:Name="btSearch"
                             Height="30"
                             Width="30"
                             Margin="0 0 10 0"
@@ -623,7 +616,6 @@
 
             <!--Catelogy grid-->
             <!--Material-->
-
             <Grid Grid.Row="1"
                   Visibility="Collapsed"
                   x:Name="grMaterial"
@@ -664,7 +656,7 @@
                         <DataGridTextColumn Header="Name of Material" Width="300" Binding="{Binding NameMaterial}" />
                         <DataGridTextColumn Header="Profit" Width="200" Binding="{Binding Profit}"/>
 
-                        <DataGridTemplateColumn Header="" Width="" >
+                        <DataGridTemplateColumn Header="" Width="30" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -754,7 +746,7 @@
                         <DataGridTextColumn Header="No." Width="107"  Binding="{Binding No}" />
                         <DataGridTextColumn Header="Name of Form" Width="300" Binding="{Binding NameForm}" />
 
-                        <DataGridTemplateColumn Header="" Width="" >
+                        <DataGridTemplateColumn Header="" Width="30" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid Margin="0 -10 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">

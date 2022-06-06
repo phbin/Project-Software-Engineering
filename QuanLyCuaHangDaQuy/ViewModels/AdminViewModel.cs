@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using MaterialDesignThemes.Wpf;
 using System.Collections.ObjectModel;
+using System.Windows.Media.Imaging;
 
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
@@ -28,8 +29,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         public ICommand NavigateCommand { get; set; }
         public ICommand GetUidCommand { get; set; }
         public ICommand MouseLeaveCommand { get; set; }
-
-
 
         public ICommand SwitchMenuButton { get; set; }
 
@@ -111,7 +110,6 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                         window.btHR.Background = (Brush)new BrushConverter().ConvertFrom(backgr_enable);
                         window.btAdd.IsEnabled = true;
                         Navigate_id = 10;
-
                         window.SearchBar.DataContext = window.grHR.DataContext;
                         window.btSearch.IsEnabled = true;
                         break;
@@ -178,6 +176,7 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 {
                     case 10:
                         HumanResourceEditWindow addHRWindow = new HumanResourceEditWindow();
+                        addHRWindow.ProfileImage.ImageSource = new BitmapImage(new Uri(@"../../Resources/Images/b.jpg", UriKind.RelativeOrAbsolute));
                         addHRWindow.TxtbName.Text = null;
                         addHRWindow.TxtbEmail.Text = null;
                         addHRWindow.TxtbAddress.Text = null;
