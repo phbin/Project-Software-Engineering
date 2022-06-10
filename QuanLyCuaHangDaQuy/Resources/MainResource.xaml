@@ -1,8 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:resources="clr-namespace:QuanLyCuaHangDaQuy.Resources"
-                    xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
-                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-                    xmlns:local="clr-namespace:Interactivity">
-    <viewmodels:BaseViewModel x:Key="HomeVM"></viewmodels:BaseViewModel>
+                    xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
+                    xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels">
+    <viewmodels:HumanResourcesViewModel x:Key="HumanResourcesVM"/>
+    <viewmodels:ProviderViewModel x:Key="ProviderVM"/>
+    <viewmodels:MaterialCategoryViewModel x:Key="MaterialCategoryVM"/>
+    <viewmodels:FormCategoryViewModel x:Key="FormCategoryVM"/>
+    <viewmodels:ExitButtonViewModel x:Key="ExitButtonVM"/>
+    <viewmodels:AdminViewModel x:Key="AdminVM"/>
+    <viewmodels:CustomerViewModel x:Key="CustomerVM"/>
 </ResourceDictionary>

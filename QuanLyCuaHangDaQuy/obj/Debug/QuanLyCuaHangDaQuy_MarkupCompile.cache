@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\obj\Debug\
 QuanLyCuaHangDaQuy
 none
 false
 DEBUG;TRACE
-C:\Users\ADMIN\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
-18-68826997
-2739969757
-46-89233888
-2268392883
-Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ItemsControl.xaml;Views\AddAccountWindow.xaml;Views\AdminWindow.xaml;Resources\MainResource.xaml;Views\PersonalInfoWindow.xaml;Views\ShopWindow.xaml;Views\Staff_AddCustomer.xaml;Views\Staff_AddReceipt.xaml;Views\Staff_AddService.xaml;Views\Staff_EditCustomer.xaml;Views\Staff_EditReceipt.xaml;Views\Staff_EditService.xaml;Views\Staff_InfoCustomer.xaml;Views\Staff_ListCustomer.xaml;Views\Staff_ListReceipt.xaml;Views\Staff_ListService.xaml;
+C:\Users\Bin\Desktop\Project-Software-Engineering\QuanLyCuaHangDaQuy\App.xaml
+501465020487
+21628168987
+131-728936818
+311695237125
+Resources\ResourceDictionary\ScrollBarStyle.xaml;Resources\UserControls\CartUC.xaml;Resources\UserControls\ControlBarUC.xaml;Resources\UserControls\CustomerControl.xaml;Resources\UserControls\ExitButton.xaml;Resources\UserControls\HumanResourceControl.xaml;Resources\UserControls\ItemsControl.xaml;Resources\UserControls\SearchBarUC.xaml;Resources\UserControls\SelectedProductCartUC.xaml;Resources\UserControls\ShowProductUC.xaml;Views\Admin\AccountManagerWindow.xaml;Views\Admin\AdminWindow.xaml;Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml;Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml;Views\Admin\Admin_ImportedItems\Admin_BillListImported.xaml;Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml;Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml;Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml;Views\Admin\Admin_Service\Admin_AddService.xaml;Views\Admin\Admin_Service\Admin_EditService.xaml;Views\Admin\Admin_Service\Admin_ListService.xaml;Views\Admin\CustomerInfoWindow.xaml;Views\Admin\FormCategoryManagerWindow.xaml;Views\Admin\HumanResourceEditWindow.xaml;Views\Admin\HumanResourceInformationWindow.xaml;Views\Admin\ItemManageWindow.xaml;Views\Admin\MaterialCategoryManagerWindow.xaml;Views\Admin\ReportAdmin.xaml;Views\Admin\UnitManageWindow.xaml;Views\InventoryBill.xaml;Views\LoginWindow.xaml;Views\Staff\CheckOutBill.xaml;Views\Staff\HomeWindow.xaml;Views\Staff\MainStaffWindow.xaml;Views\Admin\PersonalInfoWindow.xaml;Views\Admin\ProviderManagerWindow.xaml;Views\Staff\ShopItemsClick.xaml;Views\Staff\ShopWindow.xaml;Views\Staff\Staff_Customer\Staff_AddCustomer.xaml;Views\Staff\Staff_Customer\Staff_EditCustomer.xaml;Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml;Views\Staff\Staff_Customer\Staff_ListCustomer.xaml;Views\Staff\Staff_Service\Staff_AddReceipt.xaml;Views\Staff\Staff_Service\Staff_AddService.xaml;Views\Staff\Staff_Service\Staff_BillListReceipt.xaml;Views\Staff\Staff_Service\Staff_BillListService.xaml;Views\Staff\Staff_Service\Staff_EditReceipt.xaml;Views\Staff\Staff_Service\Staff_EditService.xaml;Views\Staff\Staff_Service\Staff_ListReceipt.xaml;Views\Staff\Staff_Service\Staff_ListService.xaml;
 
 False
 

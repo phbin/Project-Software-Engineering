@@ -4,9 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" 
+             d:DataContext="{d:DesignInstance Type=viewmodels:MainStaffViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="65.25" >
+             d:DesignHeight="65.25" 
+             >
     <Grid>
         <Grid.Resources>
             <Style TargetType="Button" x:Key="ButtonMenu">
@@ -37,6 +40,10 @@
                                     <Setter Property="Background" TargetName="border" Value="#E0A645"/>
                                     <Setter Property="BorderBrush" TargetName="border" Value="#E0A645"/>
                                 </Trigger>
+                                <Trigger Property="IsFocused" Value="True">
+                                    <Setter Property="Background" TargetName="border" Value="#E0A645"/>
+                                    <Setter Property="BorderBrush" TargetName="border" Value="#E0A645"/>
+                                </Trigger>
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>
@@ -46,6 +53,7 @@
         <materialDesign:ColorZone
          Height="65.25"
             Width="1080"
+            MaxWidth="1600"
           Background="#585858">
 
             <DockPanel>
@@ -55,7 +63,7 @@
                         <ImageBrush ImageSource="/QuanLyCuaHangDaQuy;component/Resources/Image/avatar.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnName" Content="Hi Bin" FontFamily="Lato" FontSize="24" FontWeight="Normal"
+                <Button x:Name="btnName" Content="Hi!" FontFamily="Lato" FontSize="24" FontWeight="Normal"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         BorderThickness="0"
                         Background="Transparent" Foreground="#FFFFFF"></Button>
@@ -69,9 +77,7 @@
                     </Menu.Background>
                     <MenuItem Header="">
                         <MenuItem 
-                            Header="_Profile">
-                        </MenuItem>
-                        <MenuItem 
+                            Command="{Binding LogOutCommand}"
                             Header="_Log out">
                         </MenuItem>
                     </MenuItem>
@@ -85,16 +91,18 @@
                      Width="75.75"
                      Height="33.75"
                      Content="Home"
-                     Margin="0,0,30,0"
+                     Margin="160,0,30,0"
+                     Command="{Binding HomeViewCommand}"
+
                         >
                     </Button>
-                    <Button
+                    <Button x:Name="shopButton"
                      Style="{StaticResource ButtonMenu}"
                      Width="64.75"
                      Height="33.75"
                      Content="Shop"
                      Margin="0,0,30,0"
-                        
+                     Command="{Binding ShopViewCommand}"
                      >
                     </Button>
                     <Button
@@ -103,6 +111,7 @@
                      Height="33.75"
                      Margin="0,0,30,0"
                      Content="Service"
+                     Command="{Binding ServiceViewCommand}"
                       >
                     </Button>
                     <Button
@@ -110,22 +119,16 @@
                      Width="113.75"
                      Height="33.75"
                      Margin="0,0,30,0"
-                     Content="Customer"
-                     >
-                    </Button>
-                    <Button
-                     Style="{StaticResource ButtonMenu}"
-                     Width="82.75"
-                     Height="33.75"
-                     Margin="0,0,80,0"  
-                     Content="Report"
-                      >
+                     Command="{Binding CustomerViewCommand}"
+                     Content="Customer">
+
                     </Button>
 
                     <Button
                      Style="{StaticResource ButtonMenu}"
                      Height="39" Width="55"
-                      HorizontalAlignment="Left" Margin="0,0,30,0"   
+                     HorizontalAlignment="Left" Margin="0,0,30,0"   
+                     Command="{Binding CartViewCommand}"
                       >
                         <Grid Height="39"
                           Width="50">
@@ -153,5 +156,6 @@
             </DockPanel>
 
         </materialDesign:ColorZone>
+
     </Grid>
 </UserControl>
