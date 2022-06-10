@@ -28,6 +28,7 @@ namespace QuanLyCuaHangDaQuy.Models
         public string Email { get; set; }
         public long IDPersonal { get; set; }
         public Nullable<int> Points { get; set; }
+        public Nullable<int> stt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CUSSERVICE> CUSSERVICEs { get; set; }

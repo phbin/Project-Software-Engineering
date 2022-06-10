@@ -17,33 +17,20 @@ namespace QuanLyCuaHangDaQuy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public IMPORTEDITEM()
         {
-            this.CARTS = new HashSet<CART>();
             this.ITEMBILLs = new HashSet<ITEMBILL>();
-            this.ITEMS = new HashSet<ITEM>();
         }
     
         public string ID { get; set; }
-        public string NameItem { get; set; }
         public string IDProd { get; set; }
-        public string IDForm { get; set; }
-        public string IDMaterial { get; set; }
-        public Nullable<int> SellQty { get; set; }
+        public string IDOrgItem { get; set; }
         public Nullable<int> Quantity { get; set; }
         public double PurchasePrice { get; set; }
-        public Nullable<double> Price { get; set; }
         public Nullable<double> Total { get; set; }
         public System.DateTime DatePurchase { get; set; }
-        public string Descript { get; set; }
-        public byte[] Picture { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CART> CARTS { get; set; }
-        public virtual FORMCATEGORY FORMCATEGORY { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ITEMBILL> ITEMBILLs { get; set; }
-        public virtual MATERIALCATEGORY MATERIALCATEGORY { get; set; }
+        public virtual ORIGINALITEM ORIGINALITEM { get; set; }
         public virtual INFOPROVIDER INFOPROVIDER { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ITEM> ITEMS { get; set; }
     }
 }

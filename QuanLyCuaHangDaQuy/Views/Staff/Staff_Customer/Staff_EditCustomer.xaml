@@ -1,13 +1,29 @@
-﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.Staff_EditCustomer"
+﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.Staff.Staff_Customer.Staff_EditCustomer"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views"
+        xmlns:local="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff.Staff_Customer"
         mc:Ignorable="d"
-          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        x:Name="EditCustomer"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
         WindowStyle="None" 
         WindowStartupLocation="CenterScreen" Height="540" Width="676">
+    <Window.DataContext>
+        <vm:Staff_EditCustomerVM></vm:Staff_EditCustomerVM>
+    </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="Pastday" TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignDatePicker}">
+            <Setter Property="DisplayDateStart" Value="1/1/1111"></Setter>
+            <Setter Property="DisplayDateEnd" Value="{x:Static System:DateTime.Today}"/>
+        </Style>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="86"/>
@@ -42,9 +58,13 @@
                  Height="40"
                  Padding="0"
                  Width="40"
-                 Command="{Binding btnClose}"
                  Background="Transparent"
                  BorderThickness="0">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <ei:CallMethodAction TargetObject="{Binding ElementName=EditCustomer}" MethodName="Close"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <materialDesign:PackIcon Kind="Close" 
                                  Foreground="#BCBCBC" 
                                      HorizontalAlignment="Center"
@@ -83,10 +103,11 @@
         <TextBox Grid.Column="1"
                  Grid.Row="4"
                  FontSize="20"
+                  x:Name="FullName"
                  Margin="0,0,0,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
+                 Text="{Binding FullName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Height="35.6">
         </TextBox>
         <!-- Email -->
@@ -99,30 +120,41 @@
                    Margin="5,0,0,0"/>
         <TextBox Grid.Column="3"
                  Grid.Row="4"
+                 x:Name="Email"
                  FontSize="20"
                  Margin="0,0,0,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
+                 Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 
                  Height="35.6">
         </TextBox>
-        <!--Brithday-->
-        <TextBlock Text="Brithday"
+        <!--Birthday-->
+        <TextBlock Text="Birthday"
                    Grid.Column="1"
                    Grid.Row="6"
                    Foreground="#BCBCBC"
                    FontSize="15"
                    FontFamily="Lato"
                    Margin="5,0,0,0"/>
-        <TextBox Grid.Column="1"
+        <DatePicker Grid.Column="1"
                  Grid.Row="8"
                  FontSize="20"
-                 Margin="0,0,0,0"
+                 x:Name="Birthday"
+                    Style="{StaticResource Pastday}"
+                 Margin="0,0,100,0"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
+                 Text="{Binding Birthday,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  Height="35.6">
-        </TextBox>
+            <DatePicker.CalendarStyle>
+                <Style TargetType="Calendar" BasedOn="{StaticResource MaterialDesignCalendarPortrait}">
+                    <Style.Resources>
+                        <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FCC871" />
+                    </Style.Resources>
+                </Style>
+            </DatePicker.CalendarStyle>
+        </DatePicker>
         <!--ID Personal-->
         <TextBlock Text="ID Personal"
                    Grid.Column="3"
@@ -135,9 +167,11 @@
                  Grid.Row="8"
                  FontSize="20"
                  Margin="0,0,0,0"
+                 x:Name="IDPersonal"
                  Foreground="Black"
+                 PreviewTextInput="Point_PreviewTextInput"
+                  Text="{Binding IDPersonal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
                  Height="35.6">
         </TextBox>
         <!--Phone number-->
@@ -153,9 +187,12 @@
                  FontSize="20"
                  Margin="0,0,0,0"
                  Foreground="Black"
+                 x:Name="Phonenumber"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
-                 Height="35.6">
+                 Text="{Binding Phone,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 Height="35.6"
+                 PreviewTextInput="Phonenumber_PreviewTextInput"
+                >
         </TextBox>
         <!--Points -->
         <TextBlock Text="Points"
@@ -169,11 +206,20 @@
                  Grid.Row="12"
                  FontSize="20"
                  Margin="0,0,0,0"
+                 x:Name="Point"
                  Foreground="Black"
                  VerticalAlignment="Top"
-                 Text="Nguyen Phuoc Binh "
+                 Text="{Binding Points,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                 PreviewTextInput="Point_PreviewTextInput"
                  Height="35.6">
         </TextBox>
+        <!--ID -->
+        <TextBlock
+            Text="{Binding ID, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+            x:Name="ID"
+            Foreground="White">
+
+        </TextBlock>
         <!--Confirm-->
         <Button Grid.Row="14"
             Grid.Column="0"
@@ -186,7 +232,10 @@
             Foreground="White"
             BorderThickness="0"
             FontSize="21"
-                 materialDesign:ShadowAssist.ShadowDepth="Depth0" 
+            Command="{Binding ConfirmCommand}"
+              CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}"
+            materialDesign:ShadowAssist.ShadowDepth="Depth0" 
                 />
     </Grid>
 </Window>

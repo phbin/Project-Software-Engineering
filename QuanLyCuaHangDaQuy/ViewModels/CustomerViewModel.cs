@@ -17,7 +17,7 @@ using QuanLyCuaHangDaQuy.Views;
 
 namespace QuanLyCuaHangDaQuy.ViewModels
 {
-    internal class CustomerViewModel:BaseViewModel
+    internal class CustomerViewModel : BaseViewModel
     {
         //private MainWindow mainWindow;
         //private List<CustomerControl> ListCustomerControl = new List<CustomerControl>();

@@ -1,7 +1,9 @@
-﻿using System;
+﻿using QuanLyCuaHangDaQuy.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +26,18 @@ namespace QuanLyCuaHangDaQuy.Resources.UserControls
         {
             InitializeComponent();
         }
-
+        //private void ShowFormLogin()
+        //{
+        //    LoginWindow frmLogin = new LoginWindow();
+        //    frmLogin.Show();
+        //}
+        //private void MenuItem_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Thread thread = new Thread(new ThreadStart(ShowFormLogin)); //Create new thread 
+        //    thread.Start(); //Start thread
+        //    LoginWindow frmLogin = new LoginWindow();
+        //    frmLogin.Show();
+        //    this.Close(); //Close current form
+        //}
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyCuaHangDaQuy.Views
+namespace QuanLyCuaHangDaQuy.Views.Staff.Staff_Service
 {
     /// <summary>
     /// Interaction logic for Staff_EditReceipt.xaml

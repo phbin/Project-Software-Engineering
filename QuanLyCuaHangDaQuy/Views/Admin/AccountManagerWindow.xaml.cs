@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyCuaHangDaQuy.Models;
+using QuanLyCuaHangDaQuy.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,37 @@ namespace QuanLyCuaHangDaQuy.Views
     /// </summary>
     public partial class AccountManagerWindow : Window
     {
+
         public AccountManagerWindow()
         {
+         
             InitializeComponent();
+            //var List = DataProvider.Ins.DB.ACCOUNTs.ToList();
+
+           var list = DataProvider.Ins.DB.INFOSTAFFs.Select(x => x.FullName).ToList();
+            foreach (var i in list)
+            {
+                textFullname.Items.Add(i);
+            }
+            textAccType.Items.Add("admin");
+            textAccType.Items.Add("staff");
+
+            //list = DataProvider.Ins.DB.ACCOUNTs.Select(x => x.AccType).ToList();
+            //foreach (var i in list)
+            //{
+            //    textAccType.Items.Add(i);
+
+            //}
+        }
+
+        private void btSave_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

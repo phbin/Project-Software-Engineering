@@ -5,14 +5,18 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" xmlns:viewmodel="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         mc:Ignorable="d"
         Height="605" Width="676"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
+        WindowStartupLocation="CenterScreen"
         AllowsTransparency="True"
         FontFamily="Lato">
+    <Window.DataContext>
+        <viewmodel:AccountViewModel/>
+    </Window.DataContext>
     <Window.Resources>
 
 
@@ -23,7 +27,7 @@
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="Foreground" Value="#BCBCBC"/>
                 <Setter Property="FontWeight" Value="Regular"/>
 
                 <Setter Property="Padding" Value="0"/>
@@ -92,13 +96,14 @@
                        Foreground="#FCC871"
                        FontWeight="ExtraBold"
                        />
+                    
                 </Border>
             </Grid>
 
             <!--Main-->
 
             <Grid Grid.Row="1">
-                
+
                 <StackPanel HorizontalAlignment="Center">
                     <Label x:Name="AddressLabel"
                         Style="{StaticResource labelStyle}" 
@@ -106,8 +111,13 @@
                        Margin="0 38 0 13"
                            Uid="40"/>
                     <ComboBox 
+                        Name="textFullname"
                         Height="41"
-                        Width="225"/>
+                        FontSize="18"
+                        Width="225" HorizontalAlignment="Left" 
+                        HorizontalContentAlignment="Left" 
+                        Text="{Binding Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         VerticalContentAlignment="Center"/>
                     <Label x:Name="Username"
                         Style="{StaticResource labelStyle}" 
                        Content="Username"
@@ -115,8 +125,10 @@
                            Uid="50"/>
                     <TextBox 
                         Uid="70"
-                        x:Name="PhoneTxtb"
+                        x:Name="textUsername"
                         materialDesign:HintAssist.Hint="Enter Username"
+                        Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+
                            HorizontalAlignment="Left" />
 
                     <Label x:Name="EmailLabel"
@@ -125,18 +137,25 @@
                        Content="Password"     
                        Margin="0 21 0 13"/>
                     <TextBox 
+                        x:Name="textPassword"
                             Uid="60"
+                           Text="{Binding Pass, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                            materialDesign:HintAssist.Hint="Enter new password"
                            HorizontalAlignment="Left"
                            />
-
+                    
                     <Label 
                         Style="{StaticResource labelStyle}" 
                        Content="Account type"
                        Margin="0 50 0 13"/>
                     <ComboBox 
+                        Name="textAccType"
                         Height="41"
-                        Width="225"/>
+                        FontSize="18"
+                        Text="{Binding AccType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        Width="225" HorizontalAlignment="Left" 
+                        HorizontalContentAlignment="Left" 
+                        VerticalContentAlignment="Center"/>
 
 
                 </StackPanel>
@@ -145,17 +164,35 @@
             <!--BUTTON-->
             <Grid Grid.Row="2">
                 <Button 
+                    Visibility="Visible"
                     Style="{StaticResource MaterialDesignFlatButton}"
                     materialDesign:ButtonAssist.CornerRadius="0"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Width="187"
+                    Name="btSave"
                     Height="45"
                     Content="Confirm"
                     FontSize="21"
+                    Click="btSave_Click"
+                    Command="{Binding UpdateCommand}"
                     Background="#FCC871"
                     Foreground="#FFFFFF"/>
-
+                <Button 
+                    Visibility="Collapsed"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    materialDesign:ButtonAssist.CornerRadius="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="187"
+                    Name="btnCreate"
+                    Click="btnCreate_Click"
+                    Height="45"
+                    Content="Create"
+                    FontSize="21"
+                    Command="{Binding CreateCommand}"
+                    Background="#FCC871"
+                    Foreground="#FFFFFF"/>
 
             </Grid>
         </Grid>

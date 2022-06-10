@@ -7,8 +7,10 @@
              xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" 
              xmlns:view1="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff" 
              xmlns:view11="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" 
+             xmlns:view2="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff.Staff_Service" 
+             xmlns:view3="clr-namespace:QuanLyCuaHangDaQuy.Views.Staff.Staff_Customer"
              x:Class="QuanLyCuaHangDaQuy.App"
-             StartupUri="/Views/LoginWindow.xaml">  
+             StartupUri="/Views/LoginWindow.xaml">
 
     <Application.Resources>
         <ResourceDictionary>
@@ -30,6 +32,15 @@
             <DataTemplate DataType="{x:Type viewModel:CartViewModel}">
                 <view11:CartUC/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:Staff_ListReceiptVM}">
+                <view2:Staff_ListReceipt/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:Staff_ListCustomerVM}">
+                <view3:Staff_ListCustomer/>
+            </DataTemplate>
+            <!--DataTemplate DataType="{x:Type viewModel:Staff_ReportYearVM}">
+                <view1:ReportYearStaff/>
+            </DataTemplate-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

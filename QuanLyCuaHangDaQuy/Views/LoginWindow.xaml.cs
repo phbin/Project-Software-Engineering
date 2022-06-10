@@ -19,7 +19,7 @@ namespace QuanLyCuaHangDaQuy.Views
     /// </summary>
     public partial class LoginWindow : Window
     {
-        public LoginWindow()
+       public LoginWindow()
         {
             InitializeComponent();
         }

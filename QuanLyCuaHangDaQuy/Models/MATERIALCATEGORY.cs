@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDaQuy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public MATERIALCATEGORY()
         {
-            this.IMPORTEDITEMS = new HashSet<IMPORTEDITEM>();
+            this.ORIGINALITEMs = new HashSet<ORIGINALITEM>();
         }
     
         public string ID { get; set; }
@@ -25,8 +25,8 @@ namespace QuanLyCuaHangDaQuy.Models
         public string NameMaterial { get; set; }
         public Nullable<double> Profit { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
         public virtual UNIT UNIT { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORIGINALITEM> ORIGINALITEMs { get; set; }
     }
 }

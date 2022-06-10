@@ -63,7 +63,7 @@
                         <ImageBrush ImageSource="/QuanLyCuaHangDaQuy;component/Resources/Image/avatar.png" Stretch="Uniform"/>
                     </Button.Background>
                 </Button>
-                <Button x:Name="btnName" Content="Hi Bin" FontFamily="Lato" FontSize="24" FontWeight="Normal"
+                <Button x:Name="btnName" Content="Hi!" FontFamily="Lato" FontSize="24" FontWeight="Normal"
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         BorderThickness="0"
                         Background="Transparent" Foreground="#FFFFFF"></Button>
@@ -77,9 +77,7 @@
                     </Menu.Background>
                     <MenuItem Header="">
                         <MenuItem 
-                            Header="_Profile">
-                        </MenuItem>
-                        <MenuItem 
+                            Command="{Binding LogOutCommand}"
                             Header="_Log out">
                         </MenuItem>
                     </MenuItem>
@@ -93,7 +91,7 @@
                      Width="75.75"
                      Height="33.75"
                      Content="Home"
-                     Margin="0,0,30,0"
+                     Margin="160,0,30,0"
                      Command="{Binding HomeViewCommand}"
 
                         >
@@ -113,6 +111,7 @@
                      Height="33.75"
                      Margin="0,0,30,0"
                      Content="Service"
+                     Command="{Binding ServiceViewCommand}"
                       >
                     </Button>
                     <Button
@@ -120,16 +119,9 @@
                      Width="113.75"
                      Height="33.75"
                      Margin="0,0,30,0"
+                     Command="{Binding CustomerViewCommand}"
                      Content="Customer">
 
-                    </Button>
-                    <Button
-                     Style="{StaticResource ButtonMenu}"
-                     Width="82.75"
-                     Height="33.75"
-                     Margin="0,0,80,0"  
-                     Content="Report"
-                      >
                     </Button>
 
                     <Button

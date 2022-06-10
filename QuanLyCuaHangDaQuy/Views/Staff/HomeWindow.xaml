@@ -10,7 +10,6 @@
     <Grid>
         <StackPanel Height="315" Margin="0 0 0 388">
             <Image Source="/Resources/Image/home.png">
-
             </Image>
         </StackPanel>
         <Grid Margin="0 315 0 0">

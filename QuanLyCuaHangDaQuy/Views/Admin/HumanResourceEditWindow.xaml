@@ -1,23 +1,24 @@
-﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.HumanResourceEditWindow"
+﻿<Window x:Class="QuanLyCuaHangDaQuy.Views.Admin.HumanResourceEditWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         mc:Ignorable="d"
         Height="636" Width="676"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
         FontFamily="Lato"
-        x:Name="winHREdit"
-        DataContext="{StaticResource HumanResourcesVM}">
+        x:Name="winHREdit">
+    <Window.DataContext>
+        <vm:HumanResourcesViewModel/>
+    </Window.DataContext>
     <Window.Resources>
-
-        
         <Style TargetType="{x:Type Label}"
                 x:Key="labelStyle">
             <Style.Setters>
@@ -25,9 +26,9 @@
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="VerticalAlignment" Value="Center"/>
                 <Setter Property="HorizontalAlignment" Value="Left"/>
-                <Setter Property="Foreground" Value="#000000"/>
+                <Setter Property="Foreground" Value="#BCBCBC"/>
                 <Setter Property="FontWeight" Value="Regular"/>
-                
+
                 <Setter Property="Padding" Value="0"/>
 
                 <!--<Setter Property="ContentTemplate">
@@ -63,7 +64,7 @@
             <Style.Setters>
                 <Setter Property="Foreground" Value="#BCBCBC"/>
                 <Setter Property="FontSize" Value="20"/>
-                
+
             </Style.Setters>
         </Style>
     </Window.Resources>
@@ -112,8 +113,10 @@
                     <Grid Margin="-40 0 0 0 ">
                         <Button VerticalAlignment="Bottom" Height="30"
                                 Width="30"
+                                Click="Button_Click"
                                 Margin="120 0 0 0"
-                                Style="{StaticResource MaterialDesignIconForegroundButton}">
+                                Style="{StaticResource MaterialDesignIconForegroundButton}"
+                                Command="{Binding BrowseImageCommand}">
                             <materialDesign:PackIcon Kind="Pencil" 
                                                      Foreground="#BCBCBC"/>
                         </Button>
@@ -121,11 +124,7 @@
                         <Ellipse Width="124"
                              Height="124">
                             <Ellipse.Fill>
-                                <ImageBrush>
-                                    <ImageBrush.ImageSource>
-                                        <BitmapImage UriSource="\Resources\Images\b.jpg" />
-                                    </ImageBrush.ImageSource>
-                                </ImageBrush>
+                                <ImageBrush ImageSource="{Binding BitmapImage, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" x:Name="ProfileImage"/>
                             </Ellipse.Fill>
                         </Ellipse>
                     </Grid>
@@ -142,13 +141,8 @@
                         Uid="10"
                         x:Name="TxtbName"
                         materialDesign:HintAssist.Hint="Enter Name"  
-                        HorizontalAlignment="Left">
-                        <TextBox.Text>
-                            <Binding Path="Fullname"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                        HorizontalAlignment="Left"
+                        Text="{Binding FullName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
                     <Label Style="{StaticResource labelStyle}" 
                                Content="Day of birth"
                                Margin="0 21 0 13"/>
@@ -157,13 +151,9 @@
                         Height="28"
                         Width="223"
                         HorizontalAlignment="Left"
-                        x:Name="dpDayOfBirth">
-                        <DatePicker.Text>
-                            <Binding Path="DoB"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </DatePicker.Text>
-                    </DatePicker>
+                        FontSize="20"
+                        x:Name="dpDayOfBirth"
+                        Text="{Binding DoB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                     <Label 
                         x:Name="SexLabel"
@@ -173,10 +163,14 @@
                     <ComboBox
                         Height="41"
                         Width="225"
-                        x:Name="cbSex">
+                        x:Name="cbSex"
+                        SelectedIndex="0"
+                        VerticalContentAlignment="Center"
+                        FontSize="18"
+                        SelectedValue="{Binding Sex}"
+                        SelectedValuePath="Content">
                         <ComboBoxItem Content="Male"/>
                         <ComboBoxItem Content="Female"/>
-                       
                     </ComboBox>
 
                 </StackPanel>
@@ -190,15 +184,9 @@
                            Uid="40"/>
                     <TextBox 
                         x:Name="TxtbAddress"
-                        Uid="40"
                         materialDesign:HintAssist.Hint="Enter Address"
-                        HorizontalAlignment="Left">
-                        <TextBox.Text>
-                            <Binding Path="Address"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                        HorizontalAlignment="Left"
+                        Text="{Binding Addr ,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
 
                     <Label x:Name="PhoneLabel"
                         Style="{StaticResource labelStyle}" 
@@ -206,35 +194,22 @@
                        Margin="0 34 0 13"
                            Uid="50"/>
                     <TextBox 
-                        Uid="70"
                         x:Name="TxtbPhone"
                         materialDesign:HintAssist.Hint="Enter Phone Number"
                         HorizontalAlignment="Left" 
-                        MaxLength="11">
-                        <TextBox.Text>
-                            <Binding Path="PhoneNumber"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                        MaxLength="11" 
+                        Text="{Binding Phone, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
                     <Label x:Name="EmailLabel"
-                           Uid="60"
                         Style="{StaticResource labelStyle}" 
                        Content="Email"     
                        Margin="0 21 0 13"/>
                     <TextBox 
-                            Uid="60"
                            x:Name="TxtbEmail"
                            materialDesign:HintAssist.Hint="Enter Email"
                            HorizontalAlignment="Left"
-                           >
-                        <TextBox.Text>
-                            <Binding Path="Email"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                        Text="{Binding Email,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                        />
 
                     <Label x:Name="IDLabel"
                         Style="{StaticResource labelStyle}" 
@@ -243,19 +218,14 @@
                             Uid="70"/>
                     <TextBox 
                         x:Name="TxtbID"
-                        Uid="70"
                         materialDesign:HintAssist.Hint="Enter Personal ID"
-                        HorizontalAlignment="Left">
-                        <TextBox.Text>
-                            <Binding Path="ID"
-                                     UpdateSourceTrigger="PropertyChanged">
-                            </Binding>
-                        </TextBox.Text>
-                    </TextBox>
+                        HorizontalAlignment="Left"
+                        Text="{Binding IDPersonal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
 
                 </StackPanel>
             </Grid>
-            
+
             <!--BUTTON-->
             <Grid Grid.Row="2">
                 <Button x:Name="btSave"
@@ -269,11 +239,25 @@
                     FontSize="21"
                     Background="#FCC871"
                     Foreground="#FFFFFF"
-                    Command="{Binding SaveCommand}"
-                    CommandParameter="{Binding ElementName=winHREdit}"/>
-
-
-        </Grid>
+                    Command="{Binding SaveCommand}"/>
+                <Button x:Name="btUpdate"
+                    Style="{StaticResource MaterialDesignFlatButton}"
+                    materialDesign:ButtonAssist.CornerRadius="0"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="187"
+                    Height="45"
+                    Click="btUpdate_Click"
+                    Content="Confirm"
+                    FontSize="21"
+                    Background="#FCC871"
+                    Foreground="#FFFFFF"/>
+                <TextBlock 
+                        x:Name="textID"
+                        Text="{Binding ID}"
+                        Visibility="Collapsed"
+                        Margin="0 21 0 0"/>
+            </Grid>
         </Grid>
     </Border>
 </Window>

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyCuaHangDaQuy.Views
+namespace QuanLyCuaHangDaQuy.Views.Admin
 {
     /// <summary>
     /// Interaction logic for ProviderManagerWindow.xaml

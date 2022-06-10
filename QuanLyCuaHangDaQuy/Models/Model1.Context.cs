@@ -40,17 +40,18 @@ namespace QuanLyCuaHangDaQuy.Models
         public virtual DbSet<ITEMFORM> ITEMFORMs { get; set; }
         public virtual DbSet<ITEM> ITEMS { get; set; }
         public virtual DbSet<MATERIALCATEGORY> MATERIALCATEGORies { get; set; }
+        public virtual DbSet<ORIGINALITEM> ORIGINALITEMs { get; set; }
         public virtual DbSet<SERVICECATEGORY> SERVICECATEGORies { get; set; }
         public virtual DbSet<SERVICELIST> SERVICELISTs { get; set; }
         public virtual DbSet<UNIT> UNITs { get; set; }
     
-        public virtual int USP_Carts(string iditem)
+        public virtual int USP_Carts(string idorg)
         {
-            var iditemParameter = iditem != null ?
-                new ObjectParameter("iditem", iditem) :
-                new ObjectParameter("iditem", typeof(string));
+            var idorgParameter = idorg != null ?
+                new ObjectParameter("idorg", idorg) :
+                new ObjectParameter("idorg", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_Carts", iditemParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_Carts", idorgParameter);
         }
     
         public virtual int USP_UpdateImportedItems(string id)
@@ -62,17 +63,17 @@ namespace QuanLyCuaHangDaQuy.Models
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_UpdateImportedItems", idParameter);
         }
     
-        public virtual int USP_UpdateItems(string iditemform, string iditem)
+        public virtual int USP_UpdateItems(string iditemform, string idorg)
         {
             var iditemformParameter = iditemform != null ?
                 new ObjectParameter("iditemform", iditemform) :
                 new ObjectParameter("iditemform", typeof(string));
     
-            var iditemParameter = iditem != null ?
-                new ObjectParameter("iditem", iditem) :
-                new ObjectParameter("iditem", typeof(string));
+            var idorgParameter = idorg != null ?
+                new ObjectParameter("idorg", idorg) :
+                new ObjectParameter("idorg", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_UpdateItems", iditemformParameter, iditemParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("USP_UpdateItems", iditemformParameter, idorgParameter);
         }
     
         public virtual int USP_UpdateServiceList(string idcusservice, string idservice)

@@ -31,7 +31,7 @@ namespace QuanLyCuaHangDaQuy.Resources.UserControls
         {
             txtQuantity.Text = (Int32.Parse(txtQuantity.Text)+1).ToString();
             CART cart = (from m in DataProvider.Ins.DB.CARTS
-                         where m.IDItem == txtIDItem.Text
+                         where m.IDOrgItem == txtIDItem.Text
                          select m).Single();
             cart.Quantity = Int32.Parse(txtQuantity.Text);
             DataProvider.Ins.DB.SaveChanges();
@@ -47,7 +47,7 @@ namespace QuanLyCuaHangDaQuy.Resources.UserControls
             {
                 txtQuantity.Text = (Int32.Parse(txtQuantity.Text) - 1).ToString();
                 CART cart = (from m in DataProvider.Ins.DB.CARTS
-                             where m.IDItem == txtIDItem.Text
+                             where m.IDOrgItem == txtIDItem.Text
                              select m).Single();
                 cart.Quantity = Int32.Parse(txtQuantity.Text);
                 DataProvider.Ins.DB.SaveChanges();
@@ -55,7 +55,7 @@ namespace QuanLyCuaHangDaQuy.Resources.UserControls
         }
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            CART cart = DataProvider.Ins.DB.CARTS.ToList().Where(x => x.IDItem == txtIDItem.Text).FirstOrDefault();
+            CART cart = DataProvider.Ins.DB.CARTS.ToList().Where(x => x.IDOrgItem == txtIDItem.Text).FirstOrDefault();
             DataProvider.Ins.DB.CARTS.Remove(cart);
             DataProvider.Ins.DB.SaveChanges();
         }

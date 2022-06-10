@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace QuanLyCuaHangDaQuy.Views
+namespace QuanLyCuaHangDaQuy.Views.Staff.Staff_Customer
 {
     /// <summary>
     /// Interaction logic for Staff_InfoCustomer.xaml
@@ -22,6 +22,11 @@ namespace QuanLyCuaHangDaQuy.Views
         public Staff_InfoCustomer()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+             this.Close();
         }
     }
 }

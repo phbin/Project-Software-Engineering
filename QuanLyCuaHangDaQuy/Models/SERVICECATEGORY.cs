@@ -23,6 +23,7 @@ namespace QuanLyCuaHangDaQuy.Models
         public string ID { get; set; }
         public string NameService { get; set; }
         public double Price { get; set; }
+        public Nullable<int> Stt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SERVICELIST> SERVICELISTs { get; set; }

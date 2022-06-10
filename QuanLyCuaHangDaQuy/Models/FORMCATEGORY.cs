@@ -17,13 +17,13 @@ namespace QuanLyCuaHangDaQuy.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public FORMCATEGORY()
         {
-            this.IMPORTEDITEMS = new HashSet<IMPORTEDITEM>();
+            this.ORIGINALITEMs = new HashSet<ORIGINALITEM>();
         }
     
         public string ID { get; set; }
         public string NameForm { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<IMPORTEDITEM> IMPORTEDITEMS { get; set; }
+        public virtual ICollection<ORIGINALITEM> ORIGINALITEMs { get; set; }
     }
 }

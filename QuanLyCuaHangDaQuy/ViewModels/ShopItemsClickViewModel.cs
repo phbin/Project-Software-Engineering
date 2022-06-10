@@ -85,7 +85,8 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         public ShopItemsClickViewModel(string id)
         {
             ShopItemsClick wd = new ShopItemsClick();
-            var item = DataProvider.Ins.DB.IMPORTEDITEMS.ToList().Where(x => x.ID==id). FirstOrDefault();
+
+            var item = DataProvider.Ins.DB.ORIGINALITEMs.ToList().Where(x => x.ID==id). FirstOrDefault();
             LoadCommand = new RelayCommand<ShopItemsClick>((p) => true, (p) =>
             {
                 Description = item.Descript;
@@ -111,24 +112,24 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 CART cart = new CART()
                 {
                     ID = CreateID(),
-                    IDItem= (string)ID,
+                    IDOrgItem= (string)ID,
                     Quantity =(int)Quantity
             };
-                var list = DataProvider.Ins.DB.CARTS.Where(x => x.IDItem == cart.IDItem).Count();
+                var list = DataProvider.Ins.DB.CARTS.Where(x => x.IDOrgItem == cart.IDOrgItem).Count();
                 if (list != 0)
                 {
-                    int qty = (int)DataProvider.Ins.DB.CARTS.ToList().Where(a => a.IDItem == cart.IDItem).FirstOrDefault().Quantity;
+                    int qty = (int)DataProvider.Ins.DB.CARTS.ToList().Where(a => a.IDOrgItem == cart.IDOrgItem).FirstOrDefault().Quantity;
                     CART x = (from m in DataProvider.Ins.DB.CARTS
-                              where m.IDItem == cart.IDItem
+                              where m.IDOrgItem == cart.IDOrgItem
                               select m).Single();
                     x.Quantity = qty + cart.Quantity;
-                    DataProvider.Ins.DB.USP_Carts(x.IDItem.ToString());
+                    DataProvider.Ins.DB.USP_Carts(x.IDOrgItem.ToString());
                     DataProvider.Ins.DB.SaveChanges();
                 }
                 else
                 {
                     DataProvider.Ins.DB.CARTS.Add(cart);
-                    DataProvider.Ins.DB.USP_Carts(cart.IDItem.ToString());
+                    DataProvider.Ins.DB.USP_Carts(cart.IDOrgItem.ToString());
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("Success!", "Message", MessageBoxButton.OK, MessageBoxImage.Stop);
                 }

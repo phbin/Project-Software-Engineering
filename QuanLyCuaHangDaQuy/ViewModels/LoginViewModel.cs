@@ -32,20 +32,20 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 Password = p.Password;
             });
         }
-        public static string MD5Hash(string input)
-        {
-            StringBuilder hash = new StringBuilder();
-            MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
-            byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
-            for(int i=0; i<bytes.Length; i++)
-            {
-                hash.Append(bytes[i].ToString("x2"));
-            }
-            return hash.ToString();
-        }
+        //public static string MD5Hash(string input)
+        //{
+        //    StringBuilder hash = new StringBuilder();
+        //    MD5CryptoServiceProvider md5provider = new MD5CryptoServiceProvider();
+        //    byte[] bytes = md5provider.ComputeHash(new UTF8Encoding().GetBytes(input));
+        //    for(int i=0; i<bytes.Length; i++)
+        //    {
+        //        hash.Append(bytes[i].ToString("x2"));
+        //    }
+        //    return hash.ToString();
+        //}
         private void Login(LoginWindow p)
         {
-            string passEncode = MD5Hash(p.txtPassword.Password);
+            string passEncode = HashCode.MD5Hash(p.txtPassword.Password);
             if (p == null)
             {
                 return;
@@ -70,20 +70,19 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             {
                 foreach (var i in acc)
                 {
-                    if (i.AccType == 1)
+                    if (i.AccType == "admin")
                     {
                         AdminWindow wd = new AdminWindow();
                         wd.Show();
                         p.Close();
                     }
-                    else if (i.AccType==0)
+                    else if (i.AccType=="staff")
                     {
                         MainStaffWindow wd = new MainStaffWindow();
                         wd.Show();
                         p.Close();
                     }
                 }
-              
             }
             else
             {

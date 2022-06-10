@@ -2,10 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:QuanLyCuaHangDaQuy"
                     xmlns:viewmodels="clr-namespace:QuanLyCuaHangDaQuy.ViewModels">
-    <viewmodels:BaseViewModel x:Key="HomeVM"></viewmodels:BaseViewModel>
-    <viewmodels:MainStaffViewModel x:Key="MainStaffVM"></viewmodels:MainStaffViewModel>
-    <viewmodels:ExitButtonViewModel x:Key="ExitButtonVM"></viewmodels:ExitButtonViewModel>
     <viewmodels:HumanResourcesViewModel x:Key="HumanResourcesVM"/>
+    <viewmodels:ProviderViewModel x:Key="ProviderVM"/>
+    <viewmodels:MaterialCategoryViewModel x:Key="MaterialCategoryVM"/>
+    <viewmodels:FormCategoryViewModel x:Key="FormCategoryVM"/>
+    <viewmodels:ExitButtonViewModel x:Key="ExitButtonVM"/>
     <viewmodels:AdminViewModel x:Key="AdminVM"/>
     <viewmodels:CustomerViewModel x:Key="CustomerVM"/>
 </ResourceDictionary>

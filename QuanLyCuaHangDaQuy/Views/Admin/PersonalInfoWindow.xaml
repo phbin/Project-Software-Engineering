@@ -4,15 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls"
+        xmlns:UserControls="clr-namespace:QuanLyCuaHangDaQuy.Resources.UserControls" xmlns:vm="clr-namespace:QuanLyCuaHangDaQuy.ViewModels"
         mc:Ignorable="d"
         Title="Thông tin cá nhân"
         Height="540" Width="676"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True"
-        DataContext="{StaticResource HumanResourcesVM}">
+        AllowsTransparency="True">
+    <Window.DataContext>
+        <vm:HumanResourcesViewModel/>
+    </Window.DataContext>
     <Window.Resources>
         
         <Style TargetType="{x:Type Label}"
@@ -99,7 +101,7 @@
                         <Ellipse.Fill>
                             <ImageBrush>
                                 <ImageBrush.ImageSource>
-                                    <BitmapImage UriSource="\Resources\Images\b.jpg" />
+                                    <BitmapImage UriSource="/Resources/Image/avatar.png"/>
                                 </ImageBrush.ImageSource>
                             </ImageBrush>
                         </Ellipse.Fill>

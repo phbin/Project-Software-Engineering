@@ -16,12 +16,12 @@ namespace QuanLyCuaHangDaQuy.Models
     {
         public string ID { get; set; }
         public string IDItemForm { get; set; }
-        public string IDItem { get; set; }
+        public string IDOrgItem { get; set; }
         public double Total { get; set; }
         public Nullable<int> Quantity { get; set; }
         public System.DateTime DateSell { get; set; }
     
-        public virtual IMPORTEDITEM IMPORTEDITEM { get; set; }
         public virtual ITEMFORM ITEMFORM { get; set; }
+        public virtual ORIGINALITEM ORIGINALITEM { get; set; }
     }
 }

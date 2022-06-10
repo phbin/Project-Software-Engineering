@@ -43,6 +43,12 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="MaterialDesignColors, Version=2.0.5.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.2.0.5\lib\net452\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -52,11 +58,17 @@
     <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.Imaging, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
@@ -82,6 +94,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ConvertImage.cs" />
+    <Compile Include="HashCode.cs" />
     <Compile Include="Models\ACCOUNT.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -137,6 +150,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\ORIGINALITEM.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SERVICECATEGORY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -173,62 +189,131 @@
     <Compile Include="Resources\UserControls\ShowProductUC.xaml.cs">
       <DependentUpon>ShowProductUC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Account.cs" />
     <Compile Include="ViewModels\AccountViewModel.cs" />
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\Admin_AddEditItemVM.cs" />
+    <Compile Include="ViewModels\Admin_AddReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_AddServiceVM.cs" />
+    <Compile Include="ViewModels\Admin_BillListImportedVM.cs" />
+    <Compile Include="ViewModels\Admin_EditReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_EditServiceVM.cs" />
+    <Compile Include="ViewModels\Admin_ListImportItemVM.cs" />
+    <Compile Include="ViewModels\Admin_ListReceiptVM.cs" />
+    <Compile Include="ViewModels\Admin_ListServiceVM.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\CartViewModel.cs" />
+    <Compile Include="ViewModels\CheckOutBillVM.cs" />
+    <Compile Include="ViewModels\Customer.cs" />
     <Compile Include="ViewModels\CustomerViewModel.cs" />
     <Compile Include="ViewModels\ExitButton.cs" />
+    <Compile Include="ViewModels\FormCategory.cs" />
+    <Compile Include="ViewModels\FormCategoryViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\HumanResourcesViewModel.cs" />
+    <Compile Include="ViewModels\ImportedItem.cs" />
+    <Compile Include="ViewModels\Inventory.cs" />
+    <Compile Include="ViewModels\InventoryBillVM.cs" />
+    <Compile Include="ViewModels\InventoryViewModel.cs" />
+    <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainStaffViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\MaterialCategory.cs" />
+    <Compile Include="ViewModels\MaterialCategoryViewModel.cs" />
+    <Compile Include="ViewModels\OriginalItem.cs" />
+    <Compile Include="ViewModels\Provider.cs" />
     <Compile Include="ViewModels\ProviderViewModel.cs" />
+    <Compile Include="ViewModels\Receipt.cs" />
+    <Compile Include="ViewModels\ReportViewModel.cs" />
     <Compile Include="ViewModels\SelectedItem.cs" />
     <Compile Include="ViewModels\SelectedProductCartVM.cs" />
+    <Compile Include="ViewModels\Service.cs" />
     <Compile Include="ViewModels\ShopItemsClickViewModel.cs" />
+    <Compile Include="ViewModels\Staff.cs" />
+    <Compile Include="ViewModels\Staff_AddCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_AddReceiptVM.cs" />
+    <Compile Include="ViewModels\Staff_AddServiceVM.cs" />
+    <Compile Include="ViewModels\Staff_BillListReceiptVM.cs" />
+    <Compile Include="ViewModels\Staff_BillListServiceVM.cs" />
+    <Compile Include="ViewModels\Staff_EditCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_EditReceiptVM.cs" />
+    <Compile Include="ViewModels\Staff_EditServiceVM.cs" />
+    <Compile Include="ViewModels\Staff_ListCustomerVM.cs" />
+    <Compile Include="ViewModels\Staff_ListReceiptVM.cs" />
+    <Compile Include="ViewModels\Staff_ListServiceVM.cs" />
+    <Compile Include="ViewModels\Unit.cs" />
+    <Compile Include="ViewModels\UnitViewModel.cs" />
     <Compile Include="Views\Admin\AccountManagerWindow.xaml.cs">
       <DependentUpon>AccountManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_Service\AddEditService.xaml.cs">
-      <DependentUpon>AddEditService.xaml</DependentUpon>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml.cs">
+      <DependentUpon>Admin_AddImportItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml.cs">
+      <DependentUpon>Admin_AddReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_BillListImported.xaml.cs">
+      <DependentUpon>Admin_BillListImported.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml.cs">
+      <DependentUpon>Admin_EditReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml.cs">
+      <DependentUpon>Admin_ListImportItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml.cs">
+      <DependentUpon>Admin_ListReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_AddService.xaml.cs">
+      <DependentUpon>Admin_AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_EditService.xaml.cs">
+      <DependentUpon>Admin_EditService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Admin_Service\Admin_ListService.xaml.cs">
+      <DependentUpon>Admin_ListService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\CustomerInfoWindow.xaml.cs">
       <DependentUpon>CustomerInfoWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\FormCatelogyManagerWindow.xaml.cs">
-      <DependentUpon>FormCatelogyManagerWindow.xaml</DependentUpon>
+    <Compile Include="Views\Admin\FormCategoryManagerWindow.xaml.cs">
+      <DependentUpon>FormCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\HumanResourceEditWindow.xaml.cs">
       <DependentUpon>HumanResourceEditWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml.cs">
-      <DependentUpon>ReceiptImportedItems.xaml</DependentUpon>
+    <Compile Include="Views\Admin\HumanResourceInformationWindow.xaml.cs">
+      <DependentUpon>HumanResourceInformationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml.cs">
-      <DependentUpon>ImportecItemsInList.xaml</DependentUpon>
+    <Compile Include="Views\Admin\ItemManageWindow.xaml.cs">
+      <DependentUpon>ItemManageWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml.cs">
-      <DependentUpon>ImportItem.xaml</DependentUpon>
+    <Compile Include="Views\Admin\MaterialCategoryManagerWindow.xaml.cs">
+      <DependentUpon>MaterialCategoryManagerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\InventoryInfo.xaml.cs">
-      <DependentUpon>InventoryInfo.xaml</DependentUpon>
+    <Compile Include="Views\Admin\ReportAdmin.xaml.cs">
+      <DependentUpon>ReportAdmin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\UnitManageWindow.xaml.cs">
+      <DependentUpon>UnitManageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryBill.xaml.cs">
+      <DependentUpon>InventoryBill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\CheckOutBill.xaml.cs">
+      <DependentUpon>CheckOutBill.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\HomeWindow.xaml.cs">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\MainStaffWindow.xaml.cs">
       <DependentUpon>MainStaffWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Admin\MaterialCatelogyManagerWindow.xaml.cs">
-      <DependentUpon>MaterialCatelogyManagerWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\PersonalInfoWindow.xaml.cs">
       <DependentUpon>PersonalInfoWindow.xaml</DependentUpon>
@@ -245,32 +330,32 @@
     <Compile Include="Views\Staff\Staff_Customer\Staff_AddCustomer.xaml.cs">
       <DependentUpon>Staff_AddCustomer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml.cs">
-      <DependentUpon>Staff_AddReceipt.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Staff_Service\Staff_AddService.xaml.cs">
-      <DependentUpon>Staff_AddService.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Staff_Customer\Staff_Customer.xaml.cs">
-      <DependentUpon>Staff_Customer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml.cs">
-      <DependentUpon>Staff_DetailCustomer.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Staff\Staff_Customer\Staff_EditCustomer.xaml.cs">
       <DependentUpon>Staff_EditCustomer.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml.cs">
-      <DependentUpon>Staff_EditReceipt.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Staff\Staff_Service\Staff_EditService.xaml.cs">
-      <DependentUpon>Staff_EditService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml.cs">
       <DependentUpon>Staff_InfoCustomer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\Staff_Customer\Staff_ListCustomer.xaml.cs">
       <DependentUpon>Staff_ListCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml.cs">
+      <DependentUpon>Staff_AddReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_AddService.xaml.cs">
+      <DependentUpon>Staff_AddService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_BillListReceipt.xaml.cs">
+      <DependentUpon>Staff_BillListReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_BillListService.xaml.cs">
+      <DependentUpon>Staff_BillListService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml.cs">
+      <DependentUpon>Staff_EditReceipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\Staff_Service\Staff_EditService.xaml.cs">
+      <DependentUpon>Staff_EditService.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Staff\Staff_Service\Staff_ListReceipt.xaml.cs">
       <DependentUpon>Staff_ListReceipt.xaml</DependentUpon>
@@ -326,7 +411,39 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_Service\AddEditService.xaml">
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_AddImportItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_AddReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_BillListImported.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_EditReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_ListImportItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_ImportedItems\Admin_ListReceipt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_AddService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_EditService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Admin\Admin_Service\Admin_ListService.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -334,42 +451,54 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Admin\FormCatelogyManagerWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Views\Admin\FormCategoryManagerWindow.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Admin\HumanResourceEditWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ReceiptImportedItems.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\RelayCommand.cs" />
-    <Page Include="Resources\MainResource.xaml">
+    <Resource Include="Resources\MainResource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Resource>
+    <Page Include="Views\Admin\HumanResourceInformationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ImportecItemsInList.xaml">
+    <Page Include="Views\Admin\ItemManageWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\Admin_ImportedItems\ImportItem.xaml">
+    <Page Include="Views\Admin\MaterialCategoryManagerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Admin\InventoryInfo.xaml">
+    <Page Include="Views\Admin\ReportAdmin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Admin\UnitManageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventoryBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Staff\CheckOutBill.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff\HomeWindow.xaml">
       <SubType>Designer</SubType>
@@ -378,10 +507,6 @@
     <Page Include="Views\Staff\MainStaffWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Admin\MaterialCatelogyManagerWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Admin\PersonalInfoWindow.xaml">
       <SubType>Designer</SubType>
@@ -400,52 +525,52 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff\Staff_Customer\Staff_AddCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Service\Staff_AddService.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Customer\Staff_Customer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Customer\Staff_DetailCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Staff\Staff_Customer\Staff_EditCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml">
       <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\Staff\Staff_Service\Staff_EditService.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Staff\Staff_Customer\Staff_InfoCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff\Staff_Customer\Staff_ListCustomer.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_AddReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_AddService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_BillListReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_BillListService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_EditReceipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Staff\Staff_Service\Staff_EditService.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff\Staff_Service\Staff_ListReceipt.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Staff\Staff_Service\Staff_ListService.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -518,6 +643,12 @@
     <Resource Include="Resources\Image\userIcon.png" />
     <Resource Include="Resources\Image\loginWindowBG.png" />
     <Resource Include="Resources\Image\madlife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Image\diamond.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Models\Model1.Context.tt">

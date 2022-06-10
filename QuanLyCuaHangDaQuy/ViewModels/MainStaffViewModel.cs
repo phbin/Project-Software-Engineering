@@ -2,6 +2,8 @@
 using QuanLyCuaHangDaQuy.Resources.UserControls;
 using QuanLyCuaHangDaQuy.Views;
 using QuanLyCuaHangDaQuy.Views.Staff;
+using QuanLyCuaHangDaQuy.Views.Staff.Staff_Customer;
+using QuanLyCuaHangDaQuy.Views.Staff.Staff_Service;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,6 +24,9 @@ namespace QuanLyCuaHangDaQuy.ViewModels
     {
         HomeViewModel HomeClickVM { get; set; }
         CartViewModel CartClickVM { get; set; }
+        Staff_ListReceiptVM ListReceiptVM { get; set; }
+        Staff_ListCustomerVM ListCustomerVM { get; set; }
+        //Staff_ReportYearVM ReportYearVM { get; set; }
 
 
         // public ICommand LoadedWindowCommand { get; set; }
@@ -31,6 +36,10 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         public ICommand CartViewCommand { get; set; }
         public ICommand CategoryTreeView { get; set; }
         public ICommand LoadItemCommand { get; set; }
+        public ICommand ServiceViewCommand { get; set; }
+        public ICommand CustomerViewCommand { get; set; }
+        public ICommand ReportViewCommand { get; set; }
+        public ICommand LogOutCommand { get; set; }
 
 
         private object _currentView;
@@ -55,10 +64,31 @@ namespace QuanLyCuaHangDaQuy.ViewModels
             ShopViewCommand = new RelayCommand<ShopWindow>((p) => true, (p) => {
                 CurrentView = this;
             });
-
+            LogOutCommand = new RelayCommand<MainStaffWindow>((p) => true, (p) => {
+                Logout(p);
+            });
             LoadItemCommand = new RelayCommand<ShopWindow>((p) => true, (p) => {
                 LoadItem(p);
             });
+            //click service
+            ListReceiptVM = new Staff_ListReceiptVM();
+
+            ServiceViewCommand = new RelayCommand<Staff_ListReceipt>((p) => true, (p) => {
+                CurrentView = ListReceiptVM;
+            });
+            //click report
+            //ReportYearVM = new Staff_ReportYearVM();
+
+            //ReportViewCommand = new RelayCommand<Views.Staff.ReportYearStaff>((p) => true, (p) => {
+            //    CurrentView = ReportYearVM;
+            //});
+            //click customer
+            ListCustomerVM = new Staff_ListCustomerVM();
+
+            CustomerViewCommand = new RelayCommand<Views.Staff.Staff_Customer.Staff_ListCustomer>((p) => true, (p) => {
+                CurrentView = ListCustomerVM;
+            });
+          
            
             //click  cart
             CartClickVM = new CartViewModel();
@@ -67,14 +97,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
                 CurrentView = CartClickVM;
             });
         }
-        private List<IMPORTEDITEM> itemList = DataProvider.Ins.DB.IMPORTEDITEMS.ToList();
+        private List<ORIGINALITEM> itemList = DataProvider.Ins.DB.ORIGINALITEMs.ToList();
         public void LoadItem(ShopWindow window)
         {
             window.wrpItem.Children.Clear();
             foreach ( var items in itemList)
             //for (int i = 0; i < itemList.Count; i++)
             {
-                if (items.SellQty > 0)
+                if ((items.Quantity -items.SellQty) > 0)
                 {
                     Resources.UserControls.ItemsControl control = new Resources.UserControls.ItemsControl();
                     control.txtName.Text = items.NameItem.ToString();
@@ -97,8 +127,14 @@ namespace QuanLyCuaHangDaQuy.ViewModels
         private void Control_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             curBtn = (Resources.UserControls.ItemsControl)sender;
-            ShopItemsClickViewModel ShopItemClickVM = new ShopItemsClickViewModel((curBtn.Tag as IMPORTEDITEM).ID);
+            ShopItemsClickViewModel ShopItemClickVM = new ShopItemsClickViewModel((curBtn.Tag as ORIGINALITEM).ID);
             CurrentView = ShopItemClickVM;
+        }
+        private void Logout(MainStaffWindow wd)
+        {
+            LoginWindow frmLogin = new LoginWindow();
+            frmLogin.Show();
+            wd.Close();
         }
     }
 }

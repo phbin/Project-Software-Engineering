@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace QuanLyCuaHangDaQuy.Views
+namespace QuanLyCuaHangDaQuy.Views.Staff.Staff_Service
 {
     /// <summary>
     /// Interaction logic for Staff_ListReceipt.xaml
     /// </summary>
-    public partial class Staff_ListReceipt : Window
+    public partial class Staff_ListReceipt : UserControl
     {
         public Staff_ListReceipt()
         {

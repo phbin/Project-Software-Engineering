@@ -17,7 +17,7 @@ namespace QuanLyCuaHangDaQuy.Models
         public string UserName { get; set; }
         public string Pass { get; set; }
         public string ID { get; set; }
-        public int AccType { get; set; }
+        public string AccType { get; set; }
     
         public virtual INFOSTAFF INFOSTAFF { get; set; }
     }

@@ -1,6 +1,8 @@
 ﻿using QuanLyCuaHangDaQuy.Models;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,11 +25,21 @@ namespace QuanLyCuaHangDaQuy
 
         }
         // image -> byte, insert image into database
-        public void imageToByteArray(string path, string id)
+      
+       
+        public static byte[] ConvertBitmapImageToBytes(BitmapImage bitmapImage)
         {
-            string query = "update Movie set Poster = (select * from openrowset(bulk N'" + path + "', single_blob) as img) where ID = '" + id + "'";
-            DataProvider.Ins.ExecuteQuery(query);
+            byte[] data;
+            JpegBitmapEncoder encoder = new JpegBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmapImage));
+            using (MemoryStream ms = new MemoryStream())
+            {
+                encoder.Save(ms);
+                data = ms.ToArray();
+            }
+            return data;
         }
+  
         // byte[] -> image, get image from database
         public static BitmapImage LoadImage(byte[] imageData)
         {
